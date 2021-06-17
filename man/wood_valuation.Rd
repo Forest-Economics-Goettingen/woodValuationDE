@@ -104,7 +104,7 @@ The function is a wrapper for the entire procedure of wood valuation provided
 by \pkg{woodValuationDE}. It estimates the share of salable (for revenues) and
 skidded (for harvest costs) volume as well as the wood revenues and harvest
 costs. Finally, it derives the net revenues for the user-provided standing
-wood volume . The underlying functions were derived based on data of
+wood volume. The underlying functions were derived based on data of
 HessenForst, the forest administration of the Federal State of Hesse in
 Germany. For further details see the \pkg{woodValuationDE} readme.
 }

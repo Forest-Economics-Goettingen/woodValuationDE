@@ -100,79 +100,79 @@
 #'             Bad Orb: J.D. Sauerlaender`s Verlag (Schriften zur Forst- und
 #'             Umweltoekonomie, 47).
 #' @examples
-#' wood_net_revenue(1,
-#'                  40,
-#'                  "beech")
+#' wood_net_revenues(1,
+#'                   40,
+#'                   "beech")
 #'
 #' # species codes Lower Saxony (Germany)
-#' wood_net_revenue(seq(10, 70, 20),
-#'                  40,
-#'                  211,
-#'                  species.code.type = "nds")
+#' wood_net_revenues(seq(10, 70, 20),
+#'                   40,
+#'                   211,
+#'                   species.code.type = "nds")
 #'
 #' # vector input
-#' wood_net_revenue(10,
-#'                  seq(20, 50, 5),
-#'                  "spruce")
+#' wood_net_revenues(10,
+#'                   seq(20, 50, 5),
+#'                   "spruce")
 #'
-#' wood_net_revenue(10,
-#'                  40,
-#'                  rep(c("beech", "spruce"),
-#'                      each = 9),
-#'                  value.level = rep(rep(1:3, 2),
-#'                                    each = 3),
-#'                  cost.level = rep(1:3, 6))
+#' wood_net_revenues(10,
+#'                   40,
+#'                   rep(c("beech", "spruce"),
+#'                       each = 9),
+#'                   value.level = rep(rep(1:3, 2),
+#'                                     each = 3),
+#'                   cost.level = rep(1:3, 6))
 #'
-#' wood_net_revenue(10,
-#'                  40,
-#'                  rep("spruce", 6),
-#'                  calamity.type = c("none",
-#'                                    "ips",
-#'                                    "ips.timely",
-#'                                    "stand.damage.fuchs",
-#'                                    "regional.calamity.fuchs",
-#'                                    "national.calamity.fuchs"))
+#' wood_net_revenues(10,
+#'                   40,
+#'                   rep("spruce", 6),
+#'                   calamity.type = c("none",
+#'                                     "ips",
+#'                                     "ips.timely",
+#'                                     "stand.damage.fuchs",
+#'                                     "regional.calamity.fuchs",
+#'                                     "national.calamity.fuchs"))
 #'
 #' # user-defined calamities with respective changes in harvest costs and wood revenues
-#' wood_net_revenue(10,
-#'                  40,
-#'                  rep("spruce", 3),
-#'                  calamity.type = c("none",
-#'                                    "my.own.calamity.1",
-#'                                    "my.own.calamity.2"),
-#'                  calamity.factors = dplyr::tibble(
-#'                    calamity.type = rep(c("none",
-#'                                          "my.own.calamity.1",
-#'                                          "my.own.calamity.2"),
-#'                                        each = 2),
-#'                    species.group = rep(c("softwood",
-#'                                          "deciduous"),
-#'                                        times = 3),
-#'                    revenues.factor = c(1.0, 1.0,
-#'                                        0.8, 0.8,
-#'                                        0.2, 0.2),
-#'                    cost.factor = c(1.0, 1.0,
-#'                                    1.5, 1.5,
-#'                                    1.0, 1.0),
-#'                    cost.additional = c(0, 0,
-#'                                        0, 0,
-#'                                        5, 5)))
+#' wood_net_revenues(10,
+#'                   40,
+#'                   rep("spruce", 3),
+#'                   calamity.type = c("none",
+#'                                     "my.own.calamity.1",
+#'                                     "my.own.calamity.2"),
+#'                   calamity.factors = dplyr::tibble(
+#'                     calamity.type = rep(c("none",
+#'                                           "my.own.calamity.1",
+#'                                           "my.own.calamity.2"),
+#'                                         each = 2),
+#'                     species.group = rep(c("softwood",
+#'                                           "deciduous"),
+#'                                         times = 3),
+#'                     revenues.factor = c(1.0, 1.0,
+#'                                         0.8, 0.8,
+#'                                         0.2, 0.2),
+#'                     cost.factor = c(1.0, 1.0,
+#'                                     1.5, 1.5,
+#'                                     1.0, 1.0),
+#'                     cost.additional = c(0, 0,
+#'                                         0, 0,
+#'                                         5, 5)))
 #'
 #' # adapted market situation by providing alternative prices for the reference assortments
-#' wood_net_revenue(10,
-#'                  40,
-#'                  c("oak", "beech", "spruce"))
-#' wood_net_revenue(10,
-#'                  40,
-#'                  c("oak", "beech", "spruce"),
-#'                  price.ref.assortment = dplyr::tibble(
-#'                    species = c("oak", "beech", "spruce"),
-#'                    price.ref.assortment = c(300, 80, 50)))
+#' wood_net_revenues(10,
+#'                   40,
+#'                   c("oak", "beech", "spruce"))
+#' wood_net_revenues(10,
+#'                   40,
+#'                   c("oak", "beech", "spruce"),
+#'                   price.ref.assortment = dplyr::tibble(
+#'                     species = c("oak", "beech", "spruce"),
+#'                     price.ref.assortment = c(300, 80, 50)))
 #'
 #' @import dplyr
 #'
 #' @export
-wood_net_revenue <- function(
+wood_net_revenues <- function(
   volume,
   diameter.q,
   species,
