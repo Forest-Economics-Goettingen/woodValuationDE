@@ -1,0 +1,75 @@
+species.code.nds;species.code.en;name.scientific;species.code.bodelschwingh.revenues;species.code.bodelschwingh.costs;species.code.calamity.group
+110;oak;Quercus sp.;110;110;deciduous
+111;NA;Quercus robur;110;110;deciduous
+112;NA;Quercus petraea;110;110;deciduous
+113;NA;Quercus rubra;110;110;deciduous
+114;NA;Quercus cerris;110;110;deciduous
+115;NA;Quercus palustris;110;110;deciduous
+211;beech;Fagus sylvatica;211;211;deciduous
+221;hornbeam;Carpinus betulus;211;211;deciduous
+311;ash;Fraxinus exelsior;311;211;deciduous
+321;maple;Acer pseudoplatanus;311;211;deciduous
+322;NA;Acer platanoides;311;211;deciduous
+323;NA;Acer campestre;311;211;deciduous
+331;elm;Ulmus glabra;211;211;deciduous
+332;NA;Ulmus laevis;211;211;deciduous
+333;NA;Ulmus minor;211;211;deciduous
+341;lime;Tilia platyphyllos;421;211;deciduous
+342;NA;Tilia cordata;421;211;deciduous
+351;NA;Robinia pseudoaccacia;211;211;deciduous
+352;NA;Castanea sativa;211;211;deciduous
+353;NA;Juglans regia;211;211;deciduous
+354;cherry;Prunus avium;421;211;deciduous
+355;NA;Malus sylvestris;211;211;deciduous
+356;NA;Pyrus pyraster;211;211;deciduous
+357;NA;Sorbus torminalis;211;211;deciduous
+358;NA;Sorbus domestica;211;211;deciduous
+359;NA;Sorbus intermedia;211;211;deciduous
+361;NA;Liriodendron tulipifera;211;211;deciduous
+362;NA;Carya tomentosa;211;211;deciduous
+363;NA;Platanus x acerifolia;211;211;deciduous
+365;NA;Prunus domestica;211;211;deciduous
+372;NA;Rhamnus frangula;211;211;deciduous
+375;NA;Corylus avellana;211;211;deciduous
+380;NA;Euonoymus europaeus;211;211;deciduous
+386;NA;Ilex aquifolium;211;211;deciduous
+410;birch;Betula sp.;410;211;deciduous
+411;NA;Betula pendula;410;211;deciduous
+412;NA;Betula pubescens;410;211;deciduous
+413;NA;Betula maximowicziana;410;211;deciduous
+414;NA;Betula sp. x Betula sp.;410;211;deciduous
+421;alder;Alnus glutinosa;421;211;deciduous
+422;NA;Alnus incana;421;211;deciduous
+423;NA;Alnus viridis;421;211;deciduous
+430;poplar;Populus sp.;430;211;deciduous
+431;NA;Populus tremula;430;211;deciduous
+432;NA;Populus nigra;430;211;deciduous
+433;NA;Populus x canescens;430;211;deciduous
+434;NA;Populus balsamifera;430;211;deciduous
+441;willow;Salix sp.;410;211;deciduous
+442;NA;Aesculus hippocastanum;211;211;deciduous
+451;NA;Sorbus aucuparia;211;211;deciduous
+452;NA;Prunus serotina;211;211;deciduous
+511;spruce;Picea abies;511;511;softwood
+512;NA;Picea sitchensis;511;511;softwood
+513;NA;Picea omorika;511;511;softwood
+514;NA;Picea pungens;511;511;softwood
+515;NA;Picea mariana;511;511;softwood
+516;NA;Picea glehni;511;511;softwood
+517;NA;Picea jezoensis;511;511;softwood
+521;fir;Abies alba;511;511;softwood
+522;NA;Abies nordmanniana;511;511;softwood
+523;NA;Abies grandis;511;511;softwood
+524;NA;Abies concolor;511;511;softwood
+525;NA;Abies procera;511;511;softwood
+527;NA;Abies concolor var. Lowiana;511;511;softwood
+528;NA;Abies veitchii;511;511;softwood
+529;NA;Abies amabilis;511;511;softwood
+541;NA;Tsuga;511;511;softwood
+542;NA;Thuja plicata;511;511;softwood
+611;douglas.fir;Pseudotsuga menziesii;611;511;softwood
+711;pine;Pinus sylvestris;711;711;softwood
+712;NA;Pinus nigra;711;711;softwood
+731;NA;Pinus strobus;711;711;softwood
+811;larch;Larix decidua;811;711;softwood
+812;NA;Larix kaempferi;811;711;softwood
