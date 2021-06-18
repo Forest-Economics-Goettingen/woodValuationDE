@@ -71,14 +71,14 @@ applied in bioeconomic simulations for Germany.</i>
 
 <h1><a name="structure">Package Structure</a></h1>
 
-The wood valuation implemented in <strong>woodValuationDe</strong> is a
+The wood valuation implemented in <strong>woodValuationDE</strong> is a
 three-stage approach, deriving (i) the relevant volume shares, (ii) the revenues
 and costs per volume unit, and (iii) the net revenues (see Fig. 1).
 
 <figure align="center">
   <img src="./man/fig/packagestructure.png" width="100%">
   <figcaption>
-    <i>Fig. 1:</i> Structural outline of <strong>woodValuationDe</strong> with
+    <i>Fig. 1:</i> Structural outline of <strong>woodValuationDE</strong> with
     user input and output as well as the main functions. Font: bold: main
     elements, italics: functions. Color: blue: function derived in
     [Fuchs et al. (in preparation)](#fuchs.inpreparation) based on
@@ -112,7 +112,7 @@ situations can be considered via a price correction.
 
 The functions <a href="fct_wood_valuation"><em>wood_valuation</em></a> and <a href="fct_wood_net_revenues"><em>wood_net_revenues</em></a> provide
 wrappers for easily applying the wood valuation procedure implemented in
-<strong>woodValuationDe</strong>. Both functions call the previously described
+<strong>woodValuationDE</strong>. Both functions call the previously described
 ones and combine them to derive the net wood revenues. While
 <a href="fct_wood_valuation"><em>wood_valuation</em></a> returns a tibble with
 the entire calculations,
