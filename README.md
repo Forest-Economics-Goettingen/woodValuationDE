@@ -1505,15 +1505,9 @@ get_species_codes()
 
 ```
 
-<h1><a name="examples">Examples</a></h1>
-
-``` r
-
-```
-
 <h1><a name="citation">Recommended Citation</a></h1>
 
-
+tbd.
 
 <h1><a name="references">References</a></h1>
 
