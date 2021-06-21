@@ -161,15 +161,15 @@ model (see [Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
 fitting, the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
-<p align="center"><i>vol<sub>salable</sub></i> = <i>A</i> * exp( -exp(
-  <i>z<sub>m</sub></i> / <i>A</i> * exp(1) * (<i>t<sub>w</sub></i> -
-  <i>diameter.q</i>))),
+<p align="center"><i>v<sub>salable</sub></i> = <i>$\alpha$</i> * exp( -exp(
+  <i>$\beta$</i> / <i>$\alpha$</i> * exp(1) * (<i>$\gamma$</i> -
+  <i>d<sub>q</sub></i>))),
 </p>
 
-with the quadratic mean diameter <i>diameter.q</i> and the parameters <i>A</i>,
-<i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>. This formulation provides
-parameters that are easier to interpret, and simplifies the choice of starting
-values.
+with the volume share of salable wood <i>v<sub>salable</sub></i>, the quadratic
+mean diameter <i>d<sub>q</sub></i> and the parameters <i>$\alpha$</i>,
+<i>$\beta$</i> and <i>$\gamma$</i>. This formulation provides parameters that
+are easier to interpret, and simplifies the choice of starting values.
 
 <h3>Input</h3>
 
@@ -348,15 +348,15 @@ model (see [Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
 fitting, the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
-<p align="center"><i>vol<sub>salable</sub></i> = <i>A</i> * exp( -exp(
-  <i>z<sub>m</sub></i> / <i>A</i> * exp(1) * (<i>t<sub>w</sub></i> -
-  <i>diameter.q</i>))),
+<p align="center"><i>v<sub>skidded</sub></i> = <i>$\alpha$</i> * exp( -exp(
+  <i>$\beta$</i> / <i>$\alpha$</i> * exp(1) * (<i>$\gamma$</i> -
+  <i>d<sub>q</sub></i>))),
 </p>
 
-with the quadratic mean diameter <i>diameter.q</i> and the parameters <i>A</i>,
-<i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>. This formulation provides
-parameters that are easier to interpret, and simplifies the choice of starting
-values.
+with the volume share of skidded wood <i>v<sub>skidded</sub></i>, the quadratic
+mean diameter <i>d<sub>q</sub></i> and the parameters <i>$\alpha$</i>,
+<i>$\beta$</i> and <i>$\gamma$</i>. This formulation provides parameters that
+are easier to interpret, and simplifies the choice of starting values.
 
 <h3>Input</h3>
 
@@ -433,14 +433,15 @@ from 2010 to 2015. A price matrix for different assortments was derived out of
 the sales data and combined with the assortment table to derive mean wood
 revenues over all assortments. The fitted model function is:
 
-<p align="center"><i>revenues</i> = <i>a</i>
-    * <i>diameter.q</i><sup>4</sup> + <i>b</i> * <i>diameter.q</i><sup>3</sup> +
-    <i>c</i> * <i>diameter.q</i><sup>2</sup> + <i>d</i> * <i>diameter.q</i> +
-    <i>e</i>,
+<p align="center"><i>s</i> = <i>$\alpha$</i> * <i>d<sub>q</sub></i><sup>4</sup>
+    + <i>$\beta$</i> * <i>d<sub>q</sub></i><sup>3</sup> +
+    <i>$\gamma$</i> * <i>d<sub>q</sub></i><sup>2</sup> +
+    <i>$\delta$</i> * <i>d<sub>q</sub></i> +
+    <i>$\epsilon$</i>,
 </p>
 
-with the quadratic mean diameter <i>diameter.q</i> and the parameters <i>a</i>
-to <i>e</i>.
+with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters <i>$\alpha$</i>
+to <i>$\epsilon$</i>.
 
 The model estimated wood revenues for the time period 2010 to 2015. Via the
 price of a reference assortment for each species, this can be adapted to other
@@ -448,15 +449,17 @@ years. The references assortments (saw wood) are defined by a diameter class
 (1: 10-19 cm, 2: 20-29..., with 1a: 10-14 cm and 1b: 15-19 cm) and a quality
 of A to D (with A the highest and D the lowest quality) as usually applied in
 Germany (see [Deutscher Forstwirtschaftsrat and Deutscher Holzwirtschaftsrat, 2020](#deutscherforstwirtschaftsrat.2020)). The original prices of the
-reference assortments in Hesse between 2010 and 2015 are listed in
-<a href="#tab12">Tab. 2</a>. If another price is applied to
-< href="#fct_wood_revenues"><em>wood_revenues</em></a> the wood revenues will be
-adapted by:
+reference assortments <i>p<sub>reference.assortment,original</sub></i> in Hesse
+between 2010 and 2015 are listed in <a href="#tab12">Tab. 2</a>. If another
+price <i>p<sub>reference.assortment,user</sub></i> is applied to
+< href="#fct_wood_revenues"><em>wood_revenues</em></a> the baseline wood
+revenues of the model <i>s<sub>original</sub></i> will be adapted
+(<i>s<sub>adapted</sub></i>) by:
 
-<p align="center"><i>revenues<sub>adapted</sub></i> =
-    <i>price<sub>reference.assortment,user</sub></i> /
-    <i>price<sub>reference.assortment,original</sub></i> *
-    <i>revenues<sub>original</sub></i>.
+<p align="center"><i>s<sub>adapted</sub></i> =
+    <i>p<sub>reference.assortment,user</sub></i> /
+    <i>p<sub>reference.assortment,original</sub></i> *
+    <i>s<sub>original</sub></i>.
 </p>
 
 &nbsp;<br>
@@ -748,14 +751,15 @@ The diameter- and species-sensitive harvest cost model was developed by
 [KWF (2006)](#kwf.2006) and [AFL (2014)](#afl.2014). The fitted model function
 is:
 
-<p align="center"><i>costs</i> = max(<i>a</i> *
-  <i>diameter.q</i><sup><i>b</i></sup> + <i>c</i>, <i>cost<sub>max</sub></i>),
+<p align="center"><i>c</i> = max(<i>$\alpha$</i> *
+  <i>d<sub>q</sub></i><sup><i>$\beta$</i></sup> + <i>$\gamma$</i>,
+  <i>c<sub>max</sub></i>),
 </p>
 
-with the quadratic mean diameter <i>diameter.q</i> and the parameters <i>a</i>
-to <i>c</i> and the maximum costs <i>cost<sub>max</sub></i>. The harvest costs
-were derived for a smaller number of species groups, thus, the species
-assignments differ from those for
+with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
+<i>$\alpha$</i> to <i>$\gamma$</i> and the maximum costs <i>c<sub>max</sub></i>.
+The harvest costs were derived for a smaller number of species groups, thus, the
+species assignments differ from those for
 <a href="#fct_wood_revenues"><em>wood_revenues</em></a>. The species assignments
 are provided by:
 
@@ -770,7 +774,7 @@ accessibility of the stand. The accessibility considers is considered in three
 cost levels (see <a href="#tab4">Tab. 4</a>). To avoid unusually high harvest
 costs at smaller diameters, 
 [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018) defined maximum
-harvest costs <i>cost<sub>max</sub></i> (see <a href="#tab4">Tab. 4</a>).
+harvest costs <i>c<sub>max</sub></i> (see <a href="#tab4">Tab. 4</a>).
 
 &nbsp;<br>
 
