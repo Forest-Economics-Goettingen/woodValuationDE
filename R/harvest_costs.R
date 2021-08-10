@@ -6,11 +6,12 @@
 #'
 #' The function estimates harvest costs per unit wood volume applying the
 #' harvest costs function of von Bodelschwingh (2018). Consequences of
-#' calamities are implemented based on Dieter (2001), Fuchs et al. (under
-#' review) and Fuchs et al. (in preparation). Apart from Dieter (2001), all
-#' functions and factors are based on data of HessenForst, the forest
-#' administration of the Federal State of Hesse in Germany. For further details
-#' see the \pkg{woodValuationDE} readme.
+#' calamities are implemented based on Dieter (2001), Moellmann and Moehring
+#' (2017), Fuchs et al. (under review) and Fuchs et al. (in preparation). Apart
+#' from Dieter (2001) and Moellmann and Moehring (2017) all functions and
+#' factors are based on data of HessenForst, the forest administration of the
+#' Federal State of Hesse in Germany. For further details see the
+#' \pkg{woodValuationDE} readme.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.
@@ -26,16 +27,26 @@
 #' @param calamity.type Type of a potential calamity determining the applied
 #'                      calamity corrections, which implement reduced returns
 #'                      and higher harvest costs. By default no calamity is
-#'                      assumed \code{"none"}, \code{"calamity.dieter.2001"}
+#'                      assumed \code{"none"}; \code{"calamity.dieter.2001"}
 #'                      refers to a general larger calamity applying the
-#'                      corrections according to Dieter (2001), \code{"ips"}
-#'                      refers to quality losses due to infestations by the
-#'                      European spruce bark beetle or \code{"ips.timely"} for
-#'                      timely salvage fellings in less advanced attack stages
-#'                      (both according to Fuchs et al. under review), and
-#'                      \code{"stand.damage.fuchs"} to damages affecting only
-#'                      one stand, \code{"regional.calamity.fuchs"} to
-#'                      calamities with regional market effects and
+#'                      corrections according to Dieter (2001); five parameter
+#'                      sets were implemented according to Moellmann and
+#'                      Moehring (2017): \code{fire.small.moellmann} refers to
+#'                      damages of only some trees by fire (only conifers) while
+#'                      \code{fire.large.moellmann} assumes that at least one
+#'                      compartment was affected, the same applies for
+#'                      \code{storm.small.moellmann} and
+#'                      \code{storm.large.moellmann} referring to damages by
+#'                      storm (available for coniferous and deciduous species),
+#'                      \code{insects.moellmann} refers to damages by insects;                      
+#'                      \code{"ips"} refers to quality losses due to
+#'                      infestations by the European spruce bark beetle or
+#'                      \code{"ips.timely"} for timely salvage fellings in less
+#'                      advanced attack stages (both according to Fuchs et al.
+#'                      under review); and \code{"stand.damage.fuchs"} to
+#'                      disturbances affecting only one stand,
+#'                      \code{"regional.calamity.fuchs"} to calamities with
+#'                      regional market effects and
 #'                      \code{"national.calamity.fuchs"} to calamities affecting
 #'                      (inter)national wood markets (the last three referring
 #'                      to Fuchs et al. in preparation). User-defined types can
@@ -70,6 +81,9 @@
 #'             Husmann, Kai (in preparation): Applying Time Series Analysis to
 #'             Quantify the Impact of Quality and Supply Changes After
 #'             Disturbances on Wood Revenues.
+#' @references Moellmann, Torsten B., Moehring, Bernhard (2017): A practical way
+#'             to integrate risk in forest management decisions. Ann. For. Sci.
+#'             74 (4), S.75.
 #' @references von Bodelschwingh, Hilmar (2018): Oekonomische Potentiale von
 #'             Waldbestaenden. Konzeption und Abschaetzung im Rahmen einer
 #'             Fallstudie in hessischen Staatswaldflaechen (Economic Potentials

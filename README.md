@@ -36,37 +36,45 @@ quality and wood markets.
 
 Here, <strong>woodValuationDE</strong> contributes with a comprehensive wood 
 valuation model considering various influences on <em>assortment
-structures</em>, <em>harvest costs</em> and <em>wood revenues</em>. It
-simplifies the estimation of a realistic wood valuation for broad field of
+structures</em>, <em>harvest costs</em>, and <em>wood revenues</em>. It
+simplifies the estimation of realistic wood values for broad field of
 bioeconomic applications. A particular strength of 
 <strong>woodValuationDE</strong> is the consistency of the data underlying the
-various models, including a set of different disturbance scenarios.
+various models, including a set of disturbance scenarios.
 
-<strong>woodValuationDE</strong> compiles data and models derived several
-studies but are consistent since all<sup>[1](#fndieter)</sup> based on
+<strong>woodValuationDE</strong> compiles data and models derived in several
+studies, but which are consistent since
+all<sup>[1](#fndieter),[2](#fnmoellmann)</sup> submodels are based on
 operational harvest and sale data of HessenForst, the forest administration of
 the Federal State of Hesse in Germany. The underlying assortment tables are
 taken from [Offer and Staupendahl (2018)](#offer.2018) with corresponding
-functions for salable and skidded volume derived in
+functions for salable and skidded volume derived in 
 [Fuchs et al. (in preparation)](#fuchs.inpreparation). Wood revenue and harvest
 cost functions were taken from
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018). The effects of calamities
 refer to [Dieter (2001)](#dieter.2001)<sup>[1](#fndieter)</sup>,
+[Moellmann and Moehring (2017)](#moellmann.2017)<sup>[2](#fnmoellmann)</sup>,
 [Fuchs et al. (under review)](#fuchs.underreview), and
 [Fuchs et al. (in preparation)](#fuchs.inpreparation).
 
 One should consider that the assortment tables, as well as the other models in
-<strong>woodValuationDE</strong> represent average conditions. Thus, the
-valuation estimated by <strong>woodValuationDE</strong> will likely differ from
-the realized harvest values of single stands. Furthermore, the assortment tables
+<strong>woodValuationDE</strong>, represent average conditions. Thus, values
+estimated by <strong>woodValuationDE</strong> will likely differ from
+the actual harvest values of single stands. Furthermore, the assortment tables
 assume the harvest of entire stands, which will most likely lead to deviations
 if only smaller parts of a stand are harvested. We thus recommend the
-application mainly for harvests of larger parts or entire stands.
+application mainly for harvests of larger parts or entire stands and encourage
+users to conduct sensitivity analyses.
 
-<i><sup><a id="fndieter">1</a></sup>The assumed calamity factor according to
+<i><sup><a id="fndieter">1</a></sup>The assumed factor according to
 [Dieter (2001)](#dieter.2001) is an exception since it is based on wood
 prices in southern Germany. However, we included it since it has often been
 applied in bioeconomic simulations for Germany.</i>
+
+<i><sup><a id="fndieter">1</a></sup>The assumed factors according to
+[Moellmann and Moehring (2017)](#moellmann.2017) are an exception since they are
+based surveys of entire Germany. However, we included them, since they provide
+estimates distinguishing between the disturbances agents.</i>
 
 
 <h1><a name="structure">Package Structure</a></h1>
@@ -93,24 +101,26 @@ and costs per volume unit, and (iii) the net revenues (see Fig. 1).
 
 &nbsp;<br>
 We assume that the wood to be evaluated is measured as standing trees. Thus,
-volume losses due to harvest cuts and not using e.g. the entire stem wood will
+volume losses due to harvest cuts and not using e.g. the entire stem will
 occur. For the valuation, <a href="#fct_vol_salable"><em>vol_salable</em></a>
 provides the share of salable wood volume, i.e. the volume that is utilized and
 taken out of the forest stand. Only this volume share is relevant for the
 revenues. <a href="#fct_vol_skidded"><em>vol_skidded</em></a> provides the
 skidded volume which is brought to the forest road. It is relevant for
 remuneration for the harvest, i.e. the harvest costs. The salable volume is
-higher as the skidded volume since it included the private fuel wood usage.
+higher as the skidded volume since it includes the private fuelwood usage.
 
 Accordingly, <a href="#fct_wood_revenues"><em>wood_revenues</em></a> estimates
-the revenues per unit volume of salable wood [EUR m<sup>-3</sup>] and <a href="#fct_harvest_costs"><em>harvest_costs</em></a> the harvest costs
+the revenues per unit volume of salable wood [EUR m<sup>-3</sup>] and
+<a href="#fct_harvest_costs"><em>harvest_costs</em></a> the harvest costs
 per unit volume of skidded wood [EUR m<sup>-3</sup>]. Both models depend on the
 tree species and the quadratic mean of the diameter at breast height (dbh).
-Further parameters are the stand quality, the type of harvest process and the
+Further parameters are the stand quality, the type of harvest process, and the
 accessibility of the stand for harvest operations. In addition, current market
 situations can be considered via a price correction.
 
-The functions <a href="fct_wood_valuation"><em>wood_valuation</em></a> and <a href="fct_wood_net_revenues"><em>wood_net_revenues</em></a> provide
+The functions <a href="fct_wood_valuation"><em>wood_valuation</em></a> and
+<a href="fct_wood_net_revenues"><em>wood_net_revenues</em></a> provide
 wrappers for easily applying the wood valuation procedure implemented in
 <strong>woodValuationDE</strong>. Both functions call the previously described
 ones and combine them to derive the net wood revenues. While
@@ -134,8 +144,8 @@ woodValuationDE:::params.wood.value
 <h2><em><a name="fct_vol_salable">vol_salable</a></em></h2>
 
 The function estimates the share of standing wood volume which is salable. This
-includes e.g. industrial wood, sawing wood, but also private fuel wood. Thus,
-it represents the share of wood that is taken out of the forest for usage.
+includes e.g. pulpwood, sawlogs, but also private fuelwood. Thus,
+it represents the share of wood which is taken out of the forest for usage.
 The share of salable wood is required to derive the wood revenues per unit
 standing volume. The function is based on the assortment tables of
 [Offer and Staupendahl (2018)](#offer.2018) and its derivation is described in
@@ -146,12 +156,13 @@ Federal State of Hesse in Germany.
 <h3>Data and Model</h3>
 
 The assortment tables of [Offer and Staupendahl (2018)](#offer.2018) provide the
-total share of stem wood as well as the share of non-utilized wood and private
-fuel wood thereof. The assortment tables were derived for HessenForst with the
-calculation program Holzernte 7.1 [(Schöpfer et al., 2003)](#schopfer.2003)
-using model stands, which were designed by a group of forestry experts, and 
-harvest and sale data of HessenForst. More details on the assortment tables and
-their derivation are provided in [Offer and Staupendahl (2008)](#offer.2008) and
+total share of the standing trees' volume which is harvested. In addition, they
+provide the share of non-utilized wood and private fuelwood thereof. The
+assortment tables were derived for HessenForst with the calculation program
+Holzernte 7.1 [(Schöpfer et al., 2003)](#schopfer.2003) using model stands,
+which were designed by a group of forestry experts, and harvest and sale data of
+HessenForst. More details on the assortment tables and their derivation are
+provided in [Offer and Staupendahl (2008)](#offer.2008) and
 [Offer and Staupendahl (2009)](#offer.2009).
 
 Based on the assortment tables, we derived the salable volume share of the
@@ -333,12 +344,13 @@ administration of the Federal State of Hesse in Germany.
 <h3>Data and Model</h3>
 
 The assortment tables of [Offer and Staupendahl (2018)](#offer.2018) provide the
-total share of stem wood as well as the share of non-utilized wood and private
-fuel wood thereof. The assortment tables were derived for HessenForst with the
-calculation program Holzernte 7.1 [(Schöpfer et al., 2003)](#schopfer.2003)
-using model stands, which were designed by a group of forestry experts, and 
-harvest and sale data of HessenForst. More details on the assortment tables and
-their derivation are provided in [Offer and Staupendahl (2008)](#offer.2008) and
+total share of the standing trees' volume which is harvested. In addition, they
+provide the share of non-utilized wood and private fuelwood thereof. The
+assortment tables were derived for HessenForst with the calculation program
+Holzernte 7.1 [(Schöpfer et al., 2003)](#schopfer.2003) using model stands,
+which were designed by a group of forestry experts, and harvest and sale data of
+HessenForst. More details on the assortment tables and their derivation are
+provided in [Offer and Staupendahl (2008)](#offer.2008) and
 [Offer and Staupendahl (2009)](#offer.2009).
 
 Based on the assortment tables, we derived the skidded volume share of the
@@ -418,10 +430,13 @@ assortment tables of [Offer and Staupendahl (2018)](#offer.2018) and the wood
 revenue function of [von Bodelschwingh (2018)](#vonbodelschwingh.2018).
 Consequences of calamities are implemented based on
 [Dieter (2001)](#dieter.2001), 
+[Moellmann and Moehring (2017)](#moellmann.2017),
 [Fuchs et al. (under review)](#fuchs.underreview) and
 [Fuchs et al. (in preparation)](#fuchs.inpreparation). Apart from
-[Dieter (2001)](#dieter.2001), the function and all factors are based on data of
-HessenForst, the forest administration of the Federal State of Hesse in Germany.
+[Dieter (2001)](#dieter.2001) and
+[Moellmann and Moehring (2017)](#moellmann.2017), the function and all factors
+are based on data of HessenForst, the forest administration of the Federal State
+of Hesse in Germany.
 
 <h3>Data and Model</h3>
 
@@ -443,16 +458,17 @@ revenues over all assortments. The fitted model function is:
 with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters <i>$\alpha$</i>
 to <i>$\epsilon$</i>.
 
-The model estimated wood revenues for the time period 2010 to 2015. Via the
-price of a reference assortment for each species, this can be adapted to other
-years. The references assortments (saw wood) are defined by a diameter class 
-(1: 10-19 cm, 2: 20-29..., with 1a: 10-14 cm and 1b: 15-19 cm) and a quality
-of A to D (with A the highest and D the lowest quality) as usually applied in
-Germany (see [Deutscher Forstwirtschaftsrat and Deutscher Holzwirtschaftsrat, 2020](#deutscherforstwirtschaftsrat.2020)). The original prices of the
-reference assortments <i>p<sub>reference.assortment,original</sub></i> in Hesse
+The model estimates wood revenues for the time period 2010 to 2015. Via the
+market price of a reference assortment for each species, this can be adapted to
+other years. The references assortments (saw wood) are defined by a diameter
+class (1: 10-19 cm, 2: 20-29..., with 1a: 10-14 cm and 1b: 15-19 cm) and a
+quality of A to D (with A the highest and D the lowest quality) as usually
+applied in Germany (see [Deutscher Forstwirtschaftsrat and Deutscher Holzwirtschaftsrat, 2020](#deutscherforstwirtschaftsrat.2020)).
+The original prices of the reference assortments
+<i>p<sub>reference.assortment,original</sub></i> in Hesse
 between 2010 and 2015 are listed in <a href="#tab12">Tab. 2</a>. If another
 price <i>p<sub>reference.assortment,user</sub></i> is applied to
-< href="#fct_wood_revenues"><em>wood_revenues</em></a> the baseline wood
+<a href="#fct_wood_revenues"><em>wood_revenues</em></a> the baseline wood
 revenues of the model <i>s<sub>original</sub></i> will be adapted
 (<i>s<sub>adapted</sub></i>) by:
 
@@ -499,6 +515,11 @@ default are listed in <a href="#tab3">Tab. 3</a>.
 | ----- | -----: | -----: | --------- | --------------------------------------- |
 | <i>"none"</i>	                   | 1.00	            | 1.00              | -         | default: no calamity | 
 | <i>"calamity.dieter.2001"</i>	   | 0.50             | 0.50              | [Dieter (2001)](#dieter.2001) | Assumption based on prices in southern Germany after a calamity event, often applied in bioeconomic simulations for Germany. Originally referring to net revenues, thus to be used in combination with <a href="#fct_harvest_costs"><em>harvest_costs</em></a>. |
+| <i>"fire.small.moellmann"</i> | 0.56 | -	| [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"fire.large.moellmann"</i> | 0.56 | -	| [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartement. The survey only asked for effects of quality losses. |
+| <i>"storm.small.moellmann"</i> | 0.85 | 0.79	| [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"storm.large.moellmann"</i> | 0.85 | 0.79	| [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartement. The survey only asked for effects of quality losses. |
+| <i>"insects.moellmann"</i> | 0.78 | -	| [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
 | <i>"ips"</i>	                   | 0.67	            | -                 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
 | <i>"ips.timely"</i>	             | 0.88	            | -                 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
 | <i>"stand.damage.fuchs"</i>      | 0.96	            | 0.81              | [Fuchs et al. (in preparation)](#fuchs.inpreparation) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
@@ -615,6 +636,11 @@ illustrated by the default tibble:
 calamity.factors <- dplyr::tibble(
       calamity.type = rep(c("none",
                             "calamity.dieter.2001",
+                            "fire.small.moellmann",
+                            "fire.large.moellmann",
+                            "storm.small.moellmann",
+                            "storm.large.moellmann",
+                            "insects.moellmann",
                             "ips",
                             "ips.timely",
                             "stand.damage.fuchs",
@@ -623,22 +649,37 @@ calamity.factors <- dplyr::tibble(
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
-                          times = 7),
+                          times = 12),
       revenues.factor = c(1.00, 1.00,
                           0.50, 0.50,
+                          0.56,   NA,
+                          0.56,   NA,
+                          0.85, 0.79,
+                          0.85, 0.79,
+                          0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.96, 0.81,
-                          0.68, 0.76,
-                          0.43, 0.61),
+                          0.95, 0.85,
+                          0.71, 0.70,
+                          0.48, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
+                      1.17,   NA,
+                      1.09,   NA,
+                      1.21, 1.24,
+                      1.10, 1.12,
+                        NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
                       1.00, 1.00,
                       1.00, 1.00,
                       1.00, 1.00),
       cost.additional = c(0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
@@ -741,7 +782,8 @@ wood_revenues(40,
 The function estimates harvest costs per unit skidded wood volume applying the
 harvest costs function of [von Bodelschwingh (2018)](#vonbodelschwingh.2018).
 Consequences of calamities are implemented based on
-[Dieter (2001)](#dieter.2001), [Fuchs et al. (under review)](#fuchs.underreview)
+[Dieter (2001)](#dieter.2001), [Moellmann and Moehring (2017)](#moellmann.2017),
+[Fuchs et al. (under review)](#fuchs.underreview),
 and [Fuchs et al. (in preparation)](#fuchs.inpreparation).
 
 <h3>Data and Model</h3>
@@ -785,9 +827,9 @@ harvest costs <i>c<sub>max</sub></i> (see <a href="#tab4">Tab. 4</a>).
 
 | <em>cost.level</em> | Definition                                     | Maximum Harvest Costs [EUR m<sup>-3</sup>] |
 | ------------------- | ---------------------------------------------- | ------------------------------------------ |
-| <i>3</i>	          | slope > 58 %                                   | 60                                         |
+| <i>3</i>	          | slope > 58 %                                   | 80                                         |
 | <i>2</i>	          | slope between 36 % and 58 % AND/OR moist sites | 70                                         |
-| <i>1</i>	          | all other stands without special limitations   | 80                                         |
+| <i>1</i>	          | all other stands without special limitations   | 60                                         |
 
 A special strength of <strong>woodValuationDE</strong> is the consideration of
 consequences of calamities. A broad set of previously published and newly
@@ -808,6 +850,11 @@ disturbances. The options that are implemented by default are listed in
 | --- | ------: | ------: | ------: | ------: | --------- | ------------------------------------ |
 | <i>"none"</i>	                   | 1.0	            | 0.0              | 1.0	            | 0.0              | -         | default: no calamity | 
 | <i>"calamity.dieter.2001"</i>	   | 0.5             | 0.0              | 0.5	            | 0.0              | [Dieter (2001)](#dieter.2001) | [Dieter (2001)](#dieter.2001) assumed a reduction of the net revenues by 0.5 in case of calamities. In our model, this factor is therefore applied to reduce both wood revenues and harvest costs. Obviously this is counterintuitive for the harvest costs and thus to be used in combination with <a href="#fct_wood_revenues"><em>wood_revenues</em></a>. |
+| <i>"fire.small.moellmann"</i> | 1.17 | 0.0 | NA | 0.0 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"Name"</i> | 1.09 | 0.0 | NA | 0.0 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartement. The survey only asked for effects of quality losses. |
+| <i>"Name"</i> | 1.21 | 0.0 | 1.24 | 0.0 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"Name"</i> | 1.10 | 0.0 | 1.12 | 0.0 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartement. The survey only asked for effects of quality losses. |
+| <i>"Name"</i> | NA | 0.0 | NA | 0.0 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
 | <i>"ips"</i>	                   | 1.0	            | 2.5                 | 1.0	            | 2.5              |[Fuchs et al. (under review)](#fuchs.underreview) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
 | <i>"ips.timely"</i>	             | 1.0	            | 7.5                 | 1.0	            | 7.5              | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
 | <i>"stand.damage.fuchs"</i>      | 1.0	            | 2.0              | 1.0	            | 2.0              | [Fuchs et al. (in preparation)](#fuchs.inpreparation) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
@@ -866,6 +913,11 @@ illustrated by the default tibble:
 calamity.factors <- dplyr::tibble(
       calamity.type = rep(c("none",
                             "calamity.dieter.2001",
+                            "fire.small.moellmann",
+                            "fire.large.moellmann",
+                            "storm.small.moellmann",
+                            "storm.large.moellmann",
+                            "insects.moellmann",
                             "ips",
                             "ips.timely",
                             "stand.damage.fuchs",
@@ -874,22 +926,37 @@ calamity.factors <- dplyr::tibble(
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
-                          times = 7),
+                          times = 12),
       revenues.factor = c(1.00, 1.00,
                           0.50, 0.50,
+                          0.56,   NA,
+                          0.56,   NA,
+                          0.85, 0.79,
+                          0.85, 0.79,
+                          0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.96, 0.81,
-                          0.68, 0.76,
-                          0.43, 0.61),
+                          0.95, 0.85,
+                          0.71, 0.70,
+                          0.48, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
+                      1.17,   NA,
+                      1.09,   NA,
+                      1.21, 1.24,
+                      1.10, 1.12,
+                        NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
                       1.00, 1.00,
                       1.00, 1.00,
                       1.00, 1.00),
       cost.additional = c(0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
@@ -1107,6 +1174,11 @@ illustrated by the default tibble:
 calamity.factors <- dplyr::tibble(
       calamity.type = rep(c("none",
                             "calamity.dieter.2001",
+                            "fire.small.moellmann",
+                            "fire.large.moellmann",
+                            "storm.small.moellmann",
+                            "storm.large.moellmann",
+                            "insects.moellmann",
                             "ips",
                             "ips.timely",
                             "stand.damage.fuchs",
@@ -1115,22 +1187,37 @@ calamity.factors <- dplyr::tibble(
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
-                          times = 7),
+                          times = 12),
       revenues.factor = c(1.00, 1.00,
                           0.50, 0.50,
+                          0.56,   NA,
+                          0.56,   NA,
+                          0.85, 0.79,
+                          0.85, 0.79,
+                          0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.96, 0.81,
-                          0.68, 0.76,
-                          0.43, 0.61),
+                          0.95, 0.85,
+                          0.71, 0.70,
+                          0.48, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
+                      1.17,   NA,
+                      1.09,   NA,
+                      1.21, 1.24,
+                      1.10, 1.12,
+                        NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
                       1.00, 1.00,
                       1.00, 1.00,
                       1.00, 1.00),
       cost.additional = c(0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
@@ -1367,6 +1454,11 @@ illustrated by the default tibble:
 calamity.factors <- dplyr::tibble(
       calamity.type = rep(c("none",
                             "calamity.dieter.2001",
+                            "fire.small.moellmann",
+                            "fire.large.moellmann",
+                            "storm.small.moellmann",
+                            "storm.large.moellmann",
+                            "insects.moellmann",
                             "ips",
                             "ips.timely",
                             "stand.damage.fuchs",
@@ -1375,22 +1467,37 @@ calamity.factors <- dplyr::tibble(
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
-                          times = 7),
+                          times = 12),
       revenues.factor = c(1.00, 1.00,
                           0.50, 0.50,
+                          0.56,   NA,
+                          0.56,   NA,
+                          0.85, 0.79,
+                          0.85, 0.79,
+                          0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.96, 0.81,
-                          0.68, 0.76,
-                          0.43, 0.61),
+                          0.95, 0.85,
+                          0.71, 0.70,
+                          0.48, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
+                      1.17,   NA,
+                      1.09,   NA,
+                      1.21, 1.24,
+                      1.10, 1.12,
+                        NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
                       1.00, 1.00,
                       1.00, 1.00,
                       1.00, 1.00),
       cost.additional = c(0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0,
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
@@ -1551,6 +1658,10 @@ Erhebung und Beurteilung, Daten CD mit Beschreibung der Ernteverfahren und
 Kalkulationen. [Wood harvesting methods - Comparative survey and assessment,
 data CD with description of harvesting methods and calculations.].
 <em>Groß-Umstadt: KWF.</em>
+
+<a id="moellmann.2017">Moellmann</a>, Torsten B.; Moehring, Bernhard (2017): A
+practical way to integrate risk in forest management decisions. <em>Ann. For.
+Sci.</em> **74 (4)**, S. 75.
 
 <a id="offer.2008">Offer</a>, Armin; Staupendahl, Kai (2008): Neue
 Bestandessortentafeln für die Waldbewertung und ihr Einsatz in der

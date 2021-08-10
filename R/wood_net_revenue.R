@@ -4,11 +4,12 @@
 
 #' Net revenues for standing wood
 #'
-#' The function is a wrapper for the wood valuation provided by \pkg{woodValuationDE}.
-#' It calls \code{\link{wood_valuation}} and returns only the net revenues for
-#' the user-provided standing wood volume. The underlying functions were derived
-#' based on data of HessenForst, the forest administration of the Federal State
-#' of Hesse in Germany. For further details see the \pkg{woodValuationDE} readme.
+#' The function is a wrapper for the wood valuation provided by
+#' \pkg{woodValuationDE}. It calls \code{\link{wood_valuation}} and returns only
+#' the net revenues for the user-provided standing wood volume. The underlying
+#' functions were derived based on data of HessenForst, the forest
+#' administration of the Federal State of Hesse in Germany. For further details
+#' see the \pkg{woodValuationDE} readme.
 #'
 #' @param volume Wood volume \eqn{[m^{3}]}{[m^3]}, referring to standing tree
 #'               volume before the harvest.
@@ -47,16 +48,26 @@
 #' @param calamity.type Type of a potential calamity determining the applied
 #'                      calamity corrections, which implement reduced returns
 #'                      and higher harvest costs. By default no calamity is
-#'                      assumed \code{"none"}, \code{"calamity.dieter.2001"}
+#'                      assumed \code{"none"}; \code{"calamity.dieter.2001"}
 #'                      refers to a general larger calamity applying the
-#'                      corrections according to Dieter (2001), \code{"ips"}
-#'                      refers to quality losses due to infestations by the
-#'                      European spruce bark beetle or \code{"ips.timely"} for
-#'                      timely salvage fellings in less advanced attack stages
-#'                      (both according to Fuchs et al. under review), and
-#'                      \code{"stand.damage.fuchs"} to damages affecting only
-#'                      one stand, \code{"regional.calamity.fuchs"} to
-#'                      calamities with regional market effects and
+#'                      corrections according to Dieter (2001); five parameter
+#'                      sets were implemented according to Moellmann and
+#'                      Moehring (2017): \code{fire.small.moellmann} refers to
+#'                      damages of only some trees by fire (only conifers) while
+#'                      \code{fire.large.moellmann} assumes that at least one
+#'                      compartment was affected, the same applies for
+#'                      \code{storm.small.moellmann} and
+#'                      \code{storm.large.moellmann} referring to damages by
+#'                      storm (available for coniferous and deciduous species),
+#'                      \code{insects.moellmann} refers to damages by insects;                      
+#'                      \code{"ips"} refers to quality losses due to
+#'                      infestations by the European spruce bark beetle or
+#'                      \code{"ips.timely"} for timely salvage fellings in less
+#'                      advanced attack stages (both according to Fuchs et al.
+#'                      under review); and \code{"stand.damage.fuchs"} to
+#'                      disturbances affecting only one stand,
+#'                      \code{"regional.calamity.fuchs"} to calamities with
+#'                      regional market effects and
 #'                      \code{"national.calamity.fuchs"} to calamities affecting
 #'                      (inter)national wood markets (the last three referring
 #'                      to Fuchs et al. in preparation). User-defined types can
@@ -90,6 +101,9 @@
 #'             Husmann, Kai (in preparation): Applying Time Series Analysis to
 #'             Quantify the Impact of Quality and Supply Changes After
 #'             Disturbances on Wood Revenues.
+#' @references Moellmann, Torsten B., Moehring, Bernhard (2017): A practical way
+#'             to integrate risk in forest management decisions. Ann. For. Sci.
+#'             74 (4), S.75.
 #' @references Offer, Armin and Staupendahl, Kai (2018): Holzwerbungskosten- und
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).
