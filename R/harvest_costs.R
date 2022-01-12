@@ -198,7 +198,7 @@ harvest_costs <- function(
                                            "calamity.group"),
            species = recode_species(species,
                                     species.code.type,
-                                    "bodelschwingh.revenues")) %>%
+                                    "bodelschwingh.costs")) %>%
 
     # add specific parameters
     left_join(params.wood.value$harvest.costs,
