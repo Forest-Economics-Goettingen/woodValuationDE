@@ -271,7 +271,7 @@ wood_revenues <- function(
 
     if (!(all(colnames(price.ref.assortment) ==
               colnames(params.wood.value$prices.ref.assortments))) &
-        !(all(is.numeric(price.ref.assortment$species.code))) &
+        !(all(is.numeric(price.ref.assortment$species))) &
         !(all(is.numeric(price.ref.assortment$price.ref.assortment)))) {
 
       stop("Structure of price.ref.assortment does not match the required structure. See package readme for further details.")
