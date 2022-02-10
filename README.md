@@ -251,7 +251,11 @@ get_species_codes()
 </p>
 
 | Species Code Lower Saxony | English Species Code | Scientific Name              |
+<<<<<<< HEAD
 |:--------------------------|:---------------------|:-----------------------------|
+=======
+|---------------------------|----------------------|------------------------------|
+>>>>>>> 6abfa24e3516a127dd11ead9e018c5fe3cc59a32
 | 110                       | oak                  | <i>Quercus</i> sp.           |
 | 211                       | beech                | <i>Fagus sylvatica</i>       |
 | 221                       | hornbeam             | <i>Carpinus betulus</i>      |
@@ -584,7 +588,7 @@ wood revenues of the model <i>s<sub>original</sub></i> will be updated
 </p>
 
 | English Species Code | Reference Assortment | Price [EUR m<sup>-3</sup>] |
-|:---------------------|:---------------------|---------------------------:|
+|----------------------|----------------------|---------------------------:|
 | oak                  | B 4                  |                     277.41 |
 | beech                | B 4                  |                      75.75 |
 | spruce               | B 2b                 |                      92.47 |
@@ -1052,7 +1056,6 @@ are implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 
 
 
-|----------------------------------|----------|----------------------|-----------|----------------------|--------------------+---------------------------------+
 | Name                             | Cost     | Additional           | Cost      | Additional           | Reference          | Details                         |
 |                                  | Factor   | Costs                | Factor    | Costs                |                    |                                 |
 |                                  | Softwood | Softwood             | Deciduous | Deciduous            |                    |                                 |
