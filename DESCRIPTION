@@ -19,19 +19,25 @@ Authors@R:
            role = "aut",
            email = "hilmar.vonbodelschwingh@forst.hessen.de")
            )
-Description: Monetary valutation of standing wood with assortment, wood revenue,
-             and harvest costs functions sensitive to tree species, tree
-             diameter, wood quality, harvest procedure and calamities. The 
-             underlying assortment tables are taken from Offer and Staupendahl
-             (2018) with corresponding functions for salable and skidded volume
-             derived in Fuchs et al. (in preparation). Wood revenue and
-             harvest cost functions were taken from von Bodelschwingh (2018).
-             The effects of calamities refer to Dieter (2001), Fuchs et al.
-             (under review) and Fuchs et al. (in preparation). For the full
-             references see documentation of functions and package readme.
-             Apart from Dieter (2001), all functions and factors are based on 
-             operational data of HessenForst, the forest administration of the
-             Federal State of Hesse in Germany.
+Description: A package for monetary valuation of wood in Germany
+             forests, including estimations of the harvest volume
+             proportions, wood revenues and harvest costs. The functions 
+             are sensitive to tree species, mean diameter of the 
+             harvested trees, stand quality and harvest procedure. The
+             functions include estimations for the consequences of 
+             disturbances on revenues and costs. The underlying
+             assortment tables are taken from Offer and Staupendahl 
+             (2018) with corresponding functions for salable and skidded
+             volume derived in Fuchs et al. (in preparation). Wood 
+             revenue and harvest cost functions were taken from von 
+             Bodelschwingh (2018). The consequences of disturbances
+             refer to Dieter (2001), Moellmann and Moehring (2017),
+             Fuchs et al. (2021) and Fuchs et al. (under review). For
+             the full references see documentation of functions and
+             package readme. Apart from Dieter (2001) and Moellmann and
+             Moehring (2017), all functions and factors are based on
+             operational data of HessenForst, the forest administration
+             of the Federal State of Hesse in Germany.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
