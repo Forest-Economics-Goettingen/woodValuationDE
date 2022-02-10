@@ -251,11 +251,7 @@ get_species_codes()
 </p>
 
 | Species Code Lower Saxony | English Species Code | Scientific Name              |
-<<<<<<< HEAD
-|:--------------------------|:---------------------|:-----------------------------|
-=======
 |---------------------------|----------------------|------------------------------|
->>>>>>> 6abfa24e3516a127dd11ead9e018c5fe3cc59a32
 | 110                       | oak                  | <i>Quercus</i> sp.           |
 | 211                       | beech                | <i>Fagus sylvatica</i>       |
 | 221                       | hornbeam             | <i>Carpinus betulus</i>      |
@@ -615,85 +611,20 @@ revenues. The options that are implemented by default are listed in
   implemented in <strong>woodValuationDE</strong>.
 </p>
 
-| Name                             | Factor   | Factor    | Reference          | Details                         |
-|                                  | Softwood | Deciduous |                    |                                 |
-|:---------------------------------|---------:|----------:|:-------------------|:--------------------------------|
+| Name          | Factor Softwood | Factor Deciduous | Reference          | Details                                 |
+|:--------------|----------------:|-----------------:|:-------------------|:----------------------------------------|
 | <i>"none"</i>                    | 1.00     | 1.00      | \-                 | default: no calamity            |
-| <i>"calamity.dieter.2001"</i>    | 0.50     | 0.50      | [Dieter            | Assumption based on prices in   |
-|                                  |          |           | (2001)](           | southern Germany after a        |
-|                                  |          |           | #dieter.2001)      | calamity event, often applied   |
-|                                  |          |           |                    | in bioeconomic simulations for  |
-|                                  |          |           |                    | Germany. Originally referring   |
-|                                  |          |           |                    | to net revenues, thus to be     |
-|                                  |          |           |                    | used in combination with        |
-|                                  |          |           |                    | <a href="#fct_harvest_cos       |
-|                                  |          |           |                    | ts"><em>harvest_costs()</em>    |
-|                                  |          |           |                    | </a>.                           |
-| <i>"fire.small.moellmann"</i>    | 0.56     | \-        | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |           | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |           | #moellmann.2017)   | to damages by fire affecting    |
-|                                  |          |           |                    | only a few trees. The survey    |
-|                                  |          |           |                    | only asked for effects of       |
-|                                  |          |           |                    | quality losses.                 |
-| <i>"fire.large.moellmann"</i>    | 0.56     | \-        | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |           | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |           | #moellmann.2017)   | to damages by fire affecting at |
-|                                  |          |           |                    | least one compartement. The     |
-|                                  |          |           |                    | survey only asked for effects   |
-|                                  |          |           |                    | of quality losses.              |
-| <i>"storm.small.moellmann"</i>   | 0.85     | 0.79      | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |           | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |           | #moellmann.2017)   | to damages by storm affecting   |
-|                                  |          |           |                    | only a few trees. The survey    |
-|                                  |          |           |                    | only asked for effects of       |
-|                                  |          |           |                    | quality losses.                 |
-| <i>"storm.large.moellmann"</i>   | 0.85     | 0.79      | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |           | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |           | #moellmann.2017)   | to damages by storm affecting   |
-|                                  |          |           |                    | at least one compartement. The  |
-|                                  |          |           |                    | survey only asked for effects   |
-|                                  |          |           |                    | of quality losses.              |
-| <i>"insects.moellmann"</i>       | 0.78     | \-        | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |           | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |           | #moellmann.2017)   | to damages by insects. The      |
-|                                  |          |           |                    | survey only asked for effects   |
-|                                  |          |           |                    | of quality losses.              |
-| <i>"ips.fuchs.2021"</i>          | 0.67     | \-        | [Fuchs et al.      | Assumption of quality losses    |
-|                                  |          |           | (2021)](           | after spruce bark beetle        |
-|                                  |          |           | #fuchs.2021)       | infestations, based on the      |
-|                                  |          |           |                    | assortment tables [(Offer and   |
-|                                  |          |           |                    | Staupendahl,                    |
-|                                  |          |           |                    | 2018)](#offer.2018) and price   |
-|                                  |          |           |                    | index [(von Bodelschwingh,      |
-|                                  |          |           |                    | 2018)](#vonbodelschwingh.2018). |
-| <i>"ips.timely.fuchs.2021"</i>   | 0.88     | \-        | [Fuchs et al.      | Assumption of quality losses    |
-|                                  |          |           | (2021)](           | after spruce bark beetle        |
-|                                  |          |           | #fuchs.2021)       | infestations with timely        |
-|                                  |          |           |                    | salvage harvests leading to     |
-|                                  |          |           |                    | lower value losses, based on    |
-|                                  |          |           |                    | the assortment tables [(Offer   |
-|                                  |          |           |                    | and Staupendahl,                |
-|                                  |          |           |                    | 2018)](#offer.2018) and price   |
-|                                  |          |           |                    | index [(von Bodelschwingh,      |
-|                                  |          |           |                    | 2018)](#vonbodelschwingh.2018). |
-| <i>"stand.damage.fuchs"</i>      | 0.96     | 0.81      | [Fuchs et al.      | Assumption of damages in a      |
-|                                  |          |           | (under review)](#f | single stand influencing only   |
-|                                  |          |           | uchs.underreview)  | the wood quality not the wood   |
-|                                  |          |           |                    | market, derived based on time   |
-|                                  |          |           |                    | series analyses of sales of     |
-|                                  |          |           |                    | HessenForst.                    |
-| <i>"regional.calamity.fuchs"</i> | 0.68     | 0.76      | [Fuchs et al.      | Assumption of regional damages  |
-|                                  |          |           | (under review)](#f | influencing wood quality and    |
-|                                  |          |           | uchs.underreview)  | regional wood market            |
-|                                  |          |           |                    | (oversupply), derived based on  |
-|                                  |          |           |                    | time series analyses of sales   |
-|                                  |          |           |                    | of HessenForst.                 |
-| <i>"national.calamity.fuchs"</i> | 0.43     | 0.61      | [Fuchs et al.      | Assumption of (inter-)national  |
-|                                  |          |           | (under review)](#f | damages influencing wood        |
-|                                  |          |           | uchs.underreview)  | quality and wood national       |
-|                                  |          |           |                    | market (oversupply), derived    |
-|                                  |          |           |                    | based on time series analyses   |
-|                                  |          |           |                    | of sales of HessenForst.        |
+| <i>"calamity.dieter.2001"</i>    | 0.50     | 0.50      | [Dieter(2001)](#dieter.2001)            | Assumption based on prices in southern Germany after a calamity event, often applied in bioeconomic simulations for Germany. Originally referring to net revenues, thus to be used in combination with <a href="#fct_harvest_costs"><em>harvest_costs()</em></a>. |
+| <i>"fire.small.moellmann"</i>    | 0.56     | \-        | [Moellmann andMoehring (2017)](#moellmann.2017)     | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"fire.large.moellmann"</i>    | 0.56     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. The survey only asked for effects of quality losses. |
+| <i>"storm.small.moellmann"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"storm.large.moellmann"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
+| <i>"insects.moellmann"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
+| <i>"ips.fuchs.2021"</i>          | 0.67     | \-        | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
+| <i>"ips.timely.fuchs.2021"</i>   | 0.88     | \-        | [Fuchs et al. (2021)]( #fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
+| <i>"stand.damage.fuchs"</i>      | 0.96     | 0.81      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
+| <i>"regional.calamity.fuchs"</i> | 0.68     | 0.76      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"national.calamity.fuchs"</i> | 0.43     | 0.61      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
 
 <h3>Input</h3>
 
@@ -1055,77 +986,20 @@ are implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 </p>
 
 
-
-| Name                             | Cost     | Additional           | Cost      | Additional           | Reference          | Details                         |
-|                                  | Factor   | Costs                | Factor    | Costs                |                    |                                 |
-|                                  | Softwood | Softwood             | Deciduous | Deciduous            |                    |                                 |
-|                                  |          | [EUR m<sup>-3</sup>] |           | [EUR m<sup>-3</sup>] |                    |                                 |
-+==================================+=========:+=====================:+==========:+=====================:+====================+=================================+
-| <i>"none"</i>                    | 1.00     | 0.00                 | 1.00      | 0.00                 | \-                 | default: no calamity            |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"calamity.dieter.2001"</i>    | 0.50     | 0.00                 | 0.50      | 0.00                 | [Dieter            | [Dieter (2001)](#dieter.2001)   |
-|                                  |          |                      |           |                      | (2001)](           | assumed a reduction of the net  |
-|                                  |          |                      |           |                      | #dieter.2001)      | revenues by 0.5 in case of      |
-|                                  |          |                      |           |                      |                    | calamities. In our model, this  |
-|                                  |          |                      |           |                      |                    | factor is therefore applied to  |
-|                                  |          |                      |           |                      |                    | reduce both wood revenues and   |
-|                                  |          |                      |           |                      |                    | harvest costs. Obviously this   |
-|                                  |          |                      |           |                      |                    | is counterintuitive for the     |
-|                                  |          |                      |           |                      |                    | harvest costs and thus to be    |
-|                                  |          |                      |           |                      |                    | used in combination with <a     |
-|                                  |          |                      |           |                      |                    | href="#fct_wood_revenues">      |
-|                                  |          |                      |           |                      |                    | <em>wood_revenues()</em></a>.     |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"fire.small.moellmann"</i>    | 1.17     | 0.00                 | NA        | NA                   | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |                      |           |                      | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |                      |           |                      | #moellmann.2017)   | to damages by fire affecting    |
-|                                  |          |                      |           |                      |                    | only a few trees.               |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"fire.large.moellmann"</i>    | 1.09     | 0.00                 | NA        | NA                   | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |                      |           |                      | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |                      |           |                      | #moellmann.2017)   | to damages by fire affecting at |
-|                                  |          |                      |           |                      |                    | least one compartment.          |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"storm.small.moellmann"</i>   | 1.21     | 0.00                 | 1.24      | 0.00                 | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |                      |           |                      | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |                      |           |                      | #moellmann.2017)   | to damages by storm affecting   |
-|                                  |          |                      |           |                      |                    | only a few trees.               |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"storm.large.moellmann"</i>   | 1.10     | 0.00                 | 1.12      | 0.00                 | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |                      |           |                      | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |                      |           |                      | #moellmann.2017)   | to damages by storm affecting   |
-|                                  |          |                      |           |                      |                    | least one compartment.          |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"insects.moellmann"</i>       | NA       | NA                   | NA        | NA                   | [Moellmann and     | Based on a survey of forest     |
-|                                  |          |                      |           |                      | Moehring (2017)](  | managers in Germany, referring  |
-|                                  |          |                      |           |                      | #moellmann.2017)   | to damages by insects.          |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"ips.fuchs.2021"</i>          | 1.00     | 2.50                 | NA        | NA                   | [Fuchs et al.      | Assumption of higher harvest    |
-|                                  |          |                      |           |                      | (2021)](           | costs due to smaller, scattered |
-|                                  |          |                      |           |                      | #fuchs.2021)       | harvest measures.               |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"ips.timely.fuchs.2021"</i>   | 1.00     | 7.50                 |           |                      | [Fuchs et al.      | Assumption of higher harvest    |
-|                                  |          |                      |           |                      | (2021)](           | costs due to smaller, scattered |
-|                                  |          |                      |           |                      | #fuchs.2021)       | harvest measures, but also      |
-|                                  |          |                      |           |                      |                    | including costs for debarking   |
-|                                  |          |                      |           |                      |                    | or chemically treating the logs |
-|                                  |          |                      |           |                      |                    | afterwards.                     |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"stand.damage.fuchs"</i>      | 1.00     | 2.00                 | 1.00      | 2.00                 | [Fuchs et al.      | Assumption for damages in a     |
-|                                  |          |                      |           |                      | (under review)](#f | single stand with smaller       |
-|                                  |          |                      |           |                      | uchs.underreview)  | harvest volumes based on        |
-|                                  |          |                      |           |                      |                    | contracts of HessenForst.       |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"regional.calamity.fuchs"</i> | 1.00     | 2.50                 | 1.00      | 2.50                 | [Fuchs et al.      | Assumption for regional damages |
-|                                  |          |                      |           |                      | (under review)](#f | with smaller harvest volumes    |
-|                                  |          |                      |           |                      | uchs.underreview)  | based on contracts o            |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
-| <i>"national.calamity.fuchs"</i> | 1.00     | 5.00                 | 1.00      | 5.00                 | [Fuchs et al.      | Assumption for national damages |
-|                                  |          |                      |           |                      | (under review)](#f | with smaller harvest volumes    |
-|                                  |          |                      |           |                      | uchs.underreview)  | and a high demand for timely    |
-|                                  |          |                      |           |                      |                    | harvest capacities, based on    |
-|                                  |          |                      |           |                      |                    | contracts of HessenForst.       |
-+----------------------------------+----------+----------------------+-----------+----------------------+--------------------+---------------------------------+
+| Name          | Cost Factor Softwood | Additional Costs Softwood [EUR m<sup>-3</sup>] | Cost Factor Deciduous | Additional Costs Deciduous [EUR m<sup>-3</sup>] | Reference | 
+|:--------------|-----:|-----:|-----:|-----:|:-------------------|:----------------------------------------|
+| <i>"none"</i>                    | 1.00 | 0.00                 | 1.00      | 0.00                 | \-                 | default: no calamity            |
+| <i>"calamity.dieter.2001"</i>    | 0.50 | 0.00                 | 0.50      | 0.00                 | [Dieter (2001)](#dieter.2001) | [Dieter (2001)](#dieter.2001) assumed a reduction of the net revenues by 0.5 in case of calamities. In our model, this factor is therefore applied to reduce both wood revenues and harvest costs. Obviously this is counterintuitive for the harvest costs and thus to be used in combination with <a href="#fct_wood_revenues"><em>wood_revenues()</em></a>. |
+| <i>"fire.small.moellmann"</i>    | 1.17 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. |
+| <i>"fire.large.moellmann"</i>    | 1.09 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. |
+| <i>"storm.small.moellmann"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
+| <i>"storm.large.moellmann"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting least one compartment.
+| <i>"insects.moellmann"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
+| <i>"ips.fuchs.2021"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
+| <i>"ips.timely.fuchs.2021"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
+| <i>"stand.damage.fuchs"</i>      | 1.00 | 2.00 | 1.00 | 2.00 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"regional.calamity.fuchs"</i> | 1.00 | 2.50 | 1.00 | 2.50 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for regional damages with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"national.calamity.fuchs"</i> | 1.00 | 5.00 | 1.00 | 5.00 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for national damages with smaller harvest volumes and a high demand for timely harvest capacities, based on contracts of HessenForst. |
 
 <h3>Input</h3>
 
