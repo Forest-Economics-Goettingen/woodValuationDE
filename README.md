@@ -1,7 +1,7 @@
 ---
 output:
   html_document: default
-  word_document: default
+  pdf_document: default
 ---
 woodValuationDE
 ===================================
@@ -503,7 +503,7 @@ vol_skidded(rep(seq(20, 50, 10),
 <h2><em><a name="fct_wood_revenues">wood_revenues()</a></em></h2>
 
 The function estimates average wood revenues per unit salable volume
-based on the assortment tables of
+[EUR m<sup>-3</sup>] based on the assortment tables of
 [Offer and Staupendahl (2018)](#offer.2018) and the wood revenue
 function of [von Bodelschwingh (2018)](#vonbodelschwingh.2018).
 Consequences of calamities are implemented based on
@@ -537,27 +537,12 @@ compositions. The fitted model function is:
 with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
 <i>$\alpha$</i> to <i>$\epsilon$</i>.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The model estimates wood revenues for the time period 2010 to 2015. Via
-the market price of a reference assortment for each species, this can be
-adapted to other market conditions. The references assortments (saw
-wood) are defined by diameter class (1: 10-19 cm, 2: 20-29..., with 1a:
-10-14 cm and 1b: 15-19 cm) and quality of A to D (with A the highest and
+The model estimates wood revenues referring to Hessian market conditions
+in the time period 2010 to 2015. Via the market price of a reference
+assortment for each species, this can be adapted to other market
+conditions. The references assortments (saw wood) are defined by
+diameter class (1: 10-19 cm, 2: 20-29..., with 1a: 10-14 cm and 1b:
+15-19 cm) and quality of A to D (with A the highest and
 D the lowest quality) as usually applied in Germany (see
 [Deutscher Forstwirtschaftsrat and Deutscher Holzwirtschaftsrat, 2020](#deutscherforstwirtschaftsrat.2020)).
 The original prices of the reference assortments
@@ -598,28 +583,28 @@ wood revenues of the model <i>s<sub>original</sub></i> will be updated
 
 A particular strength of <strong>woodValuationDE</strong> is the
 consideration of consequences of calamities. A broad set of previously
-published and newly derived quantitative effects of calamities is
-implemented. Additionally, user can implement their own assumed factors.
-For wood revenues, a calamity factor is multiplied with the undisturbed
-revenues. The options that are implemented by default are listed in
-<a href="#tab3">Tab. 3</a>.
+published and often applied estimates for the consequences of
+disturbances is implemented. Additionally, users can implement their own
+assumptions. For wood revenues, a factor is multiplied with the
+undisturbed revenues. The options that are implemented by default are
+listed in <a href="#tab3">Tab. 3</a>.
 
 <br>
 
 <p align="center" id="tab3">
-  <i>Tab. 3:</i> Calamity factors to reduce the wood revenues
-  implemented in <strong>woodValuationDE</strong>.
+  <i>Tab. 3:</i> Factors to reduce the wood revenues for salvage 
+  harvests that are implemented in <strong>woodValuationDE</strong>.
 </p>
 
 | Name          | Factor Softwood | Factor Deciduous | Reference          | Details                                 |
-|:--------------|----------------:|-----------------:|:-------------------|:----------------------------------------|
+|:--------------|:---------------:|:----------------:|:-------------------|:----------------------------------------|
 | <i>"none"</i>                    | 1.00     | 1.00      | \-                 | default: no calamity            |
-| <i>"calamity.dieter.2001"</i>    | 0.50     | 0.50      | [Dieter(2001)](#dieter.2001)            | Assumption based on prices in southern Germany after a calamity event, often applied in bioeconomic simulations for Germany. Originally referring to net revenues, thus to be used in combination with <a href="#fct_harvest_costs"><em>harvest_costs()</em></a>. |
-| <i>"fire.small.moellmann"</i>    | 0.56     | \-        | [Moellmann andMoehring (2017)](#moellmann.2017)     | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
-| <i>"fire.large.moellmann"</i>    | 0.56     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. The survey only asked for effects of quality losses. |
-| <i>"storm.small.moellmann"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
-| <i>"storm.large.moellmann"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
-| <i>"insects.moellmann"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
+| <i>"calamity.dieter.2001"</i>    | 0.50     | 0.50      | [Dieter (2001)](#dieter.2001)            | Assumption based on prices in southern Germany after a calamity event, often applied in bioeconomic simulations for Germany. Originally referring to net revenues, thus to be used in combination with <a href="#fct_harvest_costs"><em>harvest_costs()</em></a>. |
+| <i>"fire.small.moellmann.2017"</i>    | 0.56     | \-        | [Moellmann andMoehring (2017)](#moellmann.2017)     | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"fire.large.moellmann.2017"</i>    | 0.56     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. The survey only asked for effects of quality losses. |
+| <i>"storm.small.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"storm.large.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
+| <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
 | <i>"ips.fuchs.2021"</i>          | 0.67     | \-        | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
 | <i>"ips.timely.fuchs.2021"</i>   | 0.88     | \-        | [Fuchs et al. (2021)]( #fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
 | <i>"stand.damage.fuchs"</i>      | 0.96     | 0.81      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
@@ -634,25 +619,25 @@ values or as a vector. If mixed, the single values will be recycled.
 
 <h4><i>diameter.q</i></h4>
 
-The quadratic mean of the diameter at breast height (dbh) of the
-harvested trees [cm].
+The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
+(dbh) of the harvested trees [cm].
 
 <h4><i>species</i></h4>
 
-The tree species, using an available <i>species.code.type</i>.
+The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species, codes, and their assignments
+the valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
-
+      
 ``` r
 get_species_codes()
 ```
 
 <h4><i>value.level</i></h4>
 
-Stand quality expressed as integer value of 1:3:
-
+Stand quality, expressed as integer value of 1:3:
+      
 <ul>
   <li>
     <i>1</i>: extraordinary high stand quality with high shares of wood
@@ -663,17 +648,17 @@ Stand quality expressed as integer value of 1:3:
   </li>
   <li>
     <i>3</i>: extraordinary low quality (e.g. trees with many thick
-    branches or stands with massive ungulate damages)
+    branches)
   </li>
 </ul>
-
+      
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
 
 <h4><i>process.type</i></h4>
 
 Type of harvest process:
-
+    
 <ul>
   <li>
     <i>"manually"</i>: motor-manual harvest using a chain saw
@@ -686,8 +671,8 @@ Type of harvest process:
     the mean diameter.
   </li>
 </ul>
-
-The process types "manually" and "harvester" refer to
+      
+The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
 deciduous species a maximum diameter of 40 cm is assumed for highly
@@ -697,7 +682,7 @@ mechanized harvests,
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
-
+                
 <ul>
   <li>
     softwood species
@@ -728,19 +713,20 @@ mechanized harvests:
     </li>
     <li>
       diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
-    <li>
+    </li>
   </ul>
 </ul>
   
 
 <h4><i>price.ref.assortment</i></h4>
 
-Wood price of the reference assortments allowing to consider market
-fluctuations as described above. Default is <i>"baseline"</i> referring
-to the prices from 2010 to 2015 in Hesse, Germany according to
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
-<a href="#tab2">Tab. 2</a>. Alternatively, it can be user-provided
-tibble with the same structure, illustrated by the default tibble:
+Wood price of the reference assortments allowing for the consideration
+of market fluctuations as described above. Default is <i>"baseline"</i>,
+which refers to the prices from 2010 to 2015 in Hesse, Germany according
+to [von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
+<a href="#tab2">Tab. 2</a>. Alternatively, users can provide a
+tibble with the same structure, which is illustrated by the
+<i>"baseline"</i> tibble:
 
 ``` r
 prices.ref.assortments <- dplyr::tibble(
@@ -752,18 +738,19 @@ prices.ref.assortments <- dplyr::tibble(
 
 <h4><i>calamity.type</i></h4>
 
-Type of a potential calamity determining the applied calamity
-corrections, which implement reduced returns (and higher harvest costs).
-For the implemented options described above see <a href="#tab3">Tab.
-3</a>. Alternatively, users can provide their own factors.
+Type of calamity or disturbance event in case of salvage harvests. This
+determines the applied reductions for salvage revenues. For the
+implemented options, see <a href="#tab3">Tab.3</a>. Alternatively, users
+can provide their own factors.
 
 <h4><i>calamity.factors</i></h4>
 
 Summands [EUR m<sup>-3</sup>] and factors to consider the consequences
-of calamities on wood revenues and harvest costs. <i>"baseline"</i>
-provides a tibble based on the references listed in <a href="#tab5">Tab.
-5</a>. Alternatively, users can provide an own tibble with the same
-structure, illustrated by the default tibble:
+of disturbances and calamities on wood revenues and harvest costs.
+<i>"baseline"</i> provides a tibble based on the references listed in
+<a href="#tab5">Tab. 5</a>. Alternatively, users can provide an own
+tibble with the same structure, which is illustrated by the
+<i>"baseline"</i> tibble:
 
 ``` r
 calamity.factors <- dplyr::tibble(
@@ -844,7 +831,7 @@ get_species_codes()
 <h3>Output</h3>
 
 A vector with wood revenues per unit volume [EUR m<sup>-3</sup>]. The
-volume refers to the salable wood volume, provided by
+volume refers to the share of salable wood volume, which is provided by
 <a href="#fct_vol_salable"><i>vol_salable()</i></a>.
 
 <h3>Application</h3>
@@ -914,8 +901,8 @@ wood_revenues(40,
 
 <h2><em><a name="fct_harvest_costs">harvest_costs()</a></em></h2>
 
-The function estimates harvest costs per unit skidded wood volume
-applying the harvest costs function of
+The function estimates harvest costs per unit skidded volume
+[EUR m<sup>-3</sup>] applying the harvest costs function of
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018). Consequences of
 calamities are implemented based on [Dieter (2001)](#dieter.2001),
 [Moellmann and Moehring (2017)](#moellmann.2017),
@@ -938,9 +925,10 @@ model function is:
 with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
 <i>$\alpha$</i> to <i>$\gamma$</i> and the maximum costs
 <i>c<sub>max</sub></i>. The harvest costs were derived for a smaller
-number of species groups, thus, the species assignments differ from
-those for <a href="#fct_wood_revenues"><em>wood_revenues()</em></a>. The
-species assignments are provided by:
+number of economic species groups, thus, the species assignments differ
+from those for
+<a href="#fct_wood_revenues"><em>wood_revenues()</em></a>. The species
+assignments are provided by:
 
 ``` r
 get_species_codes()
@@ -948,8 +936,8 @@ get_species_codes()
 
 The harvest costs are calculated under the assumption of combinations of
 harvest processes, depended on the quadratic mean of the tree diameters
-as well as the accessibility of the stand. The accessibility considers
-is considered in three cost levels (see <a href="#tab4">Tab. 4</a>). To
+as well as the accessibility of the stand. The accessibility is
+considered in three cost levels (see <a href="#tab4">Tab. 4</a>). To
 avoid unusually high harvest costs at smaller diameters,
 [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018) defined
 maximum harvest costs <i>c<sub>max</sub></i> (see <a href="#tab4">Tab.
@@ -963,38 +951,40 @@ maximum harvest costs <i>c<sub>max</sub></i> (see <a href="#tab4">Tab.
   [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018).
 </p>
 
-| <em>cost.level</em> | Definition                                     | Maximum Harvest Costs [EUR m<sup>-3</sup>] |
-|---------------------|------------------------------------------------|----------------------------------------------|
-| <i>3</i>            | slope \> 58 %                                  | 80                                           |
-| <i>2</i>            | slope between 36 % and 58 % AND/OR moist sites | 70                                           |
-| <i>1</i>            | all other stands without special limitations   | 60                                           |
+| <em>cost.level</em> | Definition                                     | Maximum Harvest Costs [EUR m<sup>-3</sup>]|
+|:-------------------:|:-----------------------------------------------|:-----------------------------------------:|
+| <i>3</i>            | slope > 58 %                                   | 80                                        |
+| <i>2</i>            | slope between 36 % and 58 % AND/OR moist sites | 70                                        |
+| <i>1</i>            | all other stands without special limitations   | 60                                        |
 
 A special strength of <strong>woodValuationDE</strong> is the
-consideration of consequences of calamities. A broad set of previously
-published and newly derived quantitative effects of calamities is
-implemented. Additionally, user can implement their own factors. For the
-harvest costs, multiplicative factors as well as absolute summands can
-be used for implementing consequences of disturbances. The options that
-are implemented by default are listed in <a href="#tab5">Tab. 5</a>.
+consideration of consequences of disturbances and large-scale
+calamities. A broad set of previously published and newly derived
+quantitative effects of calamities is implemented. Additionally, users
+can implement their own assumptions. For the harvest costs,
+multiplicative factors as well as absolute summands can be used for
+implementing consequences of disturbances. The options that are
+implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 
 <br>
 
 <p align="center" id="tab5">
   <i>Tab. 5:</i> Factors and summands for consideration of higher
-  harvest costs in case of calamities implemented in
+  harvest costs in case of salvage harvests after disturbances or
+  large-scale calamities, implemented in
   <strong>woodValuationDE</strong>.
 </p>
 
 
-| Name          | Cost Factor Softwood | Additional Costs Softwood [EUR m<sup>-3</sup>] | Cost Factor Deciduous | Additional Costs Deciduous [EUR m<sup>-3</sup>] | Reference | 
-|:--------------|-----:|-----:|-----:|-----:|:-------------------|:----------------------------------------|
+| Name          | Cost Factor Softwood | Additional Costs Softwood [EUR m<sup>-3</sup>] | Cost Factor Deciduous | Additional Costs Deciduous [EUR m<sup>-3</sup>] | Reference | Details |
+|:--------------|:----:|:----:|:----:|:----:|:-------------------|:----------------------------------------|
 | <i>"none"</i>                    | 1.00 | 0.00                 | 1.00      | 0.00                 | \-                 | default: no calamity            |
 | <i>"calamity.dieter.2001"</i>    | 0.50 | 0.00                 | 0.50      | 0.00                 | [Dieter (2001)](#dieter.2001) | [Dieter (2001)](#dieter.2001) assumed a reduction of the net revenues by 0.5 in case of calamities. In our model, this factor is therefore applied to reduce both wood revenues and harvest costs. Obviously this is counterintuitive for the harvest costs and thus to be used in combination with <a href="#fct_wood_revenues"><em>wood_revenues()</em></a>. |
-| <i>"fire.small.moellmann"</i>    | 1.17 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. |
-| <i>"fire.large.moellmann"</i>    | 1.09 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. |
-| <i>"storm.small.moellmann"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
-| <i>"storm.large.moellmann"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting least one compartment.
-| <i>"insects.moellmann"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
+| <i>"fire.small.moellmann.2017"</i>    | 1.17 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. |
+| <i>"fire.large.moellmann.2017"</i>    | 1.09 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. |
+| <i>"storm.small.moellmann.2017"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
+| <i>"storm.large.moellmann.2017"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting least one compartment.
+| <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
 | <i>"ips.fuchs.2021"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
 | <i>"ips.timely.fuchs.2021"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
 | <i>"stand.damage.fuchs"</i>      | 1.00 | 2.00 | 1.00 | 2.00 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
@@ -1009,15 +999,15 @@ values or as a vector. If mixed, the single values will be recycled.
 
 <h4><i>diameter.q</i></h4>
 
-The quadratic mean of the diameter at breast height (dbh) of the
-harvested trees [cm].
+The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
+(dbh) of the harvested trees [cm].
 
 <h4><i>species</i></h4>
 
-The tree species, using an available <i>species.code.type</i>.
+The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species, codes, and their assignments
+the valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
 
 ``` r
@@ -1027,26 +1017,28 @@ get_species_codes()
 <h4><i>cost.level</i></h4>
 
 Accessibility of the stand for harvest operations expressed as integer
-of 1:3, with 1 for standard conditions without limitations, 2 for moist
-sites or sites with a slope between 36 % and 58 %, and 3 for slopes \>
-58 %. The cost.levels refer to the harvest cost model by
+of <i>1:3</i>, with <i>1</i> for standard conditions without
+limitations, <i>2</i> for moist sites or sites with a slope between 36
+% and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
+harvest cost model by
 [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
 <h4><i>calamity.type</i></h4>
 
-Type of a potential calamity determining the applied calamity
-corrections, which implement higher harvest costs (and reduced returns).
-For the implemented options described above see <a href="#tab5">Tab.
-5</a>. Alternatively, users can provide their own factors.
+Type of calamity or disturbance event in case of salvage harvests. This
+determines the assumption on the increase in harvest costs for salvage
+harvests. For the implemented options, see <a href="#tab5">Tab.5</a>.
+Alternatively, users can provide their own assumptions.
 
 <h4><i>calamity.factors</i></h4>
 
 Summands [EUR m<sup>-3</sup>] and factors to consider the consequences
-of calamities on wood revenues and harvest costs. <i>"baseline"</i>
-provides a tibble based on the references listed in <a href="#tab5">Tab.
-5</a>. Alternatively, users can provide an own tibble with the same
-structure, illustrated by the default tibble:
+of disturbances and calamities on wood revenues and harvest costs.
+<i>"baseline"</i> provides a tibble based on the references listed in
+<a href="#tab5">Tab. 5</a>. Alternatively, users can provide an own
+tibble with the same structure, which is illustrated by the
+<i>"baseline"</i> tibble:
 
 ``` r
 calamity.factors <- dplyr::tibble(
@@ -1118,7 +1110,7 @@ The type of code in which <i>species</i> is given.
   </li>
 </ul>
 
-The list with the available species' codes is provided by:
+The list with the available species codes is provided by:
 
 ``` r
 get_species_codes()
@@ -1127,7 +1119,7 @@ get_species_codes()
 <h3>Output</h3>
 
 A vector with harvest costs per unit volume [EUR m<sup>-3</sup>]. The
-volume refers to the skidded wood volume, provided by
+volume refers to the share of skidded wood volume, provided by
 <a href="#fct_vol_skidded"><i>vol_skidded()</i></a>.
 
 <h3>Application</h3>
@@ -1186,11 +1178,38 @@ harvest_costs(40,
 
 <h2><em><a name="fct_wood_valuation">wood_valuation()</a></em></h2>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 The function is a wrapper for the entire procedure of wood valuation
-provided by <strong>woodValuationDE</strong>. It estimates the share of
-salable (for revenues) and skidded (for harvest costs) volume as well as
-the wood revenues and harvest costs. Finally, it derives the net
-revenues for the user-provided standing wood volume.
+implemented in <strong>woodValuationDE</strong>. It estimates the share
+of salable (for revenues) and skidded (for harvest costs) volume as well
+as the wood revenues and harvest costs per unit volume. Finally, it
+derives the net revenues for the user-provided volume referring to the
+volume over bark of the standing trees to be harvested.
 
 <h3>Data and Model</h3>
 
@@ -1209,8 +1228,8 @@ the harvest.
 
 <h4><i>diameter.q</i></h4>
 
-The quadratic mean of the diameter at breast height (dbh) of the
-harvested trees [cm].
+The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
+(dbh) of the harvested trees [cm].
 
 <h4><i>species</i></h4>
 
@@ -1527,8 +1546,8 @@ the harvest.
 
 <h4><i>diameter.q</i></h4>
 
-The quadratic mean of the diameter at breast height (dbh) of the
-harvested trees [cm].
+The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
+(dbh) of the harvested trees [cm].
 
 <h4><i>species</i></h4>
 
