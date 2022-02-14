@@ -1178,32 +1178,6 @@ harvest_costs(40,
 
 <h2><em><a name="fct_wood_valuation">wood_valuation()</a></em></h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 The function is a wrapper for the entire procedure of wood valuation
 implemented in <strong>woodValuationDE</strong>. It estimates the share
 of salable (for revenues) and skidded (for harvest costs) volume as well
@@ -1223,8 +1197,9 @@ functions <a href="#fct_vol_salable"><i>vol_salable()</i></a>,
 
 <h4><i>volume</i></h4>
 
-Wood volume [m<sup>3</sup>], referring to standing tree volume before
-the harvest.
+Wood volume [m<sup>3</sup>], referring to volume over bark of the
+standing trees to be harvested (German unit Vfm) as usually provided by
+yield tables and single-tree simulation models.
 
 <h4><i>diameter.q</i></h4>
 
@@ -1233,10 +1208,10 @@ The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
 
 <h4><i>species</i></h4>
 
-The tree species, using an available <i>species.code.type</i>.
+The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species, codes, and their assignments
+the valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
 
 ``` r
@@ -1245,8 +1220,8 @@ get_species_codes()
 
 <h4><i>value.level</i></h4>
 
-Stand quality expressed as integer value of 1:3:
-
+Stand quality, expressed as integer value of 1:3:
+      
 <ul>
   <li>
     <i>1</i>: extraordinary high stand quality with high shares of wood
@@ -1257,10 +1232,10 @@ Stand quality expressed as integer value of 1:3:
   </li>
   <li>
     <i>3</i>: extraordinary low quality (e.g. trees with many thick
-    branches or stands with massive ungulate damages)
+    branches)
   </li>
 </ul>
-
+      
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
 
@@ -1276,7 +1251,7 @@ sites or sites with a slope between 36 % and 58 %, and 3 for slopes \>
 <h4><i>process.type</i></h4>
 
 Type of harvest process:
-
+        
 <ul>
   <li>
     <i>"manually"</i>: motor-manual harvest using a chain saw
@@ -1289,8 +1264,8 @@ Type of harvest process:
     the mean diameter.
   </li>
 </ul>
-
-The process types "manually" and "harvester" refer to
+        
+The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
 deciduous species a maximum diameter of 40 cm is assumed for highly
@@ -1300,7 +1275,7 @@ mechanized harvests,
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
-
+                
 <ul>
   <li>
     softwood species
@@ -1337,12 +1312,13 @@ mechanized harvests:
 
 <h4><i>price.ref.assortment</i></h4>
 
-Wood price of the reference assortments allowing to consider market
-fluctuations as described above. Default is <i>"baseline"</i> referring
-to the prices from 2010 to 2015 in Hesse, Germany according to
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
-<a href="#tab2">Tab. 2</a>. Alternatively, it can be user-provided
-tibble with the same structure, illustrated by the default tibble:
+Wood price of the reference assortments allowing for the consideration
+of market fluctuations. Default is <i>"baseline"</i>,
+which refers to the prices from 2010 to 2015 in Hesse, Germany according
+to [von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
+<a href="#tab2">Tab. 2</a>. Alternatively, users can provide a
+tibble with the same structure, which is illustrated by the
+<i>"baseline"</i> tibble:
 
 ``` r
 prices.ref.assortments <- dplyr::tibble(
@@ -1354,18 +1330,19 @@ prices.ref.assortments <- dplyr::tibble(
 
 <h4><i>calamity.type</i></h4>
 
-Type of a potential calamity determining the applied calamity
-corrections, which implement reduced returns (and higher harvest costs).
-For the implemented options described above see <a href="#tab3">Tab.
-3</a>. Alternatively, users can provide their own factors.
+Type of calamity or disturbance event in case of salvage harvests. This
+determines the applied reductions for salvage revenues. For the
+implemented options, see <a href="#tab3">Tab.3</a>. Alternatively, users
+can provide their own factors.
 
 <h4><i>calamity.factors</i></h4>
 
 Summands [EUR m<sup>-3</sup>] and factors to consider the consequences
-of calamities on wood revenues and harvest costs. <i>"baseline"</i>
-provides a tibble based on the references listed in <a href="#tab5">Tab.
-5</a>. Alternatively, users can provide an own tibble with the same
-structure, illustrated by the default tibble:
+of disturbances and calamities on wood revenues and harvest costs.
+<i>"baseline"</i> provides a tibble based on the references listed in
+<a href="#tab5">Tab. 5</a>. Alternatively, users can provide an own
+tibble with the same structure, which is illustrated by the
+<i>"baseline"</i> tibble:
 
 ``` r
 calamity.factors <- dplyr::tibble(
@@ -1427,7 +1404,7 @@ calamity.factors <- dplyr::tibble(
 <h4><i>species.code.type</i></h4>
 
 The type of code in which <i>species</i> is given.
-
+              
 <ul>
   <li>
     <i>"en"</i>: English species names
@@ -1436,7 +1413,7 @@ The type of code in which <i>species</i> is given.
     <i>"nds"</i>: numeric species codes used in Lower Saxony, Germany.
   </li>
 </ul>
-
+                
 The list with the available species' codes is provided by:
 
 ``` r
@@ -1445,9 +1422,9 @@ get_species_codes()
 
 <h3>Output</h3>
 
-A tibble with all steps of the wood valuation (volume reductions,
-harvest costs, wood revenues [EUR m<sup>-3</sup>] and total net
-revenues [EUR]).
+A tibble with all steps of the wood valuation (harvest volume proportion,
+harvest costs per unit skidded volume, wood revenues per unit salable
+volume [EUR m<sup>-3</sup>] and total net revenues [EUR]).
 
 <h3>Application</h3>
 
@@ -1527,7 +1504,8 @@ wood_valuation(10,
 The function is a wrapper for the wood valuation provided by
 <strong>woodValuationDE</strong>. It calls
 <a href="#fct_wood_valuation"><em>wood_valuation()</em></a> and returns
-only the net revenues for the user-provided standing wood volume.
+only the net revenues for the user-provided volume referring to the
+volume over bark of the standing trees to be harvested.
 
 <h3>Data and Model</h3>
 
@@ -1541,8 +1519,9 @@ functions <a href="#fct_vol_salable"><i>vol_salable()</i></a>,
 
 <h4><i>volume</i></h4>
 
-Wood volume [m<sup>3</sup>], referring to standing tree volume before
-the harvest.
+Wood volume [m<sup>3</sup>], referring to volume over bark of the
+standing trees to be harvested (German unit Vfm) as usually provided by
+yield tables and single-tree simulation models.
 
 <h4><i>diameter.q</i></h4>
 
@@ -1551,10 +1530,10 @@ The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
 
 <h4><i>species</i></h4>
 
-The tree species, using an available <i>species.code.type</i>.
+The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species, codes, and their assignments
+the valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
 
 ``` r
@@ -1563,8 +1542,8 @@ get_species_codes()
 
 <h4><i>value.level</i></h4>
 
-Stand quality expressed as integer value of 1:3:
-
+Stand quality, expressed as integer value of 1:3:
+    
 <ul>
   <li>
     <i>1</i>: extraordinary high stand quality with high shares of wood
@@ -1575,10 +1554,10 @@ Stand quality expressed as integer value of 1:3:
   </li>
   <li>
     <i>3</i>: extraordinary low quality (e.g. trees with many thick
-    branches or stands with massive ungulate damages)
+    branches)
   </li>
 </ul>
-
+      
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
 
@@ -1594,7 +1573,7 @@ sites or sites with a slope between 36 % and 58 %, and 3 for slopes \>
 <h4><i>process.type</i></h4>
 
 Type of harvest process:
-
+        
 <ul>
   <li>
     <i>"manually"</i>: motor-manual harvest using a chain saw
@@ -1608,7 +1587,7 @@ Type of harvest process:
   </li>
 </ul>
 
-The process types "manually" and "harvester" refer to
+The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
 deciduous species a maximum diameter of 40 cm is assumed for highly
@@ -1618,7 +1597,7 @@ mechanized harvests,
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
-
+              
 <ul>
   <li>
     softwood species
@@ -1655,12 +1634,13 @@ mechanized harvests:
 
 <h4><i>price.ref.assortment</i></h4>
 
-Wood price of the reference assortments allowing to consider market
-fluctuations as described above. Default is <i>"baseline"</i> referring
-to the prices from 2010 to 2015 in Hesse, Germany according to
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
-<a href="#tab2">Tab. 2</a>. Alternatively, it can be user-provided
-tibble with the same structure, illustrated by the default tibble:
+Wood price of the reference assortments allowing for the consideration
+of market fluctuations. Default is <i>"baseline"</i>,
+which refers to the prices from 2010 to 2015 in Hesse, Germany according
+to [von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
+<a href="#tab2">Tab. 2</a>. Alternatively, users can provide a
+tibble with the same structure, which is illustrated by the
+<i>"baseline"</i> tibble:
 
 ``` r
 prices.ref.assortments <- dplyr::tibble(
@@ -1672,18 +1652,19 @@ prices.ref.assortments <- dplyr::tibble(
 
 <h4><i>calamity.type</i></h4>
 
-Type of a potential calamity determining the applied calamity
-corrections, which implement reduced returns (and higher harvest costs).
-For the implemented options described above see <a href="#tab3">Tab.
-3</a>. Alternatively, users can provide their own factors.
+Type of calamity or disturbance event in case of salvage harvests. This
+determines the applied reductions for salvage revenues. For the
+implemented options, see <a href="#tab3">Tab.3</a>. Alternatively, users
+can provide their own factors.
 
 <h4><i>calamity.factors</i></h4>
 
 Summands [EUR m<sup>-3</sup>] and factors to consider the consequences
-of calamities on wood revenues and harvest costs. <i>"baseline"</i>
-provides a tibble based on the references listed in <a href="#tab5">Tab.
-5</a>. Alternatively, users can provide an own tibble with the same
-structure, illustrated by the default tibble:
+of disturbances and calamities on wood revenues and harvest costs.
+<i>"baseline"</i> provides a tibble based on the references listed in
+<a href="#tab5">Tab. 5</a>. Alternatively, users can provide an own
+tibble with the same structure, which is illustrated by the
+<i>"baseline"</i> tibble:
 
 ``` r
 calamity.factors <- dplyr::tibble(
@@ -1745,7 +1726,7 @@ calamity.factors <- dplyr::tibble(
 <h4><i>species.code.type</i></h4>
 
 The type of code in which <i>species</i> is given.
-
+              
 <ul>
   <li>
     <i>"en"</i>: English species names
@@ -1754,7 +1735,7 @@ The type of code in which <i>species</i> is given.
     <i>"nds"</i>: numeric species codes used in Lower Saxony, Germany.
   </li>
 </ul>
-
+                
 The list with the available species' codes is provided by:
 
 ``` r
@@ -1763,7 +1744,8 @@ get_species_codes()
 
 <h3>Output</h3>
 
-A vector with the total net revenues for the standing volume [EUR].
+A vector with the total net revenues for the volume over bark of the
+trees to be harvested [EUR].
 
 <h3>Application</h3>
 
@@ -1840,9 +1822,8 @@ wood_net_revenues(10,
 
 <h2><em><a name="fct_get_species_codes">get_species_codes</a></em></h2>
 
-The function shows the availabe species, species codes and species
-assignments to groups for the economic valuation in order to inform the
-users for their own applications.
+The function shows all available species, species codes and species
+assignments to groups for the economic valuation.
 
 <h3>Output</h3>
 
