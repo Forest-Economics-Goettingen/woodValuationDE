@@ -1,7 +1,7 @@
 woodValuationDE
 ===================================
 
-A package for monetary valuation of wood in Germany forests, including
+A package for monetary valuation of wood in German forests, including
 estimations of the harvest volume proportions, wood revenues and harvest
 costs. The functions are sensitive to tree species, mean diameter of the
 harvested trees, stand quality and harvest procedure. The functions
@@ -1817,7 +1817,7 @@ wood_net_revenues(10,
                     price.ref.assortment = c(300, 80, 50)))
 ```
 
-<h2><em><a name="fct_get_species_codes">get_species_codes</a></em></h2>
+<h2><em><a name="fct_get_species_codes">get_species_codes()</a></em></h2>
 
 The function shows all available species, species codes and species
 assignments to groups for the economic valuation.
