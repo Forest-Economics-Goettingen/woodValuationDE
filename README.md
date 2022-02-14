@@ -113,16 +113,18 @@ net revenues (see Fig. 1).
 </figure>
 
 <br><strong>woodValuationDE</strong> allows for estimating the wood
-value referring to the volume of the standing trees. Volume losses
-due to harvest cuts and residuals, e.g. due to fixed assortment length,
-are applied based on the harvest volume proportion functions:
+value referring to the volume over bark of the standing trees to be
+harvested (German unit: Vfm) as usually provided by yield tables and
+single-tree simulation models. Volume losses due to harvest cuts and
+residuals (in German: X-Holz and NVD-Holz), e.g. due to fixed assortment
+length, are applied based on the harvest volume proportion functions:
 <a href="#fct_vol_salable"><em>vol_salable()</em></a> provides the 
 share of salable volume relative to the volume over bark of the standing
 trees that are to be harvested. It represents the volume that is
 utilized and taken out of the forest stand and is the relevant volume
 unit for the revenues.
 <a href="#fct_vol_skidded"><em>vol_skidded()</em></a> provides
-the share of skidded volume relative to the volume over bark of th
+the share of skidded volume relative to the volume over bark of the
 standing trees that are to be harvested. This volume share is brought
 to the forest road and represents the relevant volume unit for
 remuneration for the harvest, i.e. the harvest costs. The salable volume
