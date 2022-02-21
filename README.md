@@ -555,9 +555,9 @@ listed in <a href="#tab3">Tab. 3</a>.
 | <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
 | <i>"ips.fuchs.2021"</i>          | 0.67     | \-        | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
 | <i>"ips.timely.fuchs.2021"</i>   | 0.88     | \-        | [Fuchs et al. (2021)]( #fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
-| <i>"stand.damage.fuchs"</i>      | 0.96     | 0.81      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
-| <i>"regional.calamity.fuchs"</i> | 0.68     | 0.76      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
-| <i>"national.calamity.fuchs"</i> | 0.43     | 0.61      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"stand.damage.fuchs"</i>      | 0.95     | 0.85      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
+| <i>"regional.disturbance.fuchs"</i> | 0.71     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"transregional.calamity.fuchs"</i> | 0.48     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
 
 <h3>Input</h3>
 
@@ -671,10 +671,10 @@ calamity.factors <- dplyr::tibble(
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
                             "ips.fuchs.2021",
-                            "ips.timely.fuchs.2021",
+                            "ips.timely.2021",
                             "stand.damage.fuchs",
-                            "regional.calamity.fuchs",
-                            "national.calamity.fuchs"),
+                            "regional.disturbance.fuchs",
+                            "transregional.calamity.fuchs"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -700,9 +700,9 @@ calamity.factors <- dplyr::tibble(
                         NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
-                      1.00, 1.00,
-                      1.00, 1.00,
-                      1.00, 1.00),
+                      1.15, 1.15,
+                      1.15, 1.15,
+                      1.25, 1.25),
       cost.additional = c(0.0, 0.0,
                           0.0, 0.0,
                           0.0, 0.0,
@@ -712,9 +712,9 @@ calamity.factors <- dplyr::tibble(
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
-                          2.0, 2.0,
-                          2.5, 2.5,
-                          5.0, 5.0)
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0)
     )
 ```
 
@@ -762,11 +762,11 @@ wood_revenues(40,
               rep("spruce", 7),
               calamity.type = c("none",
                                 "calamity.dieter.2001",
-                                "ips",
-                                "ips.timely",
+                                "ips.fuchs.2021",
+                                "ips.timely.fuchs.2021",
                                 "stand.damage.fuchs",
-                                "regional.calamity.fuchs",
-                                "national.calamity.fuchs"))
+                                "regional.disturbance.fuchs",
+                                "transregional.calamity.fuchs"))
 
 # user-defined calamities with respective changes in wood revenues
 wood_revenues(40,
@@ -890,9 +890,9 @@ implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 | <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
 | <i>"ips.fuchs.2021"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
 | <i>"ips.timely.fuchs.2021"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
-| <i>"stand.damage.fuchs"</i>      | 1.00 | 2.00 | 1.00 | 2.00 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
-| <i>"regional.calamity.fuchs"</i> | 1.00 | 2.50 | 1.00 | 2.50 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for regional damages with smaller harvest volumes based on contracts of HessenForst. |
-| <i>"national.calamity.fuchs"</i> | 1.00 | 5.00 | 1.00 | 5.00 | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for national damages with smaller harvest volumes and a high demand for timely harvest capacities, based on contracts of HessenForst. |
+| <i>"stand.damage.fuchs"</i>      | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"regional.disturbance.fuchs"</i> | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for regional damages with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"transregional.calamity.fuchs"</i> | 1.25 | NA   | 1.25 | NA   | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for national damages with smaller harvest volumes and a high demand for timely harvest capacities, based on contracts of HessenForst. |
 
 <h3>Input</h3>
 
@@ -955,8 +955,8 @@ calamity.factors <- dplyr::tibble(
                             "ips.fuchs.2021",
                             "ips.timely.2021",
                             "stand.damage.fuchs",
-                            "regional.calamity.fuchs",
-                            "national.calamity.fuchs"),
+                            "regional.disturbance.fuchs",
+                            "transregional.calamity.fuchs"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -982,9 +982,9 @@ calamity.factors <- dplyr::tibble(
                         NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
-                      1.00, 1.00,
-                      1.00, 1.00,
-                      1.00, 1.00),
+                      1.15, 1.15,
+                      1.15, 1.15,
+                      1.25, 1.25),
       cost.additional = c(0.0, 0.0,
                           0.0, 0.0,
                           0.0, 0.0,
@@ -994,9 +994,9 @@ calamity.factors <- dplyr::tibble(
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
-                          2.0, 2.0,
-                          2.5, 2.5,
-                          5.0, 5.0)
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0)
     )
 ```
 
@@ -1042,11 +1042,12 @@ harvest_costs(40,
 harvest_costs(40,
               rep("spruce", 6),
               calamity.type = c("none",
-                                "ips",
-                                "ips.timely",
+                                "calamity.dieter.2001",
+                                "ips.fuchs.2021",
+                                "ips.timely.fuchs.2021",
                                 "stand.damage.fuchs",
-                                "regional.calamity.fuchs",
-                                "national.calamity.fuchs"))
+                                "regional.disturbance.fuchs",
+                                "transregional.calamity.fuchs"))
 
 # user-defined calamities with respective changes in harvest costs
 harvest_costs(40,
@@ -1212,10 +1213,10 @@ calamity.factors <- dplyr::tibble(
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
                             "ips.fuchs.2021",
-                            "ips.timely.fuchs.2021",
+                            "ips.timely.2021",
                             "stand.damage.fuchs",
-                            "regional.calamity.fuchs",
-                            "national.calamity.fuchs"),
+                            "regional.disturbance.fuchs",
+                            "transregional.calamity.fuchs"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1241,9 +1242,9 @@ calamity.factors <- dplyr::tibble(
                         NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
-                      1.00, 1.00,
-                      1.00, 1.00,
-                      1.00, 1.00),
+                      1.15, 1.15,
+                      1.15, 1.15,
+                      1.25, 1.25),
       cost.additional = c(0.0, 0.0,
                           0.0, 0.0,
                           0.0, 0.0,
@@ -1253,9 +1254,9 @@ calamity.factors <- dplyr::tibble(
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
-                          2.0, 2.0,
-                          2.5, 2.5,
-                          5.0, 5.0)
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0)
     )
 ```
 
@@ -1308,11 +1309,12 @@ wood_valuation(10,
                40,
                rep("spruce", 6),
                calamity.type = c("none",
-                                 "ips",
-                                 "ips.timely",
-                                 "stand.damage.fuchs",
-                                 "regional.calamity.fuchs",
-                                 "national.calamity.fuchs"))
+                                "calamity.dieter.2001",
+                                "ips.fuchs.2021",
+                                "ips.timely.fuchs.2021",
+                                "stand.damage.fuchs",
+                                "regional.disturbance.fuchs",
+                                "transregional.calamity.fuchs"))
 
 # user-defined calamities with respective changes in harvest costs and wood revenues
 wood_valuation(10,
@@ -1490,10 +1492,10 @@ calamity.factors <- dplyr::tibble(
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
                             "ips.fuchs.2021",
-                            "ips.timely.fuchs.2021",
+                            "ips.timely.2021",
                             "stand.damage.fuchs",
-                            "regional.calamity.fuchs",
-                            "national.calamity.fuchs"),
+                            "regional.disturbance.fuchs",
+                            "transregional.calamity.fuchs"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1519,9 +1521,9 @@ calamity.factors <- dplyr::tibble(
                         NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
-                      1.00, 1.00,
-                      1.00, 1.00,
-                      1.00, 1.00),
+                      1.15, 1.15,
+                      1.15, 1.15,
+                      1.25, 1.25),
       cost.additional = c(0.0, 0.0,
                           0.0, 0.0,
                           0.0, 0.0,
@@ -1531,9 +1533,9 @@ calamity.factors <- dplyr::tibble(
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
-                          2.0, 2.0,
-                          2.5, 2.5,
-                          5.0, 5.0)
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0)
     )
 ```
 
@@ -1585,11 +1587,12 @@ wood_net_revenues(10,
                   40,
                   rep("spruce", 6),
                   calamity.type = c("none",
-                                    "ips",
-                                    "ips.timely",
+                                    "calamity.dieter.2001",
+                                    "ips.fuchs.2021",
+                                    "ips.timely.fuchs.2021",
                                     "stand.damage.fuchs",
-                                    "regional.calamity.fuchs",
-                                    "national.calamity.fuchs"))
+                                    "regional.disturbance.fuchs",
+                                    "transregional.calamity.fuchs"))
 
 # user-defined calamities with respective changes in harvest costs and wood revenues
 wood_net_revenues(10,
