@@ -69,9 +69,9 @@ PrepareTimberContrMarginParameters <- function() {
                         NA,   NA,
                       1.00,   NA,
                       1.00,   NA,
-                      1.00, 1.00,
-                      1.00, 1.00,
-                      1.00, 1.00),
+                      1.15, 1.15,
+                      1.15, 1.15,
+                      1.25, 1.25),
       cost.additional = c(0.0, 0.0,
                           0.0, 0.0,
                           0.0, 0.0,
@@ -81,9 +81,9 @@ PrepareTimberContrMarginParameters <- function() {
                           0.0, 0.0,
                           2.5,  NA,
                           7.5,  NA,
-                          2.0, 2.0,
-                          2.5, 2.5,
-                          5.0, 5.0)
+                          0.0, 0.0,
+                          0.0, 0.0,
+                          0.0, 0.0)
     )
   )
 

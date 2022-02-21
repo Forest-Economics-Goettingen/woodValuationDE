@@ -1,8 +1,8 @@
-##--##############################--##
-#### Share of salable wood volume ####
-##--##############################--##
+##--################--##
+#### Recode Species ####
+####################--##
 
-#' Convert species names in codes
+#' Convert species names to codes
 #'
 #' The function converts species names in codes and assigns species groups for
 #' the wood valuation procedure.

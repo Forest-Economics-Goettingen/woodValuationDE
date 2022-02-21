@@ -2,15 +2,18 @@
 #### Share of skidded wood volume ####
 ##--##############################--##
 
-#' Share of standing tree volume which is skidded
+#' Relative share of the volume over bark that is skidded
 #'
-#' The function estimates the share of standing wood volume which is skidded.
-#' This is the share of salable volume, but excluding private fuel wood since
-#' this is not commercially skidded. The share of skidded wood is required to
-#' derive the harvest costs per unit standing volume. The function is based on
+#' The function estimates the skidded share of wood volume. It is expressed in
+#' relation to the volume over bark (German unit: Vfm) as usually provided by
+#' yield tables and forest simulators. This includes all pulp wood and saw wood.
+#' It is assumed that the fuel wood assortments are processed by private
+#' individuals and are thus not commercially delivered to the forest road. The
+#' share of salable wood is required to derive the costs for harvesting and
+#' skidding per cubic meter volume over bark. The function is based on
 #' the assortment tables of Offer and Staupendahl (2018) and its derivation is
 #' described in Fuchs et al. (in preparation). The underlying assortment tables
-#' are based on data of HessenForst, the forest administration of the Federal
+#' are based on data of HessenForst, the public forest service of the Federal
 #' State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
 #' readme.
 #'
@@ -19,14 +22,14 @@
 #' @param species Tree species, using an available \code{species.code.type}. For
 #'                a list with the available species and codes call
 #'                \code{\link{get_species_codes}}.
-#' @param value.level Stand quality expressed as integer of \code{1:3}, with
-#'                    \code{1} for an extraordinary high stand quality with high
-#'                    shares of wood suitable for furniture, \code{2} for an
-#'                    average quality, and \code{3} for an extraordinary low
-#'                    quality (e.g. trees with many thick branches or stands
-#'                    with massive ungulate damages). The value.levels refer to
-#'                    the applied assortment tables (Offer and Staupendahl,
-#'                    2018).
+#' @param value.level Stand quality expressed as an integer of \code{1:3}, with
+#'                    \code{1} for an extraordinarily high stand quality with 
+#'                    high shares of wood suitable for high-valued usages such
+#'                    as furniture, \code{2} for an average quality, and
+#'                    \code{3} for an extraordinarily low quality (e.g., trees
+#'                    with many thick branches or stands). The
+#'                    \code{value.level}s refer to the applied assortment tables
+#'                    (Offer and Staupendahl, 2018).
 #' @param process.type Type of harvest process, with \code{"manually"} for
 #'                     motor-manual harvest using a chain saw,
 #'                     \code{"harvester"} for highly mechanized harvest
@@ -38,11 +41,11 @@
 #'                          Saxony, Germany. For a list with the available
 #'                          species and codes call
 #'                          \code{\link{get_species_codes}}.
-#' @return A vector with relative shares of skidded wood volume.
-#' @references Fuchs, Jasper M., von Bodelschwingh, Hilmar, Paul, Carola,
-#'             Husmann, Kai (in preparation): Applying Time Series Analysis to
-#'             Quantify the Impact of Quality and Supply Changes After
-#'             Disturbances on Wood Revenues.
+#' @return A vector with relative shares of salable wood volume.
+#' @references Fuchs, Jasper M., von Bodelschwingh, Hilmar, Koster, Roman,
+#'             Moehring, Bernhard, Paul, Carola, Husmann, Kai (in preparation):
+#'             woodValuationDE: A consistent framework for wood valuation in
+#'             Germany
 #' @references Offer, Armin and Staupendahl, Kai (2018): Holzwerbungskosten- und
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).
