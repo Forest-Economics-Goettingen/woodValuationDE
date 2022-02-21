@@ -267,19 +267,11 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-<ul>
-  <li>
-    <i>1</i>: extraordinarily high stand quality with high shares of wood
-    suitable for furniture
-  </li>
-  <li>
-    <i>2</i>: average quality
-  </li>
-  <li>
-    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
-    branches)
-  </li>
-</ul>
+* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
+  for furniture
+* <i>2</i>: average quality
+* <i>3</i>: extraordinarily low quality (e.g., trees with many thick
+  branches)
 
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
@@ -288,19 +280,11 @@ The <i>value.levels</i> refer to the applied assortment tables
 
 Type of harvest process:
 
-<ul>
-  <li>
-    <i>"manually"</i>: motor-manual harvest using a chain saw
-  </li>
-  <li>
-    <i>"harvester"</i>: highly mechanized harvest machines
-  </li>
-  <li>
-    <i>"combined"</i>: a combination of the previous types dependent on
-    the mean diameter.
-  </li>
-</ul>
-
+* <i>"manually"</i>: motor-manual harvest using a chain saw
+* <i>"harvester"</i>: highly mechanized harvest machines
+* <i>"combined"</i>: a combination of the previous types dependent on
+  the mean diameter
+  
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
@@ -312,52 +296,23 @@ mechanized harvests,
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
 
-<ul>
-  <li>
-    softwood species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 50 cm: linear increase of
-      <i>"manually"</i>, maximum 50 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
-      <i>"manually"</i>.
-    </li>
-  </ul>
-  <li>
-    deciduous species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 40 cm: linear increase of
-      <i>"manually"</i>, maximum 100 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
-    </li>
-  </ul>
-</ul>
+* softwood species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
+    <i>"manually"</i>, maximum 50 %,
+  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+    <i>"manually"</i>.
+* deciduous species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
+  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
 
 <h4><i>species.code.type</i></h4>
 
 The type of code in which <i>species</i> is given.
 
-<ul>
-  <li>
-    <i>"en"</i>: English species names
-  </li>
-  <li>
-    <i>"nds"</i>: numeric species codes used in Lower Saxony, Germany.
-  </li>
-</ul>
+* "en"</i>: English species names
+* "nds"</i>: numeric species codes used in Lower Saxony, Germany.
 
 The list with the available species' codes is provided by:
 
@@ -631,19 +586,11 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-<ul>
-  <li>
-    <i>1</i>: extraordinarily high stand quality with high shares of wood
-    suitable for furniture
-  </li>
-  <li>
-    <i>2</i>: average quality
-  </li>
-  <li>
-    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
-    branches)
-  </li>
-</ul>
+* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
+  for furniture
+* <i>2</i>: average quality
+* <i>3</i>: extraordinarily low quality (e.g., trees with many thick
+  branches)
       
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
@@ -652,18 +599,10 @@ The <i>value.levels</i> refer to the applied assortment tables
 
 Type of harvest process:
     
-<ul>
-  <li>
-    <i>"manually"</i>: motor-manual harvest using a chain saw
-  </li>
-  <li>
-    <i>"harvester"</i>: highly mechanized harvest machines
-  </li>
-  <li>
-    <i>"combined"</i>: a combination of the previous types dependent on
-    the mean diameter.
-  </li>
-</ul>
+* <i>"manually"</i>: motor-manual harvest using a chain saw
+* <i>"harvester"</i>: highly mechanized harvest machines
+* <i>"combined"</i>: a combination of the previous types dependent on
+  the mean diameter
       
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
@@ -676,39 +615,16 @@ mechanized harvests,
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
                 
-<ul>
-  <li>
-    softwood species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 50 cm: linear increase of
-      <i>"manually"</i>, maximum 50 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
-      <i>"manually"</i>.
-    </li>
-  </ul>
-  <li>
-    deciduous species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 40 cm: linear increase of
-      <i>"manually"</i>, maximum 100 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
-    </li>
-  </ul>
-</ul>
+* softwood species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
+    <i>"manually"</i>, maximum 50 %,
+  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+    <i>"manually"</i>.
+* deciduous species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
+  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
   
 
 <h4><i>price.ref.assortment</i></h4>
@@ -806,14 +722,8 @@ calamity.factors <- dplyr::tibble(
 
 The type of code in which <i>species</i> is given.
 
-<ul>
-  <li>
-    <i>"en"</i>: English species names
-  </li>
-  <li>
-    <i>"nds"</i>: numeric species codes used in Lower Saxony, Germany.
-  </li>
-</ul>
+* "en"</i>: English species names
+* "nds"</i>: numeric species codes used in Lower Saxony, Germany.
 
 The list with the available species' codes is provided by:
 
@@ -1094,14 +1004,8 @@ calamity.factors <- dplyr::tibble(
 
 The type of code in which <i>species</i> is given.
 
-<ul>
-  <li>
-    <i>"en"</i>: English species names
-  </li>
-  <li>
-    <i>"nds"</i>: numeric species codes used in Lower Saxony, Germany.
-  </li>
-</ul>
+* "en"</i>: English species names
+* "nds"</i>: numeric species codes used in Lower Saxony, Germany.
 
 The list with the available species codes is provided by:
 
@@ -1214,19 +1118,11 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-<ul>
-  <li>
-    <i>1</i>: extraordinarily high stand quality with high shares of wood
-    suitable for furniture
-  </li>
-  <li>
-    <i>2</i>: average quality
-  </li>
-  <li>
-    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
-    branches)
-  </li>
-</ul>
+* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
+  for furniture
+* <i>2</i>: average quality
+* <i>3</i>: extraordinarily low quality (e.g., trees with many thick
+  branches)
       
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
@@ -1245,18 +1141,10 @@ harvest cost model by
 
 Type of harvest process:
         
-<ul>
-  <li>
-    <i>"manually"</i>: motor-manual harvest using a chain saw
-  </li>
-  <li>
-    <i>"harvester"</i>: highly mechanized harvest machines
-  </li>
-  <li>
-    <i>"combined"</i>: a combination of the previous types dependent on
-    the mean diameter.
-  </li>
-</ul>
+* <i>"manually"</i>: motor-manual harvest using a chain saw
+* <i>"harvester"</i>: highly mechanized harvest machines
+* <i>"combined"</i>: a combination of the previous types dependent on
+  the mean diameter
         
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
@@ -1269,39 +1157,16 @@ mechanized harvests,
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
                 
-<ul>
-  <li>
-    softwood species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 50 cm: linear increase of
-      <i>"manually"</i>, maximum 50 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
-      <i>"manually"</i>.
-    </li>
-  </ul>
-  <li>
-    deciduous species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 40 cm: linear increase of
-      <i>"manually"</i>, maximum 100 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
-    </li>
-  </ul>
-</ul>
+* softwood species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
+    <i>"manually"</i>, maximum 50 %,
+  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+    <i>"manually"</i>.
+* deciduous species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
+  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
 
 <h4><i>price.ref.assortment</i></h4>
 
@@ -1398,14 +1263,8 @@ calamity.factors <- dplyr::tibble(
 
 The type of code in which <i>species</i> is given.
               
-<ul>
-  <li>
-    <i>"en"</i>: English species names
-  </li>
-  <li>
-    <i>"nds"</i>: numeric species codes used in Lower Saxony, Germany.
-  </li>
-</ul>
+* "en"</i>: English species names
+* "nds"</i>: numeric species codes used in Lower Saxony, Germany.
                 
 The list with the available species' codes is provided by:
 
@@ -1537,19 +1396,11 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-<ul>
-  <li>
-    <i>1</i>: extraordinarily high stand quality with high shares of wood
-    suitable for furniture
-  </li>
-  <li>
-    <i>2</i>: average quality
-  </li>
-  <li>
-    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
-    branches)
-  </li>
-</ul>
+* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
+  for furniture
+* <i>2</i>: average quality
+* <i>3</i>: extraordinarily low quality (e.g., trees with many thick
+  branches)
       
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
@@ -1568,18 +1419,10 @@ harvest cost model by
 
 Type of harvest process:
         
-<ul>
-  <li>
-    <i>"manually"</i>: motor-manual harvest using a chain saw
-  </li>
-  <li>
-    <i>"harvester"</i>: highly mechanized harvest machines
-  </li>
-  <li>
-    <i>"combined"</i>: a combination of the previous types dependent on
-    the mean diameter.
-  </li>
-</ul>
+* <i>"manually"</i>: motor-manual harvest using a chain saw
+* <i>"harvester"</i>: highly mechanized harvest machines
+* <i>"combined"</i>: a combination of the previous types dependent on
+  the mean diameter
 
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
@@ -1592,39 +1435,16 @@ mechanized harvests,
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
               
-<ul>
-  <li>
-    softwood species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 50 cm: linear increase of
-      <i>"manually"</i>, maximum 50 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
-      <i>"manually"</i>.
-    </li>
-  </ul>
-  <li>
-    deciduous species
-  </li>
-  <ul>
-    <li>
-      <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
-    </li>
-    <li>
-      20 cm \< <i>diameter.q</i> \< 40 cm: linear increase of
-      <i>"manually"</i>, maximum 100 %,
-    </li>
-    <li>
-      diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
-    </li>
-  </ul>
-</ul>
+* softwood species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
+    <i>"manually"</i>, maximum 50 %,
+  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+    <i>"manually"</i>.
+* deciduous species
+  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
+  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
 
 <h4><i>price.ref.assortment</i></h4>
 
@@ -1721,14 +1541,8 @@ calamity.factors <- dplyr::tibble(
 
 The type of code in which <i>species</i> is given.
               
-<ul>
-  <li>
-    <i>"en"</i>: English species names
-  </li>
-  <li>
-    <i>"nds"</i>: numeric species codes used in Lower Saxony, Germany.
-  </li>
-</ul>
+* "en"</i>: English species names
+* "nds"</i>: numeric species codes used in Lower Saxony, Germany.
                 
 The list with the available species' codes is provided by:
 
