@@ -203,8 +203,8 @@ fitting, the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
-  <i>v<sub>salable</sub></i> = <i>&alpha;</i> \* exp( -exp(
-  <i>&beta;</i> / <i>&alpha;</i> \* exp(1) \* (<i>&gamma;</i> -
+  <i>v<sub>salable</sub></i> = <i>&alpha;</i> * exp( -exp(
+  <i>&beta;</i> / <i>&alpha;</i> * exp(1) * (<i>&gamma;</i> -
   <i>d<sub>q</sub></i>))),
 </p>
 
@@ -388,8 +388,8 @@ the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
-  <i>v<sub>skidded</sub></i> = <i>&alpha;</i> \* exp( -exp(
-  <i>&beta;</i> / <i>&alpha;</i> \* exp(1) \* (<i>&gamma;</i> -
+  <i>v<sub>skidded</sub></i> = <i>&alpha;</i> * exp( -exp(
+  <i>&beta;</i> / <i>&alpha;</i> * exp(1) * (<i>&gamma;</i> -
   <i>d<sub>q</sub></i>))),
 </p>
 
@@ -476,9 +476,9 @@ to derive average wood revenues for diameter-dependent assortment
 compositions. The fitted model function is:
 
 <p align="center">
-  <i>s</i> = <i>&alpha;</i> \* <i>d<sub>q</sub></i><sup>4</sup> +
-  <i>&beta;</i> \* <i>d<sub>q</sub></i><sup>3</sup> + <i>&gamma;</i> \*
-  <i>d<sub>q</sub></i><sup>2</sup> + <i>&delta;</i> \*
+  <i>s</i> = <i>&alpha;</i> * <i>d<sub>q</sub></i><sup>4</sup> +
+  <i>&beta;</i> * <i>d<sub>q</sub></i><sup>3</sup> + <i>&gamma;</i> *
+  <i>d<sub>q</sub></i><sup>2</sup> + <i>&delta;</i> *
   <i>d<sub>q</sub></i> + <i>&epsilon;</i>,
 </p>
 
@@ -504,7 +504,7 @@ wood revenues of the model <i>s<sub>original</sub></i> will be updated
 <p align="center">
   <i>s<sub>updated</sub></i> =
   <i>p<sub>reference.assortment,user</sub></i> /
-  <i>p<sub>reference.assortment,original</sub></i> \*
+  <i>p<sub>reference.assortment,original</sub></i> *
   <i>s<sub>original</sub></i>.
 </p>
 
@@ -820,7 +820,7 @@ from [KWF (2006)](#kwf.2006) and [AFL (2014)](#afl.2014). The fitted
 model function is:
 
 <p align="center">
-  <i>c</i> = max(<i>&alpha;</i> \*
+  <i>c</i> = max(<i>&alpha;</i> *
   <i>d<sub>q</sub></i><sup><i>&beta;</i></sup> + <i>&gamma;</i>,
   <i>c<sub>max</sub></i>),
 </p>
