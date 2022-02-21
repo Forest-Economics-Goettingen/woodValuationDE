@@ -203,14 +203,14 @@ fitting, the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
-  <i>v<sub>salable</sub></i> = <i>$\alpha$</i> \* exp( -exp(
-  <i>$\beta$</i> / <i>$\alpha$</i> \* exp(1) \* (<i>$\gamma$</i> -
+  <i>v<sub>salable</sub></i> = <i>&alpha;</i> \* exp( -exp(
+  <i>&beta;</i> / <i>&alpha;</i> \* exp(1) \* (<i>&gamma;</i> -
   <i>d<sub>q</sub></i>))),
 </p>
 
 with the volume share of salable wood <i>v<sub>salable</sub></i>, the
 quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>$\alpha$</i>, <i>$\beta$</i> and <i>$\gamma$</i>.
+<i>&alpha;</i>, <i>&beta;</i> and <i>&gamma;</i>.
 
 <h3>Input</h3>
 
@@ -388,14 +388,14 @@ the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
-  <i>v<sub>skidded</sub></i> = <i>$\alpha$</i> \* exp( -exp(
-  <i>$\beta$</i> / <i>$\alpha$</i> \* exp(1) \* (<i>$\gamma$</i> -
+  <i>v<sub>skidded</sub></i> = <i>&alpha;</i> \* exp( -exp(
+  <i>&beta;</i> / <i>&alpha;</i> \* exp(1) \* (<i>&gamma;</i> -
   <i>d<sub>q</sub></i>))),
 </p>
 
 with the volume share of skidded wood <i>v<sub>skidded</sub></i>, the
 quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>$\alpha$</i>, <i>$\beta$</i> and <i>$\gamma$</i>.
+<i>&alpha;</i>, <i>&beta;</i> and <i>&gamma;</i>.
 
 <h3>Input</h3>
 
@@ -476,14 +476,14 @@ to derive average wood revenues for diameter-dependent assortment
 compositions. The fitted model function is:
 
 <p align="center">
-  <i>s</i> = <i>$\alpha$</i> \* <i>d<sub>q</sub></i><sup>4</sup> +
-  <i>$\beta$</i> \* <i>d<sub>q</sub></i><sup>3</sup> + <i>$\gamma$</i> \*
-  <i>d<sub>q</sub></i><sup>2</sup> + <i>$\delta$</i> \*
-  <i>d<sub>q</sub></i> + <i>$\epsilon$</i>,
+  <i>s</i> = <i>&alpha;</i> \* <i>d<sub>q</sub></i><sup>4</sup> +
+  <i>&beta;</i> \* <i>d<sub>q</sub></i><sup>3</sup> + <i>&gamma;</i> \*
+  <i>d<sub>q</sub></i><sup>2</sup> + <i>&delta;</i> \*
+  <i>d<sub>q</sub></i> + <i>&epsilon;</i>,
 </p>
 
 with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>$\alpha$</i> to <i>$\epsilon$</i>.
+<i>&alpha;</i> to <i>&epsilon;</i>.
 
 The model estimates wood revenues referring to Hessian market conditions
 in the time period from 2010 to 2015. Via the market price of a reference
@@ -820,13 +820,13 @@ from [KWF (2006)](#kwf.2006) and [AFL (2014)](#afl.2014). The fitted
 model function is:
 
 <p align="center">
-  <i>c</i> = max(<i>$\alpha$</i> \*
-  <i>d<sub>q</sub></i><sup><i>$\beta$</i></sup> + <i>$\gamma$</i>,
+  <i>c</i> = max(<i>&alpha;</i> \*
+  <i>d<sub>q</sub></i><sup><i>&beta;</i></sup> + <i>&gamma;</i>,
   <i>c<sub>max</sub></i>),
 </p>
 
 with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>$\alpha$</i> to <i>$\gamma$</i> and the maximum costs
+<i>&alpha;</i> to <i>&gamma;</i> and the maximum costs
 <i>c<sub>max</sub></i>. The harvest costs were derived for a smaller
 number of economic species groups, thus, the species assignments differ
 from those for
