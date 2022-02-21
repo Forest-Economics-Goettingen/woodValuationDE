@@ -1,8 +1,8 @@
 woodValuationDE
 ===================================
 
-A package for monetary valuation of wood in German forests, including
-estimations of the harvest volume proportions, wood revenues and harvest
+A package for the monetary valuation of wood in German forests, including
+estimations of harvest volume proportions, wood revenues and harvest
 costs. The functions are sensitive to tree species, mean diameter of the
 harvested trees, stand quality and harvest procedure. The functions
 include estimations for the consequences of disturbances on revenues and
@@ -14,15 +14,15 @@ costs.
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#structure">Package Structure</a></li>
   <li><a href="#functions">Functions</a></li>
-  <ul>
-      <a href="#fct_vol_salable"><li>vol_salable()</li>
-      </a> <a href="#fct_vol_skidded"><li>vol_skidded()</li></a>
-      <a href="#fct_wood_revenues"><li>wood_revenues()</li></a>
-      <a href="#fct_harvest_costs"><li>harvest_costs()</li></a>
-      <a href="#fct_wood_valuation"><li>wood_valuation()</li></a>
-      <a href="#fct_wood_net_revenues"><li>wood_net_revenues()</li></a>
-      <a href="#fct_get_species_codes"><li>get_species_codes()</li></a>
-  </ul>
+      <ul>
+          <a href="#fct_vol_salable"><li>vol_salable()</li>
+          </a> <a href="#fct_vol_skidded"><li>vol_skidded()</li></a>
+          <a href="#fct_wood_revenues"><li>wood_revenues()</li></a>
+          <a href="#fct_harvest_costs"><li>harvest_costs()</li></a>
+          <a href="#fct_wood_valuation"><li>wood_valuation()</li></a>
+          <a href="#fct_wood_net_revenues"><li>wood_net_revenues()</li></a>
+          <a href="#fct_get_species_codes"><li>get_species_codes()</li></a>
+      </ul>
   <li><a href="#examples">Examples</a></li>
   <li><a href="#citation">Recommended Citation</a></li>
   <li><a href="#references">References</a></li>
@@ -32,11 +32,11 @@ costs.
 
 When assessing the multiple ecosystem services provided by German
 forests, economic indicators for productive ecosystem services are
-relevant but not always easily estimable as their calculation is time
-consuming and requires many quantitative information or assumption on
-them. The net wood revenues, as basis for several indicators related to
-income from wood production, depend, a.o., on tree species, diameter,
-and stand quality. Also disturbance events affect the net revenues, as
+relevant but are not always easily estimable. This is because their calculation
+is time consuming and requires either quantitative information or many
+assumptions on them. The net wood revenues, as a basis for several indicators
+related to income from wood production, depend, a.o., on tree species, diameter,
+and stand quality. Disturbance events also affect the net revenues, as
 wood quality is reduced due to mechanical damage, market prices are
 reduced due to increasing wood supply and harvest costs might increase
 [Fuchs et al. (under review)](#fuchs.underreview).
@@ -44,7 +44,7 @@ reduced due to increasing wood supply and harvest costs might increase
 Here, <strong>woodValuationDE</strong> contributes with a comprehensive
 wood valuation model considering the various influences on 
 <em>assortment composition</em>, <em>harvest costs</em> and <em>wood
-revenues</em>. It simplifies the estimation of realistic wood values for
+revenues</em>. It simplifies the estimation of realistic wood values for a
 broad field of bioeconomic applications. A particular strength of
 <strong>woodValuationDE</strong> is the consistency of the data
 underlying the various models, including a set of disturbance scenarios.
@@ -83,9 +83,9 @@ been applied in bioeconomic simulations for Germany.</i>
 
 <i><sup><a id="fndieter">2</a></sup>The assumed factors according to
 [Moellmann and Moehring (2017)](#moellmann.2017) are an exception since
-they are based surveys of forest owners and managers in entire Germany.
-However, we included them, since they provide estimates distinguishing
-between the disturbances agents.</i>
+they are based on surveys of forest owners and managers in the entirety of
+Germany. However, we included them, since they provide estimates distinguishing
+between the disturbance agents.</i>
 
 <h1><a name="structure">Package Structure</a></h1>
 
@@ -98,7 +98,7 @@ net revenues (see Fig. 1).
   <img src="./man/fig/packagestructure.png" width="100%"/>
   <figcaption>
     <i>Fig. 1:</i> Structural outline of
-    <strong>woodValuationDE</strong>with user input and output as well
+    <strong>woodValuationDE</strong> with user input and output as well
     as the main functions. Font: bold: main elements, italics:
     functions. Color: blue: function derived in 
     [Fuchs et al. (in preparation)](#fuchs.inpreparation) based on
@@ -107,12 +107,12 @@ net revenues (see Fig. 1).
     calamity factors derived in [Dieter (2001)](#dieter.2001),
     [Fuchs et al. (2021)](#fuchs.2021), and
     [Fuchs et al. (under review)](#fuchs.underreview). Box shape:
-    rectangle: functions and factors, parallelogram: user input and
+    rectangular: functions and factors, parallelogram: user input and
     output.
   </figcaption>
 </figure>
 
-<br><strong>woodValuationDE</strong> allows for estimating the wood
+<br><strong>woodValuationDE</strong> allows for the estimation of wood
 value referring to the volume over bark of the standing trees to be
 harvested (German unit: Vfm) as usually provided by yield tables and
 single-tree simulation models. Volume losses due to harvest cuts and
@@ -145,7 +145,7 @@ reference assortments.
 
 The functions <a href="fct_wood_valuation"><em>wood_valuation()</em></a>
 and <a href="fct_wood_net_revenues"><em>wood_net_revenues()</em></a>
-provide wrappers for easily applying the wood valuation procedure
+provide wrappers for easy application of the wood valuation procedure
 implemented in <strong>woodValuationDE</strong>. Both functions call the
 previously described ones and combine them to derive the net wood
 revenues. While <a href="fct_wood_valuation"><em>wood_valuation()</em>
@@ -232,7 +232,7 @@ The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
 The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species, codes, and their assignments
+valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
 
 ``` r
@@ -269,18 +269,18 @@ get_species_codes()
 
 <h4><i>value.level</i></h4>
 
-Stand quality, expressed as integer value of 1:3:
+Stand quality, expressed as an integer value of 1:3:
 
 <ul>
   <li>
-    <i>1</i>: extraordinary high stand quality with high shares of wood
+    <i>1</i>: extraordinarily high stand quality with high shares of wood
     suitable for furniture
   </li>
   <li>
     <i>2</i>: average quality
   </li>
   <li>
-    <i>3</i>: extraordinary low quality (e.g. trees with many thick
+    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
     branches)
   </li>
 </ul>
@@ -406,9 +406,9 @@ vol_salable(rep(seq(20, 50, 10),
 
 The function estimates the skidded share of the volume over bark of the
 standing trees that are to be harvested. It is the share of salable
-volume, but excluding private fuel wood since this is not commercially
-skidded. The share of skidded wood is required to derive the harvest
-costs per unit standing volume. The function is based on the assortment
+volume but excludes fuel wood proportions that are not assumed to be
+commercially skidded. The share of skidded wood is required to derive the
+harvest costs per unit standing volume. The function is based on the assortment
 tables of [Offer and Staupendahl (2018)](#offer.2018) and its derivation
 is described in [Fuchs et al. (in preparation)](#fuchs.inpreparation).
 The underlying assortment tables are based on data of HessenForst, the
@@ -420,20 +420,20 @@ The assortment tables of
 [Offer and Staupendahl (2018)](#offer.2018) provide conversion factors
 from the volume of standing trees over bark to the harvested volume
 under bark. In addition, they provide the share of non-utilized wood,
-e.g. due to fixed assortment lengths, and private fuelwood thereof. The
+e.g., due to fixed assortment lengths, and private fuelwood thereof. The
 assortment tables were derived for HessenForst with the calculation
 program Holzernte 7.1 [(Schöpfer et al., 2003)](#schopfer.2003) using
 model stands, which were designed by a group of forestry experts, and
-harvest and sale data of HessenForst. More details on the assortment
+harvest and sales data of HessenForst. More details on the assortment
 tables and their derivation are provided in
 [Offer and Staupendahl (2008)](#offer.2008) and
 [Offer and Staupendahl (2009)](#offer.2009).
 
 We derived the share of skidded volume based on these assortment tables.
 Since the assortment tables only provide the values in diameter steps of
-2 cm, a Gompertz functions was fitted in order to have a continuous
-model (see [Fuchs et al., in preparation](#fuchs.inpreparation)). For
-the model fitting, the modified formulation according to
+2 cm, a Gompertz function was fitted to have a continuous model (see
+[Fuchs et al., in preparation](#fuchs.inpreparation)). For the model fitting,
+the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
@@ -535,11 +535,11 @@ with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
 <i>$\alpha$</i> to <i>$\epsilon$</i>.
 
 The model estimates wood revenues referring to Hessian market conditions
-in the time period 2010 to 2015. Via the market price of a reference
+in the time period from 2010 to 2015. Via the market price of a reference
 assortment for each species, this can be adapted to other market
 conditions. The references assortments (saw wood) are defined by
 diameter class (1: 10-19 cm, 2: 20-29..., with 1a: 10-14 cm and 1b:
-15-19 cm) and quality of A to D (with A the highest and
+15-19 cm) and a quality from A to D (with A the highest and
 D the lowest quality) as usually applied in Germany (see
 [Deutscher Forstwirtschaftsrat and Deutscher Holzwirtschaftsrat, 2020](#deutscherforstwirtschaftsrat.2020)).
 The original prices of the reference assortments
@@ -579,7 +579,7 @@ wood revenues of the model <i>s<sub>original</sub></i> will be updated
 | poplar               | B 4                  |                      45.43 |
 
 A particular strength of <strong>woodValuationDE</strong> is the
-consideration of consequences of calamities. A broad set of previously
+consideration of the consequences of calamities. A broad set of previously
 published and often applied estimates for the consequences of
 disturbances is implemented. Additionally, users can implement their own
 assumptions. For wood revenues, a factor is multiplied with the
@@ -589,7 +589,7 @@ listed in <a href="#tab3">Tab. 3</a>.
 <br>
 
 <p align="center" id="tab3">
-  <i>Tab. 3:</i> Factors to reduce the wood revenues for salvage 
+  <i>Tab. 3:</i> Factors to reduce wood revenues for salvage 
   harvests that are implemented in <strong>woodValuationDE</strong>.
 </p>
 
@@ -624,7 +624,7 @@ The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
 The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species codes, and their assignments
+valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
       
 ``` r
@@ -633,18 +633,18 @@ get_species_codes()
 
 <h4><i>value.level</i></h4>
 
-Stand quality, expressed as integer value of 1:3:
-      
+Stand quality, expressed as an integer value of 1:3:
+
 <ul>
   <li>
-    <i>1</i>: extraordinary high stand quality with high shares of wood
+    <i>1</i>: extraordinarily high stand quality with high shares of wood
     suitable for furniture
   </li>
   <li>
     <i>2</i>: average quality
   </li>
   <li>
-    <i>3</i>: extraordinary low quality (e.g. trees with many thick
+    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
     branches)
   </li>
 </ul>
@@ -932,7 +932,7 @@ get_species_codes()
 ```
 
 The harvest costs are calculated under the assumption of combinations of
-harvest processes, depended on the quadratic mean of the tree diameters
+harvest processes, dependent on the quadratic mean of the tree diameters
 as well as the accessibility of the stand. The accessibility is
 considered in three cost levels (see <a href="#tab4">Tab. 4</a>). To
 avoid unusually high harvest costs at smaller diameters,
@@ -980,7 +980,7 @@ implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 | <i>"fire.small.moellmann.2017"</i>    | 1.17 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. |
 | <i>"fire.large.moellmann.2017"</i>    | 1.09 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. |
 | <i>"storm.small.moellmann.2017"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
-| <i>"storm.large.moellmann.2017"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting least one compartment.
+| <i>"storm.large.moellmann.2017"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment.
 | <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
 | <i>"ips.fuchs.2021"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
 | <i>"ips.timely.fuchs.2021"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
@@ -1004,7 +1004,7 @@ The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
 The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species codes, and their assignments
+valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
 
 ``` r
@@ -1013,7 +1013,7 @@ get_species_codes()
 
 <h4><i>cost.level</i></h4>
 
-Accessibility of the stand for harvest operations expressed as integer
+Accessibility of the stand for harvest operations expressed as an integer
 of <i>1:3</i>, with <i>1</i> for standard conditions without
 limitations, <i>2</i> for moist sites or sites with a slope between 36
 % and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
@@ -1208,27 +1208,26 @@ The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
 The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species codes, and their assignments
+valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
-
 ``` r
 get_species_codes()
 ```
 
 <h4><i>value.level</i></h4>
 
-Stand quality, expressed as integer value of 1:3:
-      
+Stand quality, expressed as an integer value of 1:3:
+
 <ul>
   <li>
-    <i>1</i>: extraordinary high stand quality with high shares of wood
+    <i>1</i>: extraordinarily high stand quality with high shares of wood
     suitable for furniture
   </li>
   <li>
     <i>2</i>: average quality
   </li>
   <li>
-    <i>3</i>: extraordinary low quality (e.g. trees with many thick
+    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
     branches)
   </li>
 </ul>
@@ -1238,10 +1237,11 @@ The <i>value.levels</i> refer to the applied assortment tables
 
 <h4><i>cost.level</i></h4>
 
-Accessibility of the stand for harvest operations expressed as integer
-of 1:3, with 1 for standard conditions without limitations, 2 for moist
-sites or sites with a slope between 36 % and 58 %, and 3 for slopes \>
-58 %. The cost.levels refer to the harvest cost model by
+Accessibility of the stand for harvest operations expressed as an integer
+of <i>1:3</i>, with <i>1</i> for standard conditions without
+limitations, <i>2</i> for moist sites or sites with a slope between 36
+% and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
+harvest cost model by
 [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
@@ -1530,7 +1530,7 @@ The quadratic mean<sup>[3](#fndq)</sup> of the diameter at breast height
 The tree species, using one of the available <i>species.code.type</i>s.
 <a href="#tab1">Tab. 1</a> lists the most important genera and species
 implemented. Most species are assigned to economic species groups for
-the valuation. A list of available species codes, and their assignments
+valuation. A list of available species codes, and their assignments
 to valuation groups is provided by:
 
 ``` r
@@ -1539,18 +1539,18 @@ get_species_codes()
 
 <h4><i>value.level</i></h4>
 
-Stand quality, expressed as integer value of 1:3:
-    
+Stand quality, expressed as an integer value of 1:3:
+
 <ul>
   <li>
-    <i>1</i>: extraordinary high stand quality with high shares of wood
+    <i>1</i>: extraordinarily high stand quality with high shares of wood
     suitable for furniture
   </li>
   <li>
     <i>2</i>: average quality
   </li>
   <li>
-    <i>3</i>: extraordinary low quality (e.g. trees with many thick
+    <i>3</i>: extraordinarily low quality (e.g., trees with many thick
     branches)
   </li>
 </ul>
@@ -1560,10 +1560,11 @@ The <i>value.levels</i> refer to the applied assortment tables
 
 <h4><i>cost.level</i></h4>
 
-Accessibility of the stand for harvest operations expressed as integer
-of 1:3, with 1 for standard conditions without limitations, 2 for moist
-sites or sites with a slope between 36 % and 58 %, and 3 for slopes \>
-58 %. The cost.levels refer to the harvest cost model by
+Accessibility of the stand for harvest operations expressed as an integer
+of <i>1:3</i>, with <i>1</i> for standard conditions without
+limitations, <i>2</i> for moist sites or sites with a slope between 36
+% and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
+harvest cost model by
 [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
@@ -1876,6 +1877,8 @@ Portfolios. <em>Forestry</em>.
 <a id="fuchs.underreview">Fuchs</a>, Jasper M., von Bodelschwingh,
 Hilmar, Paul, Carola, Husmann, Kai (under review): Quantifying the
 consequences of disturbances on wood revenues with time series analyses.
+Preprint available at SSRN: <https://ssrn.com/abstract=4011837> or
+<http://dx.doi.org/10.2139/ssrn.4011837>
 
 <a id="fuchs.inpreparation">Fuchs</a>, Jasper M., von Bodelschwingh,
 Hilmar, Koster, Roman, Möhring, Bernhard, Paul, Carola, Husmann, Kai
