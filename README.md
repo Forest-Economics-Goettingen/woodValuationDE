@@ -10,23 +10,19 @@ costs.
 
 <h1><a name="menu"></a></h1>
 
-<ul>
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#structure">Package Structure</a></li>
-  <li><a href="#functions">Functions</a></li>
-      <ul>
-          <a href="#fct_vol_salable"><li>vol_salable()</li>
-          </a> <a href="#fct_vol_skidded"><li>vol_skidded()</li></a>
-          <a href="#fct_wood_revenues"><li>wood_revenues()</li></a>
-          <a href="#fct_harvest_costs"><li>harvest_costs()</li></a>
-          <a href="#fct_wood_valuation"><li>wood_valuation()</li></a>
-          <a href="#fct_wood_net_revenues"><li>wood_net_revenues()</li></a>
-          <a href="#fct_get_species_codes"><li>get_species_codes()</li></a>
-      </ul>
-  <li><a href="#examples">Examples</a></li>
-  <li><a href="#citation">Recommended Citation</a></li>
-  <li><a href="#references">References</a></li>
-</ul>
+1. <a href="#introduction">Introduction</a>
+2. <a href="#structure">Package Structure</a>
+3. <a href="#functions">Functions</a>
+   * <a href="#fct_vol_salable">vol_salable()</a>
+   * <a href="#fct_vol_skidded">vol_skidded()</a>
+   * <a href="#fct_wood_revenues">wood_revenues()</a>
+   * <a href="#fct_harvest_costs">harvest_costs()</a>
+   * <a href="#fct_wood_valuation">wood_valuation()</a>
+   * <a href="#fct_wood_net_revenues">wood_net_revenues()</a>
+   * <a href="#fct_get_species_codes">get_species_codes()</a>
+4. <a href="#examples">Examples</a>
+5. <a href="#citation">Recommended Citation</a>
+6. <a href="#references">References</a>
 
 <h1><a name="introduction">Introduction</a></h1>
 
