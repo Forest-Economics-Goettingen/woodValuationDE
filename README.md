@@ -555,9 +555,9 @@ listed in <a href="#tab3">Tab. 3</a>.
 | <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
 | <i>"ips.fuchs.2021"</i>          | 0.67     | \-        | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
 | <i>"ips.timely.fuchs.2021"</i>   | 0.88     | \-        | [Fuchs et al. (2021)]( #fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
-| <i>"stand.damage.fuchs"</i>      | 0.95     | 0.85      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
-| <i>"regional.disturbance.fuchs"</i> | 0.71     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
-| <i>"transregional.calamity.fuchs"</i> | 0.48     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"stand.damage.fuchs"</i>      | 0.90     | 0.85      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
+| <i>"regional.disturbance.fuchs"</i> | 0.74     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"transregional.calamity.fuchs"</i> | 0.54     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
 
 <h3>Input</h3>
 
@@ -688,9 +688,9 @@ calamity.factors <- dplyr::tibble(
                           0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.95, 0.85,
-                          0.71, 0.70,
-                          0.48, 0.70),
+                          0.90, 0.85,
+                          0.74, 0.70,
+                          0.54, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
                       1.17,   NA,
@@ -970,9 +970,9 @@ calamity.factors <- dplyr::tibble(
                           0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.95, 0.85,
-                          0.71, 0.70,
-                          0.48, 0.70),
+                          0.90, 0.85,
+                          0.74, 0.70,
+                          0.54, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
                       1.17,   NA,
@@ -1230,9 +1230,9 @@ calamity.factors <- dplyr::tibble(
                           0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.95, 0.85,
-                          0.71, 0.70,
-                          0.48, 0.70),
+                          0.90, 0.85,
+                          0.74, 0.70,
+                          0.54, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
                       1.17,   NA,
@@ -1509,9 +1509,9 @@ calamity.factors <- dplyr::tibble(
                           0.78,   NA,
                           0.67,   NA,
                           0.88,   NA,
-                          0.95, 0.85,
-                          0.71, 0.70,
-                          0.48, 0.70),
+                          0.90, 0.85,
+                          0.74, 0.70,
+                          0.54, 0.70),
       cost.factor = c(1.00, 1.00,
                       0.50, 0.50,
                       1.17,   NA,
