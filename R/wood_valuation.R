@@ -65,17 +65,17 @@
 #'                      \code{storm.large.moellmann.2017} referring to damages
 #'                      by storm (available for coniferous and deciduous
 #'                      species), \code{insects.moellmann.2017} refers to
-#'                      damages by insects; \code{"ips.fuchs.2021"} refers to
+#'                      damages by insects; \code{"ips.fuchs.2022b"} refers to
 #'                      quality losses due to infestations by the European
-#'                      spruce bark beetle or \code{"ips.timely.fuchs.2021"} for
+#'                      spruce bark beetle or \code{"ips.timely.fuchs.2022b"} for
 #'                      timely salvage fellings in less advanced attack stages
-#'                      (both according to Fuchs et al. 2021); and
-#'                      \code{"stand.damage.fuchs"} to disturbances affecting
-#'                      only one stand, \code{"regional.disturbances.fuchs"} to
+#'                      (both according to Fuchs et al. 2022b); and
+#'                      \code{"stand.damage.fuchs.2022a"} to disturbances affecting
+#'                      only one stand, \code{"regional.disturbances.fuchs.2022a"} to
 #'                      disturbances with effects on the regional wood market
-#'                      and \code{"transregional.calamity.fuchs"} to calamities
+#'                      and \code{"transregional.calamity.fuchs.2022a"} to calamities
 #'                      affecting transregional wood markets (the last three
-#'                      referring to Fuchs et al. under review). User-defined
+#'                      referring to Fuchs et al. (2022a). User-defined
 #'                      types can be implemented via the \code{calamity.factors}
 #'                      parameter.
 #' @param calamity.factors Summands \eqn{[EUR m^{-3}]}{[EUR m^(-3)]}
@@ -100,17 +100,16 @@
 #'             beech calculated with Monte Carlo modelling techniques. For.
 #'             Policy Econ. 2 (2), S. 157-166.
 #'             \doi{10.1016/S1389-9341(01)00045-4}.
+#' @references Fuchs, Jasper M., v. Bodelschwingh, Hilmar, Lange, Alexander,
+#'             Paul, Carola, Husmann, Kai (2022a): Quantifying the
+#'             consequences of disturbances on wood revenues with Impulse
+#'             Response Functions. For. Policy Econ. 140, art. 102738.
+#'             \doi{10.1016/j.forpol.2022.102738}.
 #' @references Fuchs, Jasper M., Hittenbeck, Anika, Brandl, Susanne, Schmidt,
-#'             Matthias, Paul, Carola (2021): Adaptation Strategies for
+#'             Matthias, Paul, Carola (2022b): Adaptation Strategies for
 #'             Spruce Forests - Economic Potential of Bark Beetle Management and
 #'             Douglas Fir Cultivation in Future Tree Species Portfolios.
-#'             Forestry. \doi{10.1093/forestry/cpab040}
-#' @references Fuchs, Jasper M., von Bodelschwingh, Hilmar, Lange, Alexander,
-#'             Paul, Carola, Husmann, Kai (under review): Quantifying the
-#'             consequences of disturbances on wood revenues with time series
-#'             analyses. Preprint available at SSRN:
-#'             https://ssrn.com/abstract=4011837 or
-#'             \doi{10.2139/ssrn.4011837}
+#'             Forestry 95 (2) 229-246. \doi{10.1093/forestry/cpab040}
 #' @references Fuchs, Jasper M., von Bodelschwingh, Hilmar, Koster, Roman,
 #'             Moehring, Bernhard, Paul, Carola, Husmann, Kai (in preparation):
 #'             woodValuationDE: A consistent framework for wood valuation in

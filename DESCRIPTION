@@ -30,8 +30,8 @@ Description: A package for the monetary valuation of wood in German forests,
              skidded volume derived in Fuchs et al. (in preparation). Wood 
              revenue and harvest cost functions were taken from von
              Bodelschwingh (2018). The consequences of disturbances refer to
-             Dieter (2001), Moellmann and Moehring (2017), Fuchs et al. (2021)
-             and Fuchs et al. (under review). For the full references see
+             Dieter (2001), Moellmann and Moehring (2017) and Fuchs et al.
+             (2022a, 2022b). For the full references see
              documentation of functions and package readme. Apart from Dieter
              (2001) and Moellmann and Moehring (2017), all functions and factors
              are based on operational data of HessenForst, the forest

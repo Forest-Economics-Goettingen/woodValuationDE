@@ -35,7 +35,7 @@ related to income from wood production, depend, a.o., on tree species, diameter,
 and stand quality. Disturbance events also affect the net revenues, as
 wood quality is reduced due to mechanical damage, market prices are
 reduced due to increasing wood supply and harvest costs might increase
-[Fuchs et al. (under review)](#fuchs.underreview).
+[Fuchs et al. (2022a)](#fuchs.2022a).
 
 Here, <strong>woodValuationDE</strong> contributes with a comprehensive
 wood valuation model considering the various influences on 
@@ -58,8 +58,8 @@ proportions derived in [Fuchs et al. (in preparation)](
 taken from [von Bodelschwingh (2018)](#vonbodelschwingh.2018). The 
 consequences of disturbances refer to [Dieter (2001)](
 #dieter.2001)<sup>[1](#fndieter)</sup>, [Moellmann and Moehring (2017)](
-#moellmann.2017)<sup>[2](#fnmoellmann)</sup>, [Fuchs et al. (2021)](
-#fuchs.2021), and [Fuchs et al. (under review)](#fuchs.underreview).
+#moellmann.2017)<sup>[2](#fnmoellmann)</sup>, [Fuchs et al. (2022b)](
+#fuchs.2022b), and [Fuchs et al. (2022a)](#fuchs.2022a).
 
 The assortment tables as well as the other models in
 <strong>woodValuationDE</strong> represent average conditions in Hesse.
@@ -101,8 +101,8 @@ net revenues (see Fig. 1).
     [Offer and Staupendahl (2018)](#offer.2018), green: functions taken
     from [von Bodelschwingh (2018)](#vonbodelschwingh.2018), red:
     calamity factors derived in [Dieter (2001)](#dieter.2001),
-    [Fuchs et al. (2021)](#fuchs.2021), and
-    [Fuchs et al. (under review)](#fuchs.underreview). Box shape:
+    [Fuchs et al. (2022b)](#fuchs.2022b), and
+    [Fuchs et al. (2022a)](#fuchs.2022a). Box shape:
     rectangular: functions and factors, parallelogram: user input and
     output.
   </figcaption>
@@ -457,8 +457,8 @@ function of [von Bodelschwingh (2018)](#vonbodelschwingh.2018).
 Consequences of calamities are implemented based on
 [Dieter (2001)](#dieter.2001),
 [Moellmann and Moehring (2017)](#moellmann.2017),
-[Fuchs et al. (2021)](#fuchs.2021) and
-[Fuchs et al. (under review)](#fuchs.underreview). Apart from
+[Fuchs et al. (2022b)](#fuchs.2022b) and
+[Fuchs et al. (2022a)](#fuchs.2022a). Apart from
 [Dieter (2001)](#dieter.2001) and
 [Moellmann and Moehring (2017)](#moellmann.2017), the function and all
 factors are based on data of HessenForst, the public forest service of
@@ -553,11 +553,11 @@ listed in <a href="#tab3">Tab. 3</a>.
 | <i>"storm.small.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
 | <i>"storm.large.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
 | <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
-| <i>"ips.fuchs.2021"</i>          | 0.67     | \-        | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
-| <i>"ips.timely.fuchs.2021"</i>   | 0.88     | \-        | [Fuchs et al. (2021)]( #fuchs.2021) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
-| <i>"stand.damage.fuchs"</i>      | 0.90     | 0.85      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
-| <i>"regional.disturbance.fuchs"</i> | 0.74     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
-| <i>"transregional.calamity.fuchs"</i> | 0.54     | 0.70      | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"ips.fuchs.2022b"</i>          | 0.67     | \-        | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
+| <i>"ips.timely.fuchs.2022b"</i>   | 0.88     | \-        | [Fuchs et al. (2022b)]( #fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
+| <i>"stand.damage.fuchs.2022a"</i>      | 0.90     | 0.85      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
+| <i>"regional.disturbance.fuchs.2022a"</i> | 0.74     | 0.70      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"transregional.calamity.fuchs.2022a"</i> | 0.54     | 0.70      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
 
 <h3>Input</h3>
 
@@ -670,11 +670,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2021",
-                            "ips.timely.2021",
-                            "stand.damage.fuchs",
-                            "regional.disturbance.fuchs",
-                            "transregional.calamity.fuchs"),
+                            "ips.fuchs.2022b",
+                            "ips.timely.fuchs.2022b",
+                            "stand.damage.fuchs.2022a",
+                            "regional.disturbance.fuchs.2022a",
+                            "transregional.calamity.fuchs.2022a"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -762,11 +762,11 @@ wood_revenues(40,
               rep("spruce", 7),
               calamity.type = c("none",
                                 "calamity.dieter.2001",
-                                "ips.fuchs.2021",
-                                "ips.timely.fuchs.2021",
-                                "stand.damage.fuchs",
-                                "regional.disturbance.fuchs",
-                                "transregional.calamity.fuchs"))
+                                "ips.fuchs.2022b",
+                                "ips.timely.fuchs.2022b",
+                                "stand.damage.fuchs.2022a",
+                                "regional.disturbance.fuchs.2022a",
+                                "transregional.calamity.fuchs.2022a"))
 
 # user-defined calamities with respective changes in wood revenues
 wood_revenues(40,
@@ -809,8 +809,8 @@ The function estimates harvest costs per unit skidded volume
 [von Bodelschwingh (2018)](#vonbodelschwingh.2018). Consequences of
 calamities are implemented based on [Dieter (2001)](#dieter.2001),
 [Moellmann and Moehring (2017)](#moellmann.2017),
-[Fuchs et al. (2021)](#fuchs.2021), and
-[Fuchs et al. (under review)](#fuchs.underreview).
+[Fuchs et al. (2022b)](#fuchs.2022b), and
+[Fuchs et al. (2022a)](#fuchs.2022a).
 
 <h3>Data and Model</h3>
 
@@ -888,11 +888,11 @@ implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 | <i>"storm.small.moellmann.2017"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
 | <i>"storm.large.moellmann.2017"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment.
 | <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
-| <i>"ips.fuchs.2021"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
-| <i>"ips.timely.fuchs.2021"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2021)](#fuchs.2021) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
-| <i>"stand.damage.fuchs"</i>      | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
-| <i>"regional.disturbance.fuchs"</i> | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for regional damages with smaller harvest volumes based on contracts of HessenForst. |
-| <i>"transregional.calamity.fuchs"</i> | 1.25 | NA   | 1.25 | NA   | [Fuchs et al. (under review)](#fuchs.underreview) | Assumption for national damages with smaller harvest volumes and a high demand for timely harvest capacities, based on contracts of HessenForst. |
+| <i>"ips.fuchs.2022b"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
+| <i>"ips.timely.fuchs.2022b"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
+| <i>"stand.damage.fuchs.2022a"</i>      | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"regional.disturbance.fuchs.2022a"</i> | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for regional damages with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"transregional.calamity.fuchs.2022a"</i> | 1.25 | NA   | 1.25 | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for national damages with smaller harvest volumes and a high demand for timely harvest capacities, based on contracts of HessenForst. |
 
 <h3>Input</h3>
 
@@ -952,11 +952,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2021",
-                            "ips.timely.2021",
-                            "stand.damage.fuchs",
-                            "regional.disturbance.fuchs",
-                            "transregional.calamity.fuchs"),
+                            "ips.fuchs.2022b",
+                            "ips.timely.fuchs.2022b",
+                            "stand.damage.fuchs.2022a",
+                            "regional.disturbance.fuchs.2022a",
+                            "transregional.calamity.fuchs.2022a"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1043,11 +1043,11 @@ harvest_costs(40,
               rep("spruce", 6),
               calamity.type = c("none",
                                 "calamity.dieter.2001",
-                                "ips.fuchs.2021",
-                                "ips.timely.fuchs.2021",
-                                "stand.damage.fuchs",
-                                "regional.disturbance.fuchs",
-                                "transregional.calamity.fuchs"))
+                                "ips.fuchs.2022b",
+                                "ips.timely.fuchs.2022b",
+                                "stand.damage.fuchs.2022a",
+                                "regional.disturbance.fuchs.2022a",
+                                "transregional.calamity.fuchs.2022a"))
 
 # user-defined calamities with respective changes in harvest costs
 harvest_costs(40,
@@ -1212,11 +1212,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2021",
-                            "ips.timely.2021",
-                            "stand.damage.fuchs",
-                            "regional.disturbance.fuchs",
-                            "transregional.calamity.fuchs"),
+                            "ips.fuchs.2022b",
+                            "ips.timely.fuchs.2022b",
+                            "stand.damage.fuchs.2022a",
+                            "regional.disturbance.fuchs.2022a",
+                            "transregional.calamity.fuchs.2022a"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1310,11 +1310,11 @@ wood_valuation(10,
                rep("spruce", 6),
                calamity.type = c("none",
                                 "calamity.dieter.2001",
-                                "ips.fuchs.2021",
-                                "ips.timely.fuchs.2021",
-                                "stand.damage.fuchs",
-                                "regional.disturbance.fuchs",
-                                "transregional.calamity.fuchs"))
+                                "ips.fuchs.2022b",
+                                "ips.timely.fuchs.2022b",
+                                "stand.damage.fuchs.2022a",
+                                "regional.disturbance.fuchs.2022a",
+                                "transregional.calamity.fuchs.2022a"))
 
 # user-defined calamities with respective changes in harvest costs and wood revenues
 wood_valuation(10,
@@ -1491,11 +1491,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2021",
-                            "ips.timely.2021",
-                            "stand.damage.fuchs",
-                            "regional.disturbance.fuchs",
-                            "transregional.calamity.fuchs"),
+                            "ips.fuchs.2022b",
+                            "ips.timely.fuchs.2022b",
+                            "stand.damage.fuchs.2022a",
+                            "regional.disturbance.fuchs.2022a",
+                            "transregional.calamity.fuchs.2022a"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1588,11 +1588,11 @@ wood_net_revenues(10,
                   rep("spruce", 6),
                   calamity.type = c("none",
                                     "calamity.dieter.2001",
-                                    "ips.fuchs.2021",
-                                    "ips.timely.fuchs.2021",
-                                    "stand.damage.fuchs",
-                                    "regional.disturbance.fuchs",
-                                    "transregional.calamity.fuchs"))
+                                    "ips.fuchs.2022b",
+                                    "ips.timely.fuchs.2022b",
+                                    "stand.damage.fuchs.2022a",
+                                    "regional.disturbance.fuchs.2022a",
+                                    "transregional.calamity.fuchs.2022a"))
 
 # user-defined calamities with respective changes in harvest costs and wood revenues
 wood_net_revenues(10,
@@ -1680,18 +1680,17 @@ for spruce and beech calculated with Monte Carlo modelling techniques.
 to the age--height relationship of individual trees. <em>Can. J. For.
 Res.</em> **47**, S. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
 
-<a id="fuchs.2021">Fuchs</a>, Jasper M., Hittenbeck, Anika,
-Brandl, Susanne, Schmidt, Matthias, Paul, Carola (2021):
+<a id="fuchs.2022a">Fuchs</a>, Jasper M., v. Bodelschwingh, Hilmar, Paul,
+Carola, Husmann, Kai (2022a): Quantifying the consequences of disturbances on
+wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
+**140**, art. 102738. <https://doi.org/10.1016/j.forpol.2022.102738>.
+
+<a id="fuchs.2022b">Fuchs</a>, Jasper M., Hittenbeck, Anika,
+Brandl, Susanne, Schmidt, Matthias, Paul, Carola (2022b):
 Adaptation Strategies for Spruce Forests - Economic Potential of Bark
 Beetle Management and Douglas Fir Cultivation in Future Tree Species
-Portfolios. <em>Forestry</em>.
+Portfolios. <em>Forestry</em> **95 (2)**, S. 229-246.
 <https://doi.org/10.1093/forestry/cpab040>
-
-<a id="fuchs.underreview">Fuchs</a>, Jasper M., von Bodelschwingh,
-Hilmar, Paul, Carola, Husmann, Kai (under review): Quantifying the
-consequences of disturbances on wood revenues with time series analyses.
-Preprint available at SSRN: <https://ssrn.com/abstract=4011837> or
-<http://dx.doi.org/10.2139/ssrn.4011837>
 
 <a id="fuchs.inpreparation">Fuchs</a>, Jasper M., von Bodelschwingh,
 Hilmar, Koster, Roman, Möhring, Bernhard, Paul, Carola, Husmann, Kai
