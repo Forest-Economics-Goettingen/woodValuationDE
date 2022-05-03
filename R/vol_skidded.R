@@ -1,21 +1,22 @@
 ##--##############################--##
-#### Share of skidded wood volume ####
+#### Share of Skidded Wood Volume ####
 ##--##############################--##
 
 #' Relative share of the volume over bark that is skidded
 #'
-#' The function estimates the skidded share of wood volume. It is expressed in
-#' relation to the volume over bark (German unit: Vfm) as usually provided by
-#' yield tables and forest simulators. This includes all pulp wood and saw wood.
-#' It is assumed that the fuel wood assortments are processed by private
-#' individuals and are thus not commercially delivered to the forest road. The
-#' share of salable wood is required to derive the costs for harvesting and
-#' skidding per cubic meter volume over bark. The function is based on
-#' the assortment tables of Offer and Staupendahl (2018) and its derivation is
-#' described in Fuchs et al. (in preparation). The underlying assortment tables
-#' are based on data of HessenForst, the public forest service of the Federal
-#' State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
-#' readme.
+#' The function estimates the skidded share of the wood volume. It is expressed
+#' in relation to the volume over bark (German unit: Vfm) as usually provided by
+#' yield tables and forest simulators. This includes all pulp wood and sawlog
+#' assortments. It is assumed that the fuel wood assortments are processed by
+#' private individuals and are thus not commercially delivered to the forest
+#' road. The share of salable wood is required to derive the costs for
+#' harvesting and skidding per cubic meter volume over bark. The function is
+#' based on the assortment tables from Offer and Staupendahl (2018) and its
+#' derivation is described in Fuchs et al. (in preparation). The underlying
+#' assortment tables are based on data from HessenForst, the public forest
+#' service of the Federal State of Hesse in Germany. For further details see the
+#' \pkg{woodValuationDE}
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.

@@ -55,7 +55,7 @@ assortment tables are taken from [Offer and Staupendahl (2018)](
 #offer.2018) with corresponding functions for the harvest volume
 proportions derived in [Fuchs et al. (in preparation)](
 #fuchs.inpreparation). Wood revenue and harvest cost functions were
-taken from [von Bodelschwingh (2018)](#vonbodelschwingh.2018). The 
+taken from [v. Bodelschwingh (2018)](#vbodelschwingh.2018). The 
 consequences of disturbances refer to [Dieter (2001)](
 #dieter.2001)<sup>[1](#fndieter)</sup>, [Moellmann and Moehring (2017)](
 #moellmann.2017)<sup>[2](#fnmoellmann)</sup>, [Fuchs et al. (2022b)](
@@ -99,7 +99,7 @@ net revenues (see Fig. 1).
     functions. Color: blue: function derived in 
     [Fuchs et al. (in preparation)](#fuchs.inpreparation) based on
     [Offer and Staupendahl (2018)](#offer.2018), green: functions taken
-    from [von Bodelschwingh (2018)](#vonbodelschwingh.2018), red:
+    from [v. Bodelschwingh (2018)](#vbodelschwingh.2018), red:
     calamity factors derived in [Dieter (2001)](#dieter.2001),
     [Fuchs et al. (2022b)](#fuchs.2022b), and
     [Fuchs et al. (2022a)](#fuchs.2022a). Box shape:
@@ -194,7 +194,7 @@ HessenForst. More details on the assortment tables and their derivation
 are provided in [Offer and Staupendahl (2008)](#offer.2008) and
 [Offer and Staupendahl (2009)](#offer.2009).
 
-We derived the share of salable volume based on these assortment tables.
+We derived the share of salable volume <i>v<sub>salable</sub></i> based on these assortment tables.
 Since the assortment tables only provide the values in diameter
 steps of 2 cm, a Gompertz function was fitted in order to have a
 continuous model (see
@@ -203,14 +203,14 @@ fitting, the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
-  <i>v<sub>salable</sub></i> = <i>&alpha;</i> * exp( -exp(
-  <i>&beta;</i> / <i>&alpha;</i> * exp(1) * (<i>&gamma;</i> -
+  <i>v<sub>salable</sub></i> = <i>A</i> * exp( -exp(
+  <i>z<sub>m</sub></i> / <i>A</i> * exp(1) * (<i>t<sub>w</sub></i> -
   <i>d<sub>q</sub></i>))),
 </p>
 
 with the volume share of salable wood <i>v<sub>salable</sub></i>, the
 quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>&alpha;</i>, <i>&beta;</i> and <i>&gamma;</i>.
+<i>A</i>, <i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>.
 
 <h3>Input</h3>
 
@@ -287,25 +287,25 @@ Type of harvest process:
   
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since e.g. for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018) in the harvest cost
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
 
 * softwood species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
     <i>"manually"</i>, maximum 50 %,
-  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+  + diameter.q</i> >= 50 cm: 50 % <i>"harvester"</i> and 50 %
     <i>"manually"</i>.
 * deciduous species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
-  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
+  + diameter.q</i> >= 40 cm: 100 % <i>"manually"</i>.
 
 <h4><i>species.code.type</i></h4>
 
@@ -380,7 +380,7 @@ tables and their derivation are provided in
 [Offer and Staupendahl (2008)](#offer.2008) and
 [Offer and Staupendahl (2009)](#offer.2009).
 
-We derived the share of skidded volume based on these assortment tables.
+We derived the share of skidded volume <i>v<sub>skidded</sub></i> based on these assortment tables.
 Since the assortment tables only provide the values in diameter steps of
 2 cm, a Gompertz function was fitted to have a continuous model (see
 [Fuchs et al., in preparation](#fuchs.inpreparation)). For the model fitting,
@@ -388,14 +388,14 @@ the modified formulation according to
 [Fischer and Schoenfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
-  <i>v<sub>skidded</sub></i> = <i>&alpha;</i> * exp( -exp(
-  <i>&beta;</i> / <i>&alpha;</i> * exp(1) * (<i>&gamma;</i> -
+  <i>v<sub>skidded</sub></i> = <i>A</i> * exp( -exp(
+  <i>z<sub>m</sub></i> / <i>A</i> * exp(1) * (<i>t<sub>w</sub></i> -
   <i>d<sub>q</sub></i>))),
 </p>
 
 with the volume share of skidded wood <i>v<sub>skidded</sub></i>, the
 quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>&alpha;</i>, <i>&beta;</i> and <i>&gamma;</i>.
+<i>A</i>, <i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>.
 
 <h3>Input</h3>
 
@@ -453,7 +453,7 @@ vol_skidded(rep(seq(20, 50, 10),
 The function estimates average wood revenues per unit salable volume
 [EUR m<sup>-3</sup>] based on the assortment tables of
 [Offer and Staupendahl (2018)](#offer.2018) and the wood revenue
-function of [von Bodelschwingh (2018)](#vonbodelschwingh.2018).
+function of [v. Bodelschwingh (2018)](#vbodelschwingh.2018).
 Consequences of calamities are implemented based on
 [Dieter (2001)](#dieter.2001),
 [Moellmann and Moehring (2017)](#moellmann.2017),
@@ -467,23 +467,23 @@ the Federal State of Hesse in Germany
 <h3>Data and Model</h3>
 
 The diameter- and species-sensitive wood revenue model was developed by
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018). It is based on a
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018). It is based on a
 previous version (2013) of the assortment tables of
 [Offer and Staupendahl (2018)](#offer.2018) and the wood sales of
 HessenForst from 2010 to 2015. A price matrix for different assortments
 was derived out of the sales data and combined with the assortment table
 to derive average wood revenues for diameter-dependent assortment
-compositions. The fitted model function is:
+compositions. The fitted model function for the wood revenues <i>s</i> is:
 
 <p align="center">
-  <i>s</i> = <i>&alpha;</i> * <i>d<sub>q</sub></i><sup>4</sup> +
-  <i>&beta;</i> * <i>d<sub>q</sub></i><sup>3</sup> + <i>&gamma;</i> *
-  <i>d<sub>q</sub></i><sup>2</sup> + <i>&delta;</i> *
-  <i>d<sub>q</sub></i> + <i>&epsilon;</i>,
+  <i>s</i> = <i>a</i> * <i>d<sub>q</sub></i><sup>4</sup> +
+  <i>b</i> * <i>d<sub>q</sub></i><sup>3</sup> + 
+  <i>c</i> * <i>d<sub>q</sub></i><sup>2</sup> + 
+  <i>d</i> * <i>d<sub>q</sub></i> + <i>e</i>,
 </p>
 
 with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>&alpha;</i> to <i>&epsilon;</i>.
+<i>a</i> to <i>e</i>.
 
 The model estimates wood revenues referring to Hessian market conditions
 in the time period from 2010 to 2015. Via the market price of a reference
@@ -513,7 +513,7 @@ wood revenues of the model <i>s<sub>original</sub></i> will be updated
 <p align="center" id="tab2">
   <i>Tab. 2:</i> Prices of the reference assortments in Hesse between
   2010 and 2015, adapted from
-  [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018).
+  [v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018).
 </p>
 
 | English Species Code | Reference Assortment | Price [EUR m<sup>-3</sup>] |
@@ -553,8 +553,8 @@ listed in <a href="#tab3">Tab. 3</a>.
 | <i>"storm.small.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
 | <i>"storm.large.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
 | <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
-| <i>"ips.fuchs.2022b"</i>          | 0.67     | \-        | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
-| <i>"ips.timely.fuchs.2022b"</i>   | 0.88     | \-        | [Fuchs et al. (2022b)]( #fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(von Bodelschwingh, 2018)](#vonbodelschwingh.2018). |
+| <i>"ips.fuchs.2022b"</i>          | 0.67     | \-        | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
+| <i>"ips.timely.fuchs.2022b"</i>   | 0.88     | \-        | [Fuchs et al. (2022b)]( #fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
 | <i>"stand.damage.fuchs.2022a"</i>      | 0.90     | 0.85      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
 | <i>"regional.disturbance.fuchs.2022a"</i> | 0.74     | 0.70      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
 | <i>"transregional.calamity.fuchs.2022a"</i> | 0.54     | 0.70      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
@@ -606,25 +606,25 @@ Type of harvest process:
       
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since e.g. for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018) in the harvest cost
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
                 
 * softwood species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
     <i>"manually"</i>, maximum 50 %,
-  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+  + diameter.q</i> >= 50 cm: 50 % <i>"harvester"</i> and 50 %
     <i>"manually"</i>.
 * deciduous species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
-  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
+  + diameter.q</i> >= 40 cm: 100 % <i>"manually"</i>.
   
 
 <h4><i>price.ref.assortment</i></h4>
@@ -632,7 +632,7 @@ mechanized harvests:
 Wood price of the reference assortments allowing for the consideration
 of market fluctuations as described above. Default is <i>"baseline"</i>,
 which refers to the prices from 2010 to 2015 in Hesse, Germany according
-to [von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
+to [v. Bodelschwingh (2018)](#vbodelschwingh.2018), listed in
 <a href="#tab2">Tab. 2</a>. Alternatively, users can provide a
 tibble with the same structure, which is illustrated by the
 <i>"baseline"</i> tibble:
@@ -806,7 +806,7 @@ wood_revenues(40,
 
 The function estimates harvest costs per unit skidded volume
 [EUR m<sup>-3</sup>] applying the harvest costs function of
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018). Consequences of
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018). Consequences of
 calamities are implemented based on [Dieter (2001)](#dieter.2001),
 [Moellmann and Moehring (2017)](#moellmann.2017),
 [Fuchs et al. (2022b)](#fuchs.2022b), and
@@ -815,19 +815,19 @@ calamities are implemented based on [Dieter (2001)](#dieter.2001),
 <h3>Data and Model</h3>
 
 The diameter- and species-sensitive harvest cost model was developed by
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018). It is based on data
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018). It is based on data
 from [KWF (2006)](#kwf.2006) and [AFL (2014)](#afl.2014). The fitted
-model function is:
+model function for the harvest costs <i>h</i> is:
 
 <p align="center">
-  <i>c</i> = max(<i>&alpha;</i> *
-  <i>d<sub>q</sub></i><sup><i>&beta;</i></sup> + <i>&gamma;</i>,
-  <i>c<sub>max</sub></i>),
+  <i>h</i> = max(<i>a</i> *
+  <i>d<sub>q</sub></i><sup><i>b</i></sup> + <i>c</i>,
+  <i>h<sub>max</sub></i>),
 </p>
 
 with the quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>&alpha;</i> to <i>&gamma;</i> and the maximum costs
-<i>c<sub>max</sub></i>. The harvest costs were derived for a smaller
+<i>a</i> to <i>c</i> and the maximum costs
+<i>h<sub>max</sub></i>. The harvest costs were derived for a smaller
 number of economic species groups, thus, the species assignments differ
 from those for
 <a href="#fct_wood_revenues"><em>wood_revenues()</em></a>. The species
@@ -842,7 +842,7 @@ harvest processes, dependent on the quadratic mean of the tree diameters
 as well as the accessibility of the stand. The accessibility is
 considered in three cost levels (see <a href="#tab4">Tab. 4</a>). To
 avoid unusually high harvest costs at smaller diameters,
-[von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018) defined
+[v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018) defined
 maximum harvest costs <i>c<sub>max</sub></i> (see <a href="#tab4">Tab.
 4</a>).
 
@@ -851,7 +851,7 @@ maximum harvest costs <i>c<sub>max</sub></i> (see <a href="#tab4">Tab.
 <p align="center" id="tab4">
   <i>Tab. 4:</i> Definitions of the harvest cost levels based on the
   accessibility of the stand and maximum harvest costs, adapted from
-  [von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018).
+  [v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018).
 </p>
 
 | <em>cost.level</em> | Definition                                     | Maximum Harvest Costs [EUR m<sup>-3</sup>]|
@@ -890,9 +890,9 @@ implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 | <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
 | <i>"ips.fuchs.2022b"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
 | <i>"ips.timely.fuchs.2022b"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
-| <i>"stand.damage.fuchs.2022a"</i>      | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
-| <i>"regional.disturbance.fuchs.2022a"</i> | 1.15 | NA   | 1.15 | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for regional damages with smaller harvest volumes based on contracts of HessenForst. |
-| <i>"transregional.calamity.fuchs.2022a"</i> | 1.25 | NA   | 1.25 | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for national damages with smaller harvest volumes and a high demand for timely harvest capacities, based on contracts of HessenForst. |
+| <i>"stand.damage.fuchs.2022a"</i>      | 1.15 | 0   | 1.15 | 0   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for damages in a single stand with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"regional.disturbance.fuchs.2022a"</i> | 1.15 | 0   | 1.15 | 0   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for regional damages with smaller harvest volumes based on contracts of HessenForst. |
+| <i>"transregional.calamity.fuchs.2022a"</i> | 1.25 | 0   | 1.25 | 0   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for national damages with smaller harvest volumes and a high demand for timely harvest capacities, based on contracts of HessenForst. |
 
 <h3>Input</h3>
 
@@ -924,7 +924,7 @@ of <i>1:3</i>, with <i>1</i> for standard conditions without
 limitations, <i>2</i> for moist sites or sites with a slope between 36
 % and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
 harvest cost model by
-[von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018). See also
+[v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
 <h4><i>calamity.type</i></h4>
@@ -1135,7 +1135,7 @@ of <i>1:3</i>, with <i>1</i> for standard conditions without
 limitations, <i>2</i> for moist sites or sites with a slope between 36
 % and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
 harvest cost model by
-[von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018). See also
+[v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
 <h4><i>process.type</i></h4>
@@ -1149,32 +1149,32 @@ Type of harvest process:
         
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since e.g. for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018) in the harvest cost
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
                 
 * softwood species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
     <i>"manually"</i>, maximum 50 %,
-  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+  + diameter.q</i> >= 50 cm: 50 % <i>"harvester"</i> and 50 %
     <i>"manually"</i>.
 * deciduous species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
-  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
+  + diameter.q</i> >= 40 cm: 100 % <i>"manually"</i>.
 
 <h4><i>price.ref.assortment</i></h4>
 
 Wood price of the reference assortments allowing for the consideration
 of market fluctuations. Default is <i>"baseline"</i>,
 which refers to the prices from 2010 to 2015 in Hesse, Germany according
-to [von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
+to [v. Bodelschwingh (2018)](#vbodelschwingh.2018), listed in
 <a href="#tab2">Tab. 2</a>. Alternatively, users can provide a
 tibble with the same structure, which is illustrated by the
 <i>"baseline"</i> tibble:
@@ -1414,7 +1414,7 @@ of <i>1:3</i>, with <i>1</i> for standard conditions without
 limitations, <i>2</i> for moist sites or sites with a slope between 36
 % and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
 harvest cost model by
-[von Bodelschwingh (2018, Tab. 10)](#vonbodelschwingh.2018). See also
+[v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
 <h4><i>process.type</i></h4>
@@ -1428,32 +1428,32 @@ Type of harvest process:
 
 The process types <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018). Since e.g. for
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since e.g. for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
-[von Bodelschwingh (2018)](#vonbodelschwingh.2018) in the harvest cost
+[v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly
 mechanized harvests:
               
 * softwood species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 50 cm: linear increase of
     <i>"manually"</i>, maximum 50 %,
-  + diameter.q</i> ≥ 50 cm: 50 % <i>"harvester"</i> and 50 %
+  + diameter.q</i> >= 50 cm: 50 % <i>"harvester"</i> and 50 %
     <i>"manually"</i>.
 * deciduous species
-  + <i>diameter.q</i> ≤ 20 cm: 100 % <i>"harvester"</i>,
+  + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
   + 20 cm < <i>diameter.q</i> < 40 cm: linear increase of
-  + diameter.q</i> ≥ 40 cm: 100 % <i>"manually"</i>.
+  + diameter.q</i> >= 40 cm: 100 % <i>"manually"</i>.
 
 <h4><i>price.ref.assortment</i></h4>
 
 Wood price of the reference assortments allowing for the consideration
 of market fluctuations. Default is <i>"baseline"</i>,
 which refers to the prices from 2010 to 2015 in Hesse, Germany according
-to [von Bodelschwingh (2018)](#vonbodelschwingh.2018), listed in
+to [v. Bodelschwingh (2018)](#vbodelschwingh.2018), listed in
 <a href="#tab2">Tab. 2</a>. Alternatively, users can provide a
 tibble with the same structure, which is illustrated by the
 <i>"baseline"</i> tibble:
@@ -1664,7 +1664,7 @@ Technical Note: Why Quadratic Mean Diameter?
 <https://doi.org/10.1093/wjaf/15.3.137>.
 
 <a id="deutscherforstwirtschaftsrat.2020">Deutscher
-Forstwirtschaftsrat</a> e.V.;Deutscher Holzwirtschaftsrat e.V. (2020):
+Forstwirtschaftsrat</a> e.V.; Deutscher Holzwirtschaftsrat e.V. (2020):
 Rahmenvereinbarung für den Rohholzhandel in Deutschland (RVR). [Master
 Agreement for Raw Wood Trading in Germany]. 3rd ed. Fachagentur
 Nachwachsende Rohstoffe e.V. (FNR). Guelzow-Pruezen. Online available at
@@ -1680,22 +1680,22 @@ for spruce and beech calculated with Monte Carlo modelling techniques.
 to the age--height relationship of individual trees. <em>Can. J. For.
 Res.</em> **47**, S. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
 
-<a id="fuchs.2022a">Fuchs</a>, Jasper M., v. Bodelschwingh, Hilmar, Paul,
-Carola, Husmann, Kai (2022a): Quantifying the consequences of disturbances on
+<a id="fuchs.2022a">Fuchs</a>, Jasper M.; v. Bodelschwingh, Hilmar; Paul,
+Carola; Husmann, Kai (2022a): Quantifying the consequences of disturbances on
 wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
 **140**, art. 102738. <https://doi.org/10.1016/j.forpol.2022.102738>.
 
-<a id="fuchs.2022b">Fuchs</a>, Jasper M., Hittenbeck, Anika,
-Brandl, Susanne, Schmidt, Matthias, Paul, Carola (2022b):
+<a id="fuchs.2022b">Fuchs</a>, Jasper M.; Hittenbeck, Anika;
+Brandl, Susanne; Schmidt, Matthias; Paul, Carola (2022b):
 Adaptation Strategies for Spruce Forests - Economic Potential of Bark
 Beetle Management and Douglas Fir Cultivation in Future Tree Species
 Portfolios. <em>Forestry</em> **95 (2)**, S. 229-246.
 <https://doi.org/10.1093/forestry/cpab040>
 
-<a id="fuchs.inpreparation">Fuchs</a>, Jasper M., von Bodelschwingh,
-Hilmar, Koster, Roman, Möhring, Bernhard, Paul, Carola, Husmann, Kai
-(in preparation): woodValuationDE: A consistent framework for wood
-valuation in Germany
+<a id="fuchs.inpreparation">Fuchs</a>, Jasper M.; Husmann, Kai;
+v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;
+Möhring, Bernhard; Paul, Carola, (in preparation): woodValuationDE: A consistent
+framework for wood valuation in Germany
 
 <a id="kwf.2006">KWF</a> (ed.) (2006): Holzernteverfahren -
 Vergleichende Erhebung und Beurteilung, Daten CD mit Beschreibung der
@@ -1719,17 +1719,17 @@ Bewertungspraxis. [New stand assortment tables for forest valuation and
 their application in valuation practice.]. <em>Forst und Holz</em> **64
 (5)**, S. 16--25.
 
-<a id="offer.2018">Offer</a>, Armin and Staupendahl, Kai (2018):
+<a id="offer.2018">Offer</a>, Armin; Staupendahl, Kai (2018):
 Holzwerbungskosten- und Bestandessortentafeln (Wood Harvest Cost and
 Assortment Tables). <em>Kassel: HessenForst (publisher)</em>.
 
-<a id="schopfer.2003">Schoepfer</a>, W., Kaendler, G., Stoehr, D.
+<a id="schopfer.2003">Schoepfer</a>, W.; Kaendler, G.; Stoehr, D.
 (2003): Entscheidungshilfen für die Forst- und Holzwirtschaft - Zur
 Abschlussversion von HOLZERNTE. [Decision Support for Forestry and Wood
 Industry - The Final Version of HOLZERNTE]. <em>Forst und Holz</em>
 **58 (18)**, S. 545--550.
 
-<a id="vonbodelschwingh.2018">von Bodelschwingh</a>, Hilmar (2018):
+<a id="vbodelschwingh.2018">v. Bodelschwingh</a>, Hilmar (2018):
 Oekonomische Potentiale von Waldbestaenden. Konzeption und Abschaetzung
 im Rahmen einer Fallstudie in hessischen Staatswaldflaechen [Economic
 Potentials of Forest Stands and Their Consideration in Strategic

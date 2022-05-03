@@ -8,10 +8,10 @@
 #' applying the harvest costs function of von Bodelschwingh (2018). Consequences
 #' of disturbances and calamities are implemented based on Dieter (2001),
 #' Moellmann and Moehring (2017) and Fuchs et al. (2022a, 2022b). Apart from
-#' Dieter (2001) and Moellmann and Moehring (2017), all
-#' functions and factors are based on data of HessenForst, the public forest
-#' service of the Federal State of Hesse in Germany. For further details see the
-#' \pkg{woodValuationDE} readme.
+#' Dieter (2001) and Moellmann and Moehring (2017), all functions and factors
+#' are based on data of HessenForst, the public forest service of the Federal
+#' State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.

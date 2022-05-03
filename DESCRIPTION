@@ -1,7 +1,7 @@
 Package: woodValuationDE
 Type: Package
 Title: Wood Valuation Germany
-Version: 0.0.1
+Version: 0.0.2
 Authors@R:
     c(
     person(given = "Jasper M.",
@@ -15,31 +15,53 @@ Authors@R:
            email = "kai.husmann@uni-goettingen.de",
            comment=c(ORCID="0000-0003-2970-4709")),
     person(given = "Hilmar",
-           family = "v.Bodelschwingh",
-           role = "aut",
-           email = "hilmar.vonbodelschwingh@forst.hessen.de")
-           )
+           family = "v. Bodelschwingh",
+           role = "ctb",
+           email = "hilmar.vonbodelschwingh@forst.hessen.de"),
+    person(given = "Roman",
+           family = "Koster",
+           role = "ctb",
+           email = "tbd@test.de",
+           comment=c(ORCID="0000-0002-0439-2086")),
+    person(given = "Kai",
+           family = "Staupendahl",
+           role = "ctb",
+           email = "tbd@test.de"),
+    person(given = "Armin",
+           family = "Offer",
+           role = "ctb",
+           email = "tbd@test.de"),
+    person(given = "Bernhard",
+           family = "Möhring",
+           role = "ctb",
+           email = "tbd@test.de"),
+    person(given = "Carola",
+           family = "Paul",
+           role = "ctb",
+           email = "carola.paul@uni-goettingen.de",
+           comment=c(ORCID="0000-0002-6257-2026"))
+    )
 Description: A package for the monetary valuation of wood in German forests,
-             including estimations of harvest volume proportions, wood revenues
-             and harvest costs. The functions are sensitive to tree species,
-             mean diameter of the harvested trees, stand quality and harvest
+             including estimations of harvest quantities, wood revenues and
+             harvest costs. The functions are sensitive to tree species, mean
+             diameter of the harvested trees, stand quality and harvest
              procedure. The functions include estimations for the consequences
              of disturbances on revenues and costs.
              The underlying assortment tables are taken from Offer and
              Staupendahl (2018) with corresponding functions for salable and
              skidded volume derived in Fuchs et al. (in preparation). Wood 
-             revenue and harvest cost functions were taken from von
+             revenue and harvest cost functions were taken from v.
              Bodelschwingh (2018). The consequences of disturbances refer to
              Dieter (2001), Moellmann and Moehring (2017) and Fuchs et al.
-             (2022a, 2022b). For the full references see
-             documentation of functions and package readme. Apart from Dieter
-             (2001) and Moellmann and Moehring (2017), all functions and factors
-             are based on operational data of HessenForst, the forest
+             (2022a, 2022b). For the full references see documentation of
+             functions, package readme and Fuchs et al. (in preparation). Apart
+             from Dieter (2001) and Moellmann and Moehring (2017), all functions
+             and factors are based on data from HessenForst, the forest
              administration of the Federal State of Hesse in Germany.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Imports: dplyr (>= 1.0.0)
-URL: tbd
+URL: https://github.com/Forest-Economics-Goettingen/woodValuationDE
 Depends: R (>= 2.10)

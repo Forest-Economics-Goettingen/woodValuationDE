@@ -11,7 +11,8 @@
 #' (2017) and Fuchs et al. (2022a, 2022b). Apart from
 #' Dieter (2001), all functions and factors are based on data of HessenForst,
 #' the public forest service of the Federal State of Hesse in Germany. Fo
-#'  further details see the \pkg{woodValuationDE} readme.
+#'  further details see the \pkg{woodValuationDE}
+#'  \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.

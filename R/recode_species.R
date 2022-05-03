@@ -14,7 +14,7 @@
 #'                          available species and codes call
 #'                          \code{\link{get_species_codes}}.
 #' @param target.format Code format to be returned or an assignment to a species
-#'                      group for economic valuation. For a list with the
+#'                      group for the economic valuation. For a list with the
 #'                      available species and codes call
 #'                      \code{\link{get_species_codes}}.
 
@@ -22,8 +22,8 @@
 #'
 #' @noRd
 recode_species <- function(species.code.orig,
-                          source.format,
-                          target.format) {
+                           source.format,
+                           target.format) {
 
   # test: existing source formats
   if (!(paste0("species.code.", source.format) %in%
@@ -43,12 +43,16 @@ recode_species <- function(species.code.orig,
 
   # test: existing species
   if (!all(species.code.orig %in%
-           pull(params.wood.value$species.codes, !!paste0("species.code.", source.format)))) {
+           pull(params.wood.value$species.codes,
+                !!paste0("species.code.",
+                         source.format)))) {
 
     # missing species codes
     species.codes.missing <- species.code.orig[
       !(species.code.orig %in%
-        pull(params.wood.value$species.codes, !!paste0("species.code.", source.format)))
+        pull(params.wood.value$species.codes,
+             !!paste0("species.code.",
+                      source.format)))
     ]
 
     stop(paste0("recode_species: Unknown species codes (",

@@ -9,7 +9,8 @@
 #' the net revenues for the user-provided wood volume over bark. The underlying
 #' functions were derived based on data of HessenForst, the public forest
 #' service of the Federal State of Hesse in Germany. For further details
-#' see the \pkg{woodValuationDE} readme.
+#' see the \pkg{woodValuationDE}
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 #'
 #' @param volume Wood volume \eqn{[m^{3}]}{[m^3]}, referring to volume over bark
 #'               of the trees to be harvested, as usually provided by yield
