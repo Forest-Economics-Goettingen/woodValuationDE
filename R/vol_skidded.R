@@ -16,7 +16,7 @@
 #' assortment tables are based on data from HessenForst, the public forest
 #' service of the Federal State of Hesse in Germany. For further details see the
 #' \pkg{woodValuationDE}
-#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
+#' \link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.
@@ -26,14 +26,14 @@
 #' @param value.level Stand quality expressed as an integer of \code{1:3}, with
 #'                    \code{1} for an extraordinarily high stand quality with 
 #'                    high shares of wood suitable for high-valued usages such
-#'                    as furniture, \code{2} for an average quality, and
+#'                    as furniture, \code{2} for a moderate quality, and
 #'                    \code{3} for an extraordinarily low quality (e.g., trees
 #'                    with many thick branches or stands). The
 #'                    \code{value.level}s refer to the applied assortment tables
 #'                    (Offer and Staupendahl, 2018).
 #' @param process.type Type of harvest process, with \code{"manually"} for
-#'                     motor-manual harvest using a chain saw,
-#'                     \code{"harvester"} for highly mechanized harvest
+#'                     motor-manual harvesting using a chain saw,
+#'                     \code{"harvester"} for highly mechanized forest harvest
 #'                     machines, or \code{"combined"} for a combination of the
 #'                     previous types dependent on the mean diameter.
 #' @param species.code.type Type of code in which \code{species} is given.
@@ -42,12 +42,12 @@
 #'                          Saxony, Germany. For a list with the available
 #'                          species and codes call
 #'                          \code{\link{get_species_codes}}.
-#' @return A vector with relative shares of salable wood volume.
-#' @references Fuchs, Jasper M., von Bodelschwingh, Hilmar, Koster, Roman,
-#'             Moehring, Bernhard, Paul, Carola, Husmann, Kai (in preparation):
-#'             woodValuationDE: A consistent framework for wood valuation in
-#'             Germany
-#' @references Offer, Armin and Staupendahl, Kai (2018): Holzwerbungskosten- und
+#' @return A vector with relative shares of skidded wood volume.
+#' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
+#'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
+#'             Carola (in preparation): woodValuationDE: A consistent framework
+#'             for wood valuation in Germany (technical note)
+#' @references Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).
 #' @examples

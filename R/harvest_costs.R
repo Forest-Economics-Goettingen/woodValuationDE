@@ -5,13 +5,13 @@
 #' Harvest costs per cubic meter skidded volume
 #'
 #' The function estimates harvest costs per cubic meter skidded wood volume
-#' applying the harvest costs function of von Bodelschwingh (2018). Consequences
+#' applying the harvest costs function of v. Bodelschwingh (2018). Consequences
 #' of disturbances and calamities are implemented based on Dieter (2001),
 #' Moellmann and Moehring (2017) and Fuchs et al. (2022a, 2022b). Apart from
 #' Dieter (2001) and Moellmann and Moehring (2017), all functions and factors
-#' are based on data of HessenForst, the public forest service of the Federal
+#' are based on data from HessenForst, the public forest service of the Federal
 #' State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
-#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
+#' \link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.
@@ -23,7 +23,7 @@
 #'                    standard conditions without limitations, \code{2} for
 #'                    moist sites or sites with a slope between 36 \% and 58 \%,
 #'                    and \code{3} for slopes > 58 \%. The cost.levels refer to
-#'                    the harvest cost model by von Bodelschwingh (2018).
+#'                    the harvest cost model of v. Bodelschwingh (2018).
 #' @param calamity.type Defines the disturbance or calamity situation to allow
 #'                      for the consideration of lower net revenues in the case
 #'                      of salvage harvests. The calamity type determines the
@@ -44,25 +44,27 @@
 #'                      species), \code{insects.moellmann.2017} refers to
 #'                      damages by insects; \code{"ips.fuchs.2022b"} refers to
 #'                      quality losses due to infestations by the European
-#'                      spruce bark beetle or \code{"ips.timely.fuchs.2022b"} for
-#'                      timely salvage fellings in less advanced attack stages
-#'                      (both according to Fuchs et al. 2022b); and
-#'                      \code{"stand.damage.fuchs.2022a"} to disturbances affecting
-#'                      only one stand, \code{"regional.disturbances.fuchs.2022a"} to
+#'                      spruce bark beetle or \code{"ips.timely.fuchs.2022b"}
+#'                      for timely salvage fellings in less advanced attack 
+#'                      stages (both according to Fuchs et al. 2022b); and
+#'                      \code{"stand.damage.fuchs.2022a"} to disturbances
+#'                      affecting only one stand, 
+#'                      \code{"regional.disturbances.fuchs.2022a"} to 
 #'                      disturbances with effects on the regional wood market
-#'                      and \code{"transregional.calamity.fuchs.2022a"} to calamities
-#'                      affecting transregional wood markets (the last three
-#'                      referring to Fuchs et al. 2022a). User-defined
-#'                      types can be implemented via the \code{calamity.factors}
-#'                      parameter.
+#'                      and \code{"transregional.calamity.fuchs.2022a"} to
+#'                      calamities affecting transregional wood markets (the
+#'                      last three referring to Fuchs et al. 2022a).
+#'                      User-defined types can be implemented via the
+#'                      \code{calamity.factors} argument.
 #' @param calamity.factors Summands \eqn{[EUR m^{-3}]}{[EUR m^(-3)]}
 #'                         and factors to consider the consequences of
 #'                         disturbances and calamities on wood revenues and
 #'                         harvest costs. \code{"baseline"} provides a tibble
 #'                         based on the references listed in
-#'                         \code{calamity.type} (for details see readme of
-#'                         \pkg{woodValuationDE}). Alternatively, it can be
-#'                         user-provided tibble with the same structure.
+#'                         \code{calamity.type} (for details see
+#'                         \link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}
+#'                         of \pkg{woodValuationDE}). Alternatively, it can be
+#'                         a user-provided tibble with the same structure.
 #' @param species.code.type Type of code in which \code{species} is given.
 #'                          \code{"en"} for English species names or
 #'                          \code{"nds"} for numeric species codes used in Lower
@@ -76,20 +78,20 @@
 #'             beech calculated with Monte Carlo modelling techniques. For.
 #'             Policy Econ. 2 (2), S. 157-166.
 #'             \doi{10.1016/S1389-9341(01)00045-4}.
-#' @references Fuchs, Jasper M., v. Bodelschwingh, Hilmar, Lange, Alexander,
-#'             Paul, Carola, Husmann, Kai (2022a): Quantifying the
+#' @references Fuchs, Jasper M.; v. Bodelschwingh, Hilmar; Lange, Alexander;
+#'             Paul, Carola; Husmann, Kai (2022a): Quantifying the
 #'             consequences of disturbances on wood revenues with Impulse
 #'             Response Functions. For. Policy Econ. 140, art. 102738.
 #'             \doi{10.1016/j.forpol.2022.102738}.
-#' @references Fuchs, Jasper M., Hittenbeck, Anika, Brandl, Susanne, Schmidt,
-#'             Matthias, Paul, Carola (2022b): Adaptation Strategies for
+#' @references Fuchs, Jasper M.; Hittenbeck, Anika; Brandl, Susanne; Schmidt,
+#'             Matthias; Paul, Carola (2022b): Adaptation Strategies for
 #'             Spruce Forests - Economic Potential of Bark Beetle Management and
 #'             Douglas Fir Cultivation in Future Tree Species Portfolios.
 #'             Forestry 95 (2) 229-246. \doi{10.1093/forestry/cpab040}
-#' @references Moellmann, Torsten B., Moehring, Bernhard (2017): A practical way
+#' @references Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
 #'             to integrate risk in forest management decisions. Ann. For. Sci.
 #'             74 (4), S.75. \doi{10.1007/s13595-017-0670-x}
-#' @references von Bodelschwingh, Hilmar (2018): Oekonomische Potentiale von
+#' @references v. Bodelschwingh, Hilmar (2018): Oekonomische Potentiale von
 #'             Waldbestaenden. Konzeption und Abschaetzung im Rahmen einer
 #'             Fallstudie in hessischen Staatswaldflaechen (Economic Potentials
 #'             of Forest Stands and Their Consideration in Strategic Decisions).

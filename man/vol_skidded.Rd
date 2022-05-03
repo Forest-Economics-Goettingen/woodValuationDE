@@ -2,7 +2,7 @@
 % Please edit documentation in R/vol_skidded.R
 \name{vol_skidded}
 \alias{vol_skidded}
-\title{Share of standing tree volume which is skidded}
+\title{Relative share of the volume over bark that is skidded}
 \usage{
 vol_skidded(
   diameter.q,
@@ -20,14 +20,14 @@ the harvested trees \eqn{[cm]}{[cm]}.}
 a list with the available species and codes call
 \code{\link{get_species_codes}}.}
 
-\item{value.level}{Stand quality expressed as integer of \code{1:3}, with
-\code{1} for an extraordinary high stand quality with high
-shares of wood suitable for furniture, \code{2} for an
-average quality, and \code{3} for an extraordinary low
-quality (e.g. trees with many thick branches or stands
-with massive ungulate damages). The value.levels refer to
-the applied assortment tables (Offer and Staupendahl,
-2018).}
+\item{value.level}{Stand quality expressed as an integer of \code{1:3}, with
+\code{1} for an extraordinarily high stand quality with 
+high shares of wood suitable for high-valued usages such
+as furniture, \code{2} for an average quality, and
+\code{3} for an extraordinarily low quality (e.g., trees
+with many thick branches or stands). The
+\code{value.level}s refer to the applied assortment tables
+(Offer and Staupendahl, 2018).}
 
 \item{process.type}{Type of harvest process, with \code{"manually"} for
 motor-manual harvest using a chain saw,
@@ -43,18 +43,22 @@ species and codes call
 \code{\link{get_species_codes}}.}
 }
 \value{
-A vector with relative shares of skidded wood volume.
+A vector with relative shares of salable wood volume.
 }
 \description{
-The function estimates the share of standing wood volume which is skidded.
-This is the share of salable volume, but excluding private fuel wood since
-this is not commercially skidded. The share of skidded wood is required to
-derive the harvest costs per unit standing volume. The function is based on
-the assortment tables of Offer and Staupendahl (2018) and its derivation is
-described in Fuchs et al. (in preparation). The underlying assortment tables
-are based on data of HessenForst, the forest administration of the Federal
-State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
-readme.
+The function estimates the skidded share of the wood volume. It is expressed
+in relation to the volume over bark (German unit: Vfm) as usually provided by
+yield tables and forest simulators. This includes all pulp wood and sawlog
+assortments. It is assumed that the fuel wood assortments are processed by
+private individuals and are thus not commercially delivered to the forest
+road. The share of salable wood is required to derive the costs for
+harvesting and skidding per cubic meter volume over bark. The function is
+based on the assortment tables from Offer and Staupendahl (2018) and its
+derivation is described in Fuchs et al. (in preparation). The underlying
+assortment tables are based on data from HessenForst, the public forest
+service of the Federal State of Hesse in Germany. For further details see the
+\pkg{woodValuationDE}
+\link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}. Tesr
 }
 \examples{
 vol_skidded(40,
@@ -82,10 +86,10 @@ vol_skidded(rep(seq(20, 50, 10),
                                each = 4))
 }
 \references{
-Fuchs, Jasper M., von Bodelschwingh, Hilmar, Paul, Carola,
-            Husmann, Kai (in preparation): Applying Time Series Analysis to
-            Quantify the Impact of Quality and Supply Changes After
-            Disturbances on Wood Revenues.
+Fuchs, Jasper M., von Bodelschwingh, Hilmar, Koster, Roman,
+            Moehring, Bernhard, Paul, Carola, Husmann, Kai (in preparation):
+            woodValuationDE: A consistent framework for wood valuation in
+            Germany
 
 Offer, Armin and Staupendahl, Kai (2018): Holzwerbungskosten- und
             Bestandessortentafeln (Wood Harvest Cost and Assortment
