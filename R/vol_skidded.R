@@ -16,7 +16,7 @@
 #' assortment tables are based on data from HessenForst, the public forest
 #' service of the Federal State of Hesse in Germany. For further details see the
 #' \pkg{woodValuationDE}
-#' \link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}.
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE\{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.

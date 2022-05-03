@@ -11,7 +11,7 @@
 #' Dieter (2001) and Moellmann and Moehring (2017), all functions and factors
 #' are based on data from HessenForst, the public forest service of the Federal
 #' State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
-#' \link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}.
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE\{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.
@@ -62,7 +62,7 @@
 #'                         harvest costs. \code{"baseline"} provides a tibble
 #'                         based on the references listed in
 #'                         \code{calamity.type} (for details see
-#'                         \link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}
+#'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE\{readme}
 #'                         of \pkg{woodValuationDE}). Alternatively, it can be
 #'                         a user-provided tibble with the same structure.
 #' @param species.code.type Type of code in which \code{species} is given.
