@@ -19,7 +19,7 @@ Authors@R:
            role = "ctb"),
     person(given = "Roman",
            family = "Koster",
-           role = "ctb"
+           role = "ctb",
            comment=c(ORCID="0000-0002-0439-2086")),
     person(given = "Kai",
            family = "Staupendahl",
