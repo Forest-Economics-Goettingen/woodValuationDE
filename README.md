@@ -68,23 +68,24 @@ the assortment tables assume the harvest of entire stands, which must be
 considered when revenues for harvests of smaller parts of stands are
 estimated.
 
-[Fuchs et al. (in preparation)](#fuchs.inpreparation)
-
 ---
 
 [Fuchs et al. (in preparation)](#fuchs.inpreparation)
 
-<em>
+<strong>
 For the full information on the underlying models and a discussion of the
 limitations of <strong>woodValuationDE</strong>, we refer the readers to the
-technical note of</em> [Fuchs et al. (in preparation)](#fuchs.inpreparation).
-<em>We will add the full reference once the manuscript is published.
-</em>
+technical note
+</strong>
 
-<em>
+[Fuchs et al. (in preparation)](#fuchs.inpreparation)
+
+<em>We will add the full reference once the manuscript is published.</em>
+
+<strong>
 We encourage users to conduct sensitivity analyses and to review the default
 parameters and modify them where necessary.
-</em>
+</strong>
 
 ---
 
