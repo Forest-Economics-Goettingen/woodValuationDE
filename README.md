@@ -73,7 +73,7 @@ estimated.
 <em>
 For the full information on the underlying models and a discussion of the
 limitations of <strong>woodValuationDE</strong>, we refer the readers to the
-technical note </em>([Fuchs et al., in preparation](#fuchs.inpreparation)).
+technical note of</em> [Fuchs et al. (in preparation)](#fuchs.inpreparation).
 <em>We will add the full reference once the manuscript is published.
 </em>
 
