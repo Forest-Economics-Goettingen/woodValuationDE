@@ -291,7 +291,7 @@ The <i>value.levels</i> refer to the applied assortment tables
 Type of harvest process:
 
 * <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly-mechanized harves using forest harvesters
+* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
 * <i>"combined"</i>: a combination of the previous types dependent on
   the mean diameter
   
@@ -303,7 +303,7 @@ mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
-model, assuming diameter-specific shares of motor-manual and highly-mechanized
+model, assuming diameter-specific shares of motor-manual and highly mechanized
 harvests:
 
 * softwood species
@@ -610,7 +610,7 @@ The <i>value.levels</i> refer to the applied assortment tables
 Type of harvest process:
     
 * <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly-mechanized harvest using forest harvesters
+* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
 * <i>"combined"</i>: a combination of the previous types dependent on
   the mean diameter
       
@@ -622,7 +622,7 @@ mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
-model, assuming diameter-specific shares of motor-manual and highly-mechanized
+model, assuming diameter-specific shares of motor-manual and highly mechanized
 harvests:
                 
 * softwood species
@@ -1154,7 +1154,7 @@ harvest cost model by
 Type of harvest process:
         
 * <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly-mechanized harvest using forest harvesters
+* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
 * <i>"combined"</i>: a combination of the previous types dependent on
   the mean diameter
         
@@ -1166,7 +1166,7 @@ mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
-model, assuming diameter-specific shares of motor-manual and highly-mechanized
+model, assuming diameter-specific shares of motor-manual and highly mechanized
 harvests:
                 
 * softwood species
@@ -1433,7 +1433,7 @@ harvest cost model by
 Type of harvest process:
         
 * <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly-mechanized harvest using forest harvesters
+* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
 * <i>"combined"</i>: a combination of the previous types dependent on
   the mean diameter
 
@@ -1445,7 +1445,7 @@ mechanized harvests,
 [Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
-model, assuming diameter-specific shares of motor-manual and highly-mechanized
+model, assuming diameter-specific shares of motor-manual and highly mechanized
 harvests:
               
 * softwood species
