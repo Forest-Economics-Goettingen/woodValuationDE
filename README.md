@@ -70,12 +70,10 @@ estimated.
 
 ---
 
-[Fuchs et al. (in preparation)](#fuchs.inpreparation)
-
 <strong>
 For the full information on the underlying models and a discussion of the
 limitations of <strong>woodValuationDE</strong>, we refer the readers to the
-technical note
+technical note:
 </strong>
 
 [Fuchs et al. (in preparation)](#fuchs.inpreparation)
@@ -113,15 +111,11 @@ net revenues (see Fig. 1).
     <i>Fig. 1:</i> Structural outline of
     <strong>woodValuationDE</strong> with user input and output as well
     as the main functions. Font: bold: main elements, italics:
-    functions. Color: blue: function derived in 
-    [Fuchs et al. (in preparation)](#fuchs.inpreparation) based on
-    [Offer and Staupendahl (2018)](#offer.2018), green: functions taken
-    from [v. Bodelschwingh (2018)](#vbodelschwingh.2018), red:
-    calamity factors derived in [Dieter (2001)](#dieter.2001),
-    [Fuchs et al. (2022a)](#fuchs.2022a), and
-    [Fuchs et al. (2022b)](#fuchs.2022b). Box shape:
-    rectangular: functions and factors, parallelogram: user input and
-    output.
+    functions. Color: blue: function derived in Fuchs et al. (in preparation)
+    based on Offer and Staupendahl (2018), green: functions taken from v.
+    Bodelschwingh (2018), red: calamity factors derived in Dieter (2001),
+    Moellmann and Moehring (2017) and Fuchs et al. (2022a, 2022b). Box shape:
+    rectangular: functions and factors, parallelogram: user input and output.
   </figcaption>
 </figure>
 
