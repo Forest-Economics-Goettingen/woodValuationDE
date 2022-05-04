@@ -55,7 +55,7 @@ the assortment tables from Offer and Staupendahl (2018) and its derivation is
 described in Fuchs et al. (in preparation). The underlying assortment tables
 are based on data from HessenForst, the public forest service of the Federal
 State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
-\link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}.
+\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 }
 \examples{
 vol_salable(40,

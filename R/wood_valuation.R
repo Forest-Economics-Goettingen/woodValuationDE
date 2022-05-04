@@ -11,7 +11,7 @@
 #' over bark. The underlying functions were derived based on data from
 #' HessenForst, the public forest service of the Federal State of Hesse in
 #' Germany. For further details see the \pkg{woodValuationDE}
-#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE\{readme}.
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 #'
 #' @param volume Wood volume \eqn{[m^{3}]}{[m^3]}, referring to volume over bark
 #'               of the trees to be harvested, as usually provided by yield
@@ -44,7 +44,7 @@
 #'                     to consider market fluctuations. Default is
 #'                     \code{"baseline"} referring to the prices from 2010 to
 #'                     2015 in Hesse, Germany (for details see
-#'                     \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE\{readme}
+#'                     \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
 #'                     of \pkg{woodValuationDE} or v. Bodelschwingh (2018)).
 #'                     Alternatively, it can be user-provided tibble with the
 #'                     same structure. The column species uses the specified
@@ -87,7 +87,7 @@
 #'                         harvest costs. \code{"baseline"} provides a tibble
 #'                         based on the references listed in
 #'                         \code{calamity.type} (for details see
-#'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE\{readme}
+#'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
 #'                         of \pkg{woodValuationDE}). Alternatively, it can be
 #'                         a user-provided tibble with the same structure.
 #' @param species.code.type Type of code in which \code{species} is given.

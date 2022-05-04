@@ -42,7 +42,7 @@ previous types dependent on the mean diameter.}
 to consider market fluctuations. Default is
 \code{"baseline"} referring to the prices from 2010 to
 2015 in Hesse, Germany (for details see
-\link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}
+\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
 of \pkg{woodValuationDE} or v. Bodelschwingh (2018)).
 Alternatively, it can be user-provided tibble with the
 same structure. The column species uses the specified
@@ -87,7 +87,7 @@ disturbances and calamities on wood revenues and
 harvest costs. \code{"baseline"} provides a tibble
 based on the references listed in
 \code{calamity.type} (for details see
-\link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}
+\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
 of \pkg{woodValuationDE}). Alternatively, it can be
 a user-provided tibble with the same structure.}
 
@@ -112,7 +112,7 @@ calamities are implemented based on Dieter (2001), Moellmann and Moehring
 Moellmann and Moehring (2017), all functions and factors are based on data
 from HessenForst, the public forest service of the Federal State of Hesse in
 Germany. For further details see the \pkg{woodValuationDE}
-\link[https://github.com/Forest-Economics-Goettingen/woodValuationDE]{readme}.
+\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 }
 \examples{
 wood_revenues(40,
