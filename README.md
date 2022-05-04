@@ -68,7 +68,11 @@ the assortment tables assume the harvest of entire stands, which must be
 considered when revenues for harvests of smaller parts of stands are
 estimated.
 
+[Fuchs et al. (in preparation)](#fuchs.inpreparation)
+
 ---
+
+[Fuchs et al. (in preparation)](#fuchs.inpreparation)
 
 <em>
 For the full information on the underlying models and a discussion of the
