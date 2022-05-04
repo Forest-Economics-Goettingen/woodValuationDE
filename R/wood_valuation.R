@@ -96,6 +96,9 @@
 #'                          Saxony, Germany. For a list with the available
 #'                          species and codes call
 #'                          \code{\link{get_species_codes}}.
+#' @param method argument that is currently not used, but offers the possibility
+#'               to implement alternative parameters and functions in the
+#'               future.
 #' @return A tibble with all steps of the wood valuation (harvest quantities,
 #'         harvest costs, wood revenues \eqn{[EUR m^{-3}]}{[EUR m^(-3)]} and
 #'         total net revenues \eqn{[EUR]}{[EUR]}).
@@ -212,7 +215,8 @@ wood_valuation <- function(
   price.ref.assortment = "baseline",
   calamity.type = "none",
   calamity.factors = "baseline",
-  species.code.type = "en"
+  species.code.type = "en",
+  method = "fuchs.orig"
 ) {
 
   tibble(

@@ -12,7 +12,8 @@ wood_revenues(
   price.ref.assortment = "baseline",
   calamity.type = "none",
   calamity.factors = "baseline",
-  species.code.type = "en"
+  species.code.type = "en",
+  method = "fuchs.orig"
 )
 }
 \arguments{
@@ -97,6 +98,10 @@ a user-provided tibble with the same structure.}
 Saxony, Germany. For a list with the available
 species and codes call
 \code{\link{get_species_codes}}.}
+
+\item{method}{argument that is currently not used, but offers the possibility
+to implement alternative parameters and functions in the
+future.}
 }
 \value{
 A vector with wood revenues per cubic meter

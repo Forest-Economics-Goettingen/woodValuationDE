@@ -71,6 +71,9 @@
 #'                          Saxony, Germany. For a list with the available
 #'                          species and codes call
 #'                          \code{\link{get_species_codes}}.
+#' @param method argument that is currently not used, but offers the possibility
+#'               to implement alternative parameters and functions in the
+#'               future.
 #' @return A vector with harvest costs per cubic meter skidded volume
 #'         \eqn{[EUR m^{-3}]}{[EUR m^(-3)]}. The volume refers to the skidded
 #'         wood volume, provided by \code{\link{vol_skidded}}.
@@ -157,7 +160,8 @@ harvest_costs <- function(
   cost.level = 1,
   calamity.type = "none",
   calamity.factors = "baseline",
-  species.code.type = "en"
+  species.code.type = "en",
+  method = "fuchs.orig"
 ) {
 
   if (is.character(calamity.factors)) {

@@ -9,7 +9,8 @@ vol_skidded(
   species,
   value.level = 2,
   process.type = "combined",
-  species.code.type = "en"
+  species.code.type = "en",
+  method = "fuchs.orig"
 )
 }
 \arguments{
@@ -41,6 +42,10 @@ previous types dependent on the mean diameter.}
 Saxony, Germany. For a list with the available
 species and codes call
 \code{\link{get_species_codes}}.}
+
+\item{method}{argument that is currently not used, but offers the possibility
+to implement alternative parameters and functions in the
+future.}
 }
 \value{
 A vector with relative shares of skidded wood volume.

@@ -42,6 +42,9 @@
 #'                          Saxony, Germany. For a list with the available
 #'                          species and codes call
 #'                          \code{\link{get_species_codes}}.
+#' @param method argument that is currently not used, but offers the possibility
+#'               to implement alternative parameters and functions in the
+#'               future.
 #' @return A vector with relative shares of skidded wood volume.
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
@@ -83,7 +86,8 @@ vol_skidded <- function(
   species,
   value.level = 2,
   process.type = "combined",
-  species.code.type = "en"
+  species.code.type = "en",
+  method = "fuchs.orig"
 ) {
 
   vol.skidded <-

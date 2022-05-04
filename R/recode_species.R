@@ -17,13 +17,17 @@
 #'                      group for the economic valuation. For a list with the
 #'                      available species and codes call
 #'                      \code{\link{get_species_codes}}.
+#' @param method argument that is currently not used, but offers the possibility
+#'               to implement alternative parameters and functions in the
+#'               future.
 
 #' @import dplyr
 #'
 #' @noRd
 recode_species <- function(species.code.orig,
                            source.format,
-                           target.format) {
+                           target.format,
+                           method = "fuchs.orig") {
 
   # test: existing source formats
   if (!(paste0("species.code.", source.format) %in%

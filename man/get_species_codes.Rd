@@ -4,7 +4,12 @@
 \alias{get_species_codes}
 \title{Available species in \pkg{woodValuationDE}, their codes, and parameter assignments}
 \usage{
-get_species_codes()
+get_species_codes(method = "fuchs.orig")
+}
+\arguments{
+\item{method}{argument that is currently not used, but offers the possibility
+to implement alternative parameters and functions in the
+future.}
 }
 \value{
 A list with the species, species codes, and assignments to economic
