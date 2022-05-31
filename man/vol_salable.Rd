@@ -8,7 +8,7 @@ vol_salable(
   diameter.q,
   species,
   value.level = 2,
-  process.type = "combined",
+  logging.method = "combined",
   species.code.type = "en",
   method = "fuchs.orig"
 )
@@ -30,11 +30,12 @@ with many thick branches or stands). The
 \code{value.level}s refer to the applied assortment tables
 (Offer and Staupendahl, 2018).}
 
-\item{process.type}{Type of harvest process, with \code{"manually"} for
-motor-manual harvesting using a chain saw,
-\code{"harvester"} for highly mechanized forest harvest
-machines, or \code{"combined"} for a combination of the
-previous types dependent on the mean diameter.}
+\item{logging.method}{Logging method, with \code{"manually"} for
+motor-manual logging using a chain saw,
+\code{"harvester"} for logging with highly mechanized
+forest harvesters, or \code{"combined"} for a
+combination of the previous methods dependent on the
+mean diameter.}
 
 \item{species.code.type}{Type of code in which \code{species} is given.
 \code{"en"} for English species names or
@@ -84,8 +85,8 @@ vol_salable(rep(seq(20, 50, 10),
                 2),
             rep(c("beech", "spruce"),
                 each = 4),
-            process.type = rep(c("manually", "harvester"),
-                               each = 4))
+            logging.method = rep(c("manually", "harvester"),
+                                 each = 4))
 }
 \references{
 Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,

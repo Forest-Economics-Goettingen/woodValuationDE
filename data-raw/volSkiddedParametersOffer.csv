@@ -1,4 +1,4 @@
-tree.species;species.code;value.level;process.type;A;tw;zm;min.dq;max.dq
+tree.species;species.code;value.level;logging.method;A;tw;zm;min.dq;max.dq
 birch;410;1;harvester;0,5776705;12,2639417;0,04193343;10;40
 birch;410;1;combined;0,5702768;12,2088678;0,04156681;10;60
 birch;410;1;manually;0,573595;15,1431488;0,04044717;10;60
