@@ -2,9 +2,9 @@ woodValuationDE
 ===================================
 
 A package for the monetary valuation of wood in German forests (stumpage
-values), including estimations of harvest quantities, wood revenues and harvest
+values), including estimations of harvest quantities, wood revenues, and harvest
 costs. The functions are sensitive to tree species, mean diameter of the
-harvested trees, stand quality and harvest procedure. The functions include
+harvested trees, stand quality, and logging method. The functions include
 estimations for the consequences of disturbances on revenues and costs.
 
 <h1><a name="menu"></a></h1>
@@ -25,32 +25,31 @@ estimations for the consequences of disturbances on revenues and costs.
 
 <h1><a name="introduction">Introduction</a></h1>
 
-When assessing the multiple ecosystem services provided by German
-forests, economic indicators for productive ecosystem services are
-relevant but are not always easily estimable. This is because their calculation
-is time consuming and requires either quantitative information or many
-assumptions on them. The net wood revenues, as a basis for several indicators
-related to income from wood production, depend, a.o., on tree species, diameter,
-and stand quality. Disturbance events also affect the net revenues, as
-wood quality is reduced due to mechanical damage, market prices are
-reduced due to increasing wood supply and harvest costs might increase
-[Fuchs et al. (2022a)](#fuchs.2022a).
+When assessing the multiple ecosystem services provided by German forests,
+economic indicators for productive ecosystem services are relevant but are not
+always easily estimable. This is because their calculation is time consuming and
+requires either quantitative information or many assumptions on them. The net
+wood revenues, as a basis for several indicators related to income from wood
+production, depend, a.o., on tree species, diameter, and stand quality.
+Disturbance events also affect the net revenues, as wood quality is reduced due
+to mechanical damage, market prices are reduced due to increasing wood supply
+and harvest costs might increase [Fuchs et al. (2022b)](#fuchs.2022b).
 
-Here, <strong>woodValuationDE</strong> contributes with a comprehensive
-wood valuation model considering the various influences on 
+Here, <strong>woodValuationDE</strong> contributes with a comprehensive wood
+valuation model considering the various influences on 
 <em>assortment composition</em>, <em>harvest costs</em> and <em>wood
-revenues</em>. It simplifies the estimation of realistic monetary wood value
-for a broad field of bioeconomic applications. A particular strength of
-<strong>woodValuationDE</strong> is the consistency of the data
-underlying the various models, including a set of disturbance scenarios.
+revenues</em>. It simplifies the estimation of realistic monetary wood value for
+a broad field of bioeconomic applications. A particular strength of
+<strong>woodValuationDE</strong> is the consistency of the data underlying the
+various models, including a set of disturbance scenarios.
 
-<strong>woodValuationDE</strong> comprises data and models obtained from
-several studies. It makes previously published models available for
-future studies by creating a consistent valuation framework since
+<strong>woodValuationDE</strong> comprises data and models obtained from several
+studies. It makes previously published models available for future studies by
+creating a consistent valuation framework since
 all<sup>[1](#fndieter),[2](#fnmoellmann)</sup> submodels are based on
-operational harvest and sale data from HessenForst, the public forest
-service of the Federal State of Hesse in Germany. The underlying
-assortment tables are taken from [Offer and Staupendahl (2018)](
+operational harvest and sale data from HessenForst, the public forest service of
+the Federal State of Hesse in Germany. The underlying assortment tables are
+taken from [Offer and Staupendahl (2018)](
 #offer.2018) with corresponding functions for the harvest volume
 proportions derived in [Fuchs et al. (in preparation)](
 #fuchs.inpreparation). Wood revenue and harvest cost functions were
@@ -61,12 +60,11 @@ consequences of disturbances refer to [Dieter (2001)](
 #fuchs.2022a), and [Fuchs et al. (2022b)](#fuchs.2022b).
 
 The assortment tables as well as the other models in
-<strong>woodValuationDE</strong> represent average conditions in Hesse.
-The estimations usually represent a strong simplification, since
-the variability of these values is very large in practice. Furthermore,
-the assortment tables assume the harvest of entire stands, which must be
-considered when revenues for harvests of smaller parts of stands are
-estimated.
+<strong>woodValuationDE</strong> represent average conditions in Hesse. The
+estimations usually represent a strong simplification, since the variability of
+these values is very large in practice. Furthermore, the assortment tables
+assume the harvest of entire stands, which must be considered when revenues for
+harvests of smaller parts of stands are estimated.
 
 ---
 
@@ -88,83 +86,79 @@ parameters and modify them where necessary.
 ---
 
 <i><sup><a id="fndieter">1</a></sup>The assumed factor according to
-[Dieter (2001)](#dieter.2001) is an exception since it is based on wood
-prices in southern Germany. However, we included it since it has often
-been applied in bioeconomic simulations for Germany.</i>
+[Dieter (2001)](#dieter.2001) is an exception since it is based on wood prices
+in southern Germany. However, we included it since it has often been applied in
+bioeconomic simulations for Germany.</i>
 
 <i><sup><a id="fndieter">2</a></sup>The assumed factors according to
-[Moellmann and Moehring (2017)](#moellmann.2017) are an exception since
-they are based on surveys of forest owners and managers in the entirety of
-Germany. However, we included them, since they provide estimates distinguishing
+[Moellmann and Moehring (2017)](#moellmann.2017) are an exception since they are
+based on surveys of forest owners and managers in the entirety of Germany.
+However, we included them, since they provide estimates distinguishing
 between the disturbance agents.</i>
 
 <h1><a name="structure">Package Structure</a></h1>
 
 The wood valuation implemented in <strong>woodValuationDE</strong> is a
-three-stage approach, deriving (i) the relevant harvest volume
-proportions, (ii) the revenues and costs per volume unit, and (iii) the
-net revenues (see Fig. 1).
+three-stage approach, deriving (i) the relevant harvest volume proportions, (ii)
+the revenues and costs per volume unit, and (iii) the net revenues (see Fig. 1).
 
 <figure align="center">
   <img src="./man/fig/packagestructure.png" width="100%"/>
   <figcaption>
     <i>Fig. 1:</i> Structural outline of
-    <strong>woodValuationDE</strong> with user input and output as well
-    as the main functions. Font: bold: main elements, italics:
-    functions. Color: blue: function derived in Fuchs et al. (in preparation)
-    based on Offer and Staupendahl (2018), green: functions taken from v.
-    Bodelschwingh (2018), red: calamity factors derived in Dieter (2001),
-    Moellmann and Moehring (2017) and Fuchs et al. (2022a, 2022b). Box shape:
-    rectangular: functions and factors, parallelogram: user input and output.
+    <strong>woodValuationDE</strong> with user input and output as well as the
+    main functions. Font: bold: main elements, italics: functions. Color: blue:
+    function derived in Fuchs et al. (in preparation) based on Offer and
+    Staupendahl (2018), green: functions taken from v. Bodelschwingh (2018),
+    red: calamity factors derived in Dieter (2001), Moellmann and Moehring
+    (2017) and Fuchs et al. (2022a, 2022b). Box shape: rectangular: functions
+    and factors, parallelogram: user input and output.
   </figcaption>
 </figure>
 
-<br><strong>woodValuationDE</strong> allows for the estimation of wood
-values referring to the volume over bark of the standing trees to be
-harvested (German unit: Vfm) as usually provided by yield tables and
-single-tree simulation models. Volume losses due to harvest cuts and
-residuals (in German: X-Holz and NVD-Holz), e.g. due to fixed assortment
-length, are applied based on the harvest quantity functions:
-<a href="#fct_vol_salable"><em>vol_salable()</em></a> provides the 
-share of salable volume relative to the volume over bark of the standing
-trees that are to be harvested. It represents the volume that is
-utilized and taken out of the forest stand and is the relevant volume
-unit for the revenues.
-<a href="#fct_vol_skidded"><em>vol_skidded()</em></a> provides
-the share of skidded volume relative to the volume over bark of the
-standing trees that are to be harvested. This volume share is delivered
-to the forest road and represents the relevant volume unit for
-remuneration for the harvesting and skidding, i.e. the harvest costs. The
-salable volume is higher than the skidded volume since it also includes the
-private fuelwood usage, which is not delivered to the forest road.
+<br><strong>woodValuationDE</strong> allows for the estimation of wood values
+referring to the volume over bark of the standing trees to be harvested (German
+unit: Vfm) as usually provided by yield tables and single-tree simulation
+models. Volume losses due to harvest cuts and residues (in German: X-Holz and
+NVD-Holz), e.g. due to fixed assortment length, are applied based on the harvest
+quantity functions: <a href="#fct_vol_salable"><em>vol_salable()</em></a>
+provides the share of salable volume relative to the volume over bark of the
+standing trees that are to be harvested. It represents the volume that is
+utilized and taken out of the forest stand and is the relevant volume unit for
+the revenues.
+<a href="#fct_vol_skidded"><em>vol_skidded()</em></a> provides the share of
+skidded volume relative to the volume over bark of the standing trees that are
+to be harvested. This volume share is delivered to the forest road and
+represents the relevant volume unit for remuneration for the logging (harvesting
+and skidding), i.e. the harvest costs. The salable volume is higher than the
+skidded volume since it also includes the private fuelwood usage, which is not
+delivered to the forest road.
 
-Accordingly, <a href="#fct_wood_revenues"><em>wood_revenues()</em></a>
-estimates the revenues per cubic meter of salable wood [EUR
-m<sup>-3</sup>] and
-<a href="#fct_harvest_costs"><em>harvest_costs()</em></a> the harvest
-costs per cubic meter of skidded wood [EUR m<sup>-3</sup>]. Both
-models depend on the tree species and quadratic mean
-diameter<sup>[3](#fndq)</sup> of the harvested trees. Further function
-arguments are the stand quality, the type of harvest procedure, and the
-accessibility of the stand for harvest operations. In addition, current
-market situations can be considered via updated prices for the German
-reference assortments.
+Accordingly, <a href="#fct_wood_revenues"><em>wood_revenues()</em></a> estimates
+the revenues per cubic meter of salable wood [EUR m<sup>-3</sup>] and
+<a href="#fct_harvest_costs"><em>harvest_costs()</em></a> the harvest costs per
+cubic meter of skidded wood [EUR m<sup>-3</sup>]. Both models depend on the tree
+species and quadratic mean diameter<sup>[3](#fndq)</sup> of the harvested trees.
+Further function arguments are the stand quality, the logging method, and the
+accessibility of the stand for logging operations. In addition, current
+market situations can be considered via updated prices for the German reference
+assortments.
 
-The functions <a href="fct_wood_valuation"><em>wood_valuation()</em></a>
-and <a href="fct_wood_net_revenues"><em>wood_net_revenues()</em></a>
-provide wrappers for easy application of the wood valuation procedure
-implemented in <strong>woodValuationDE</strong>. Both functions call the
-previously described ones and combine them to derive the net wood
-revenues. While <a href="fct_wood_valuation"><em>wood_valuation()</em>
-</a> returns a tibble with the entire calculations,
-<a href="fct_wood_net_revenues"><em>wood_net_revenues()</em></a> can be
-used to directly get the total net revenues [EUR].
+The functions <a href="fct_wood_valuation"><em>wood_valuation()</em></a> and
+<a href="fct_wood_net_revenues"><em>wood_net_revenues()</em></a> provide
+wrappers for easy application of the wood valuation procedure implemented in
+<strong>woodValuationDE</strong>. Both functions call the previously described
+ones and combine them to derive the net wood revenues. While
+<a href="fct_wood_valuation"><em>wood_valuation()</em></a> returns a tibble with
+the entire calculations,
+<a href="fct_wood_net_revenues"><em>wood_net_revenues()</em></a> can be used to
+directly get the total net revenues [EUR].
 
-In the next section, we describe the functions' input arguments and
-output values as well as the underlying models and data with their
-references in more detail. The parameters for all models are stored as
-internal object <em>params.wood.value</em>. Users interested in the
-detailed parameters can call them via:
+In the next section, we describe the functions' input arguments and output
+values as well as the underlying models and data with their references in more
+detail. The parameters for all models are stored as internal object
+<em>params.wood.value</em>. Users interested in the detailed parameters can call
+them via:
 
 ``` r
 woodValuationDE:::params.wood.value
@@ -286,25 +280,25 @@ Stand quality, expressed as an integer value of 1:3:
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
 
-<h4><i>process.type</i></h4>
+<h4><i>logging.method</i></h4>
 
-Type of harvest process:
+Logging method:
 
-* <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
-* <i>"combined"</i>: a combination of the previous types dependent on
+* <i>"manually"</i>: motor-manual logging using a chain saw
+* <i>"harvester"</i>: highly mechanized logging using forest harvesters
+* <i>"combined"</i>: a combination of the previous methods dependent on
   the mean diameter
   
-The process types <i>"manually"</i> and <i>"harvester"</i> refer to
+The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
-mechanized harvests,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
+mechanized logging,
+[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly mechanized
-harvests:
+logging:
 
 * softwood species
   + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
@@ -360,7 +354,7 @@ vol_salable(rep(seq(20, 50, 10),
                 2),
             rep(c("beech", "spruce"),
                 each = 4),
-            process.type = rep(c("manually", "harvester"),
+            logging.method = rep(c("manually", "harvester"),
                                each = 4))
 ```
 
@@ -420,7 +414,7 @@ recycled.
 
 <h4><i>value.level</i></h4>
 
-<h4><i>process.type</i></h4>
+<h4><i>logging.method</i></h4>
 
 <h4><i>species.code.type</i></h4>
 
@@ -455,7 +449,7 @@ vol_skidded(rep(seq(20, 50, 10),
                 2),
             rep(c("beech", "spruce"),
                 each = 4),
-            process.type = rep(c("manually", "harvester"),
+            logging.method = rep(c("manually", "harvester"),
                                each = 4))
 ```
 
@@ -563,11 +557,11 @@ implemented by default are listed in <a href="#tab3">Tab. 3</a>.
 | <i>"storm.small.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
 | <i>"storm.large.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
 | <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
-| <i>"ips.fuchs.2022b"</i>          | 0.67     | \-        | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
-| <i>"ips.timely.fuchs.2022b"</i>   | 0.88     | \-        | [Fuchs et al. (2022b)]( #fuchs.2022b) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
-| <i>"stand.damage.fuchs.2022a"</i>      | 0.90     | 0.85      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
-| <i>"regional.disturbance.fuchs.2022a"</i> | 0.74     | 0.70      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
-| <i>"transregional.calamity.fuchs.2022a"</i> | 0.54     | 0.70      | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"ips.fuchs.2022a"</i>          | 0.67     | \-        | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
+| <i>"ips.timely.fuchs.2022a"</i>   | 0.88     | \-        | [Fuchs et al. (2022a)]( #fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
+| <i>"stand.damage.fuchs.2022b"</i>      | 0.90     | 0.85      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
+| <i>"regional.disturbance.fuchs.2022b"</i> | 0.74     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"transregional.calamity.fuchs.2022b"</i> | 0.54     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
 
 <h3>Input</h3>
 
@@ -605,25 +599,25 @@ Stand quality, expressed as an integer value of 1:3:
 The <i>value.levels</i> refer to the applied assortment tables
 [(Offer and Staupendahl, 2018)](#offer.2018).
 
-<h4><i>process.type</i></h4>
+<h4><i>logging.method</i></h4>
 
-Type of harvest process:
+Logging method:
     
-* <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
-* <i>"combined"</i>: a combination of the previous types dependent on
+* <i>"manually"</i>: motor-manual logging using a chain saw
+* <i>"harvester"</i>: highly mechanized logging using forest harvesters
+* <i>"combined"</i>: a combination of the previous methods dependent on
   the mean diameter
       
-The process types <i>"manually"</i> and <i>"harvester"</i> refer to
+The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized harvests,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
+[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly mechanized
-harvests:
+logging:
                 
 * softwood species
   + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
@@ -681,11 +675,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2022b",
-                            "ips.timely.fuchs.2022b",
-                            "stand.damage.fuchs.2022a",
-                            "regional.disturbance.fuchs.2022a",
-                            "transregional.calamity.fuchs.2022a"),
+                            "ips.fuchs.2022a",
+                            "ips.timely.fuchs.2022a",
+                            "stand.damage.fuchs.2022b",
+                            "regional.disturbance.fuchs.2022b",
+                            "transregional.calamity.fuchs.2022b"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -773,11 +767,11 @@ wood_revenues(40,
               rep("spruce", 7),
               calamity.type = c("none",
                                 "calamity.dieter.2001",
-                                "ips.fuchs.2022b",
-                                "ips.timely.fuchs.2022b",
-                                "stand.damage.fuchs.2022a",
-                                "regional.disturbance.fuchs.2022a",
-                                "transregional.calamity.fuchs.2022a"))
+                                "ips.fuchs.2022a",
+                                "ips.timely.fuchs.2022a",
+                                "stand.damage.fuchs.2022b",
+                                "regional.disturbance.fuchs.2022b",
+                                "transregional.calamity.fuchs.2022b"))
 
 # user-defined calamities with respective changes in wood revenues
 wood_revenues(40,
@@ -849,7 +843,7 @@ get_species_codes()
 ```
 
 The harvest costs are calculated under the assumption of combinations of
-harvest processes, dependent on the quadratic mean of the tree diameters
+logging methods, dependent on the quadratic mean of the tree diameters
 as well as the accessibility of the stand. The accessibility is
 considered in three cost levels (see <a href="#tab4">Tab. 4</a>). To
 avoid unusually high harvest costs at smaller diameters,
@@ -899,11 +893,11 @@ implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 | <i>"storm.small.moellmann.2017"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
 | <i>"storm.large.moellmann.2017"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment.
 | <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
-| <i>"ips.fuchs.2022b"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of higher harvest costs due to smaller, scattered harvest measures. |
-| <i>"ips.timely.fuchs.2022b"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of higher harvest costs due to smaller, scattered harvest measures, but also including costs for debarking or chemically treating the logs afterwards. |
-| <i>"stand.damage.fuchs.2022a"</i>      | 1.15 | 0   | 1.15 | 0   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for damages in a single stand with smaller harvest volumes based on experience of HessenForst. |
-| <i>"regional.disturbance.fuchs.2022a"</i> | 1.15 | 0   | 1.15 | 0   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for regional damages with smaller harvest volumes based on experience of HessenForst. |
-| <i>"transregional.calamity.fuchs.2022a"</i> | 1.25 | 0   | 1.25 | 0   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption for transregional damages with smaller harvest volumes and a high demand for timely harvest capacities, based on experience of HessenForst. |
+| <i>"ips.fuchs.2022a"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of higher harvest costs due to smaller, scattered logging operations. |
+| <i>"ips.timely.fuchs.2022a"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of higher harvest costs due to smaller, scattered logging operations, but also including costs for debarking or chemically treating the logs afterwards. |
+| <i>"stand.damage.fuchs.2022b"</i>      | 1.15 | 0   | 1.15 | 0   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption for damages in a single stand with smaller harvest volumes based on experience of HessenForst. |
+| <i>"regional.disturbance.fuchs.2022b"</i> | 1.15 | 0   | 1.15 | 0   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption for regional damages with smaller harvest volumes based on experience of HessenForst. |
+| <i>"transregional.calamity.fuchs.2022b"</i> | 1.25 | 0   | 1.25 | 0   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption for transregional damages with smaller harvest volumes and a high demand for timely harvest capacities, based on experience of HessenForst. |
 
 <h3>Input</h3>
 
@@ -930,7 +924,7 @@ get_species_codes()
 
 <h4><i>cost.level</i></h4>
 
-Accessibility of the stand for harvest operations expressed as an integer
+Accessibility of the stand for logging operations expressed as an integer
 of <i>1:3</i>, with <i>1</i> for standard conditions without
 limitations, <i>2</i> for moist sites or sites with a slope between 36
 % and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
@@ -963,11 +957,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2022b",
-                            "ips.timely.fuchs.2022b",
-                            "stand.damage.fuchs.2022a",
-                            "regional.disturbance.fuchs.2022a",
-                            "transregional.calamity.fuchs.2022a"),
+                            "ips.fuchs.2022a",
+                            "ips.timely.fuchs.2022a",
+                            "stand.damage.fuchs.2022b",
+                            "regional.disturbance.fuchs.2022b",
+                            "transregional.calamity.fuchs.2022b"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1054,11 +1048,11 @@ harvest_costs(40,
               rep("spruce", 6),
               calamity.type = c("none",
                                 "calamity.dieter.2001",
-                                "ips.fuchs.2022b",
-                                "ips.timely.fuchs.2022b",
-                                "stand.damage.fuchs.2022a",
-                                "regional.disturbance.fuchs.2022a",
-                                "transregional.calamity.fuchs.2022a"))
+                                "ips.fuchs.2022a",
+                                "ips.timely.fuchs.2022a",
+                                "stand.damage.fuchs.2022b",
+                                "regional.disturbance.fuchs.2022b",
+                                "transregional.calamity.fuchs.2022b"))
 
 # user-defined calamities with respective changes in harvest costs
 harvest_costs(40,
@@ -1141,7 +1135,7 @@ The <i>value.levels</i> refer to the applied assortment tables
 
 <h4><i>cost.level</i></h4>
 
-Accessibility of the stand for harvest operations expressed as an integer
+Accessibility of the stand for logging operations expressed as an integer
 of <i>1:3</i>, with <i>1</i> for standard conditions without
 limitations, <i>2</i> for moist sites or sites with a slope between 36
 % and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
@@ -1149,21 +1143,21 @@ harvest cost model by
 [v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
-<h4><i>process.type</i></h4>
+<h4><i>logging.method</i></h4>
 
-Type of harvest process:
+Logging method:
         
-* <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
-* <i>"combined"</i>: a combination of the previous types dependent on
+* <i>"manually"</i>: motor-manual logging using a chain saw
+* <i>"harvester"</i>: highly mechanized logging using forest harvesters
+* <i>"combined"</i>: a combination of the previous methods dependent on
   the mean diameter
         
-The process types <i>"manually"</i> and <i>"harvester"</i> refer to
+The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized harvests,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
+[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly mechanized
@@ -1224,11 +1218,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2022b",
-                            "ips.timely.fuchs.2022b",
-                            "stand.damage.fuchs.2022a",
-                            "regional.disturbance.fuchs.2022a",
-                            "transregional.calamity.fuchs.2022a"),
+                            "ips.fuchs.2022a",
+                            "ips.timely.fuchs.2022a",
+                            "stand.damage.fuchs.2022b",
+                            "regional.disturbance.fuchs.2022b",
+                            "transregional.calamity.fuchs.2022b"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1321,11 +1315,11 @@ wood_valuation(10,
                40,
                rep("spruce", 6),
                calamity.type = c("none",
-                                 "ips.fuchs.2022b",
-                                 "ips.timely.fuchs.2022b",
-                                 "stand.damage.fuchs.2022a",
-                                 "regional.disturbance.fuchs.2022a",
-                                 "transregional.calamity.fuchs.2022a"))
+                                 "ips.fuchs.2022a",
+                                 "ips.timely.fuchs.2022a",
+                                 "stand.damage.fuchs.2022b",
+                                 "regional.disturbance.fuchs.2022b",
+                                 "transregional.calamity.fuchs.2022b"))
 
 # user-defined calamities with respective changes in harvest costs and wood revenues
 wood_valuation(10,
@@ -1420,7 +1414,7 @@ The <i>value.levels</i> refer to the applied assortment tables
 
 <h4><i>cost.level</i></h4>
 
-Accessibility of the stand for harvest operations expressed as an integer
+Accessibility of the stand for logging operations expressed as an integer
 of <i>1:3</i>, with <i>1</i> for standard conditions without
 limitations, <i>2</i> for moist sites or sites with a slope between 36
 % and 58 %, and <i>3</i> for slopes > 58 %. The cost.levels refer to the
@@ -1428,25 +1422,25 @@ harvest cost model by
 [v. Bodelschwingh (2018, Tab. 10)](#vbodelschwingh.2018). See also
 <a href="#tab4">Tab. 4</a>
 
-<h4><i>process.type</i></h4>
+<h4><i>logging.method</i></h4>
 
-Type of harvest process:
+Logging methods:
         
-* <i>"manually"</i>: motor-manual harvest using a chain saw
-* <i>"harvester"</i>: highly mechanized harvest using forest harvesters
-* <i>"combined"</i>: a combination of the previous types dependent on
+* <i>"manually"</i>: motor-manual logging using a chain saw
+* <i>"harvester"</i>: highly mechanized logging using forest harvesters
+* <i>"combined"</i>: a combination of the previous methods dependent on
   the mean diameter
 
-The process types <i>"manually"</i> and <i>"harvester"</i> refer to
+The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [Offer and Staupendahl (2018)](#offer.2018) and
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
-mechanized harvests,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the type
+mechanized logging,
+[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
 <i>"combined"</i>. This refers to the combinations applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific shares of motor-manual and highly mechanized
-harvests:
+logging:
               
 * softwood species
   + <i>diameter.q</i> <= 20 cm: 100 % <i>"harvester"</i>,
@@ -1503,11 +1497,11 @@ calamity.factors <- dplyr::tibble(
                             "storm.small.moellmann.2017",
                             "storm.large.moellmann.2017",
                             "insects.moellmann.2017",
-                            "ips.fuchs.2022b",
-                            "ips.timely.fuchs.2022b",
-                            "stand.damage.fuchs.2022a",
-                            "regional.disturbance.fuchs.2022a",
-                            "transregional.calamity.fuchs.2022a"),
+                            "ips.fuchs.2022a",
+                            "ips.timely.fuchs.2022a",
+                            "stand.damage.fuchs.2022b",
+                            "regional.disturbance.fuchs.2022b",
+                            "transregional.calamity.fuchs.2022b"),
                           each = 2),
       species.group = rep(c("softwood",
                             "deciduous"),
@@ -1600,11 +1594,11 @@ wood_net_revenues(10,
                   rep("spruce", 6),
                   calamity.type = c("none",
                                     "calamity.dieter.2001",
-                                    "ips.fuchs.2022b",
-                                    "ips.timely.fuchs.2022b",
-                                    "stand.damage.fuchs.2022a",
-                                    "regional.disturbance.fuchs.2022a",
-                                    "transregional.calamity.fuchs.2022a"))
+                                    "ips.fuchs.2022a",
+                                    "ips.timely.fuchs.2022a",
+                                    "stand.damage.fuchs.2022b",
+                                    "regional.disturbance.fuchs.2022b",
+                                    "transregional.calamity.fuchs.2022b"))
 
 # user-defined calamities with respective changes in harvest costs and wood revenues
 wood_net_revenues(10,
@@ -1692,17 +1686,17 @@ for spruce and beech calculated with Monte Carlo modelling techniques.
 to the age--height relationship of individual trees. <em>Can. J. For.
 Res.</em> **47**, S. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
 
-<a id="fuchs.2022a">Fuchs</a>, Jasper M.; v. Bodelschwingh, Hilmar; Paul,
-Carola; Husmann, Kai (2022a): Quantifying the consequences of disturbances on
-wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
-**140**, art. 102738. <https://doi.org/10.1016/j.forpol.2022.102738>.
-
-<a id="fuchs.2022b">Fuchs</a>, Jasper M.; Hittenbeck, Anika;
+<a id="fuchs.2022a">Fuchs</a>, Jasper M.; Hittenbeck, Anika;
 Brandl, Susanne; Schmidt, Matthias; Paul, Carola (2022b):
 Adaptation Strategies for Spruce Forests - Economic Potential of Bark
 Beetle Management and Douglas Fir Cultivation in Future Tree Species
 Portfolios. <em>Forestry</em> **95 (2)**, S. 229-246.
 <https://doi.org/10.1093/forestry/cpab040>
+
+<a id="fuchs.2022b">Fuchs</a>, Jasper M.; v. Bodelschwingh, Hilmar; Paul,
+Carola; Husmann, Kai (2022a): Quantifying the consequences of disturbances on
+wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
+**140**, art. 102738. <https://doi.org/10.1016/j.forpol.2022.102738>.
 
 <a id="fuchs.inpreparation">Fuchs</a>, Jasper M.; Husmann, Kai;
 v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;

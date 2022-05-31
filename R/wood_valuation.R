@@ -6,7 +6,7 @@
 #'
 #' The function is a wrapper for the entire procedure of wood valuation provided
 #' by \pkg{woodValuationDE}. It estimates the share of salable (for revenues) and
-#' skidded (for harvest costs) volume as well as the wood revenues and harvest
+#' skidded (for harvest costs) volume, the wood revenues, and the harvest
 #' costs. Finally, it derives the net revenues for the user-provided wood volume
 #' over bark. The underlying functions were derived based on data from
 #' HessenForst, the public forest service of the Federal State of Hesse in
@@ -29,17 +29,18 @@
 #'                    with many thick branches or stands). The
 #'                    \code{value.level}s refer to the applied assortment tables
 #'                    (Offer and Staupendahl, 2018).
-#' @param cost.level  Accessibility of the stand for harvest operations
+#' @param cost.level  Accessibility of the stand for logging operations
 #'                    expressed as an integer of \code{1:3}, with \code{1} for
 #'                    standard conditions without limitations, \code{2} for
 #'                    moist sites or sites with a slope between 36 \% and 58 \%,
 #'                    and \code{3} for slopes > 58 \%. The cost.levels refer to
 #'                    the harvest cost model of v. Bodelschwingh (2018).
-#' @param process.type Type of harvest process, with \code{"manually"} for
-#'                     motor-manual harvesting using a chain saw,
-#'                     \code{"harvester"} for highly mechanized forest harvest
-#'                     machines, or \code{"combined"} for a combination of the
-#'                     previous types dependent on the mean diameter.
+#' @param logging.method Logging method, with \code{"manually"} for
+#'                       motor-manual logging using a chain saw,
+#'                       \code{"harvester"} for logging with highly mechanized
+#'                       forest harvesters, or \code{"combined"} for a
+#'                       combination of the previous methods dependent on the
+#'                       mean diameter.
 #' @param price.ref.assortment Wood price of the reference assortments allowing
 #'                     to consider market fluctuations. Default is
 #'                     \code{"baseline"} referring to the prices from 2010 to
@@ -67,18 +68,18 @@
 #'                      \code{storm.large.moellmann.2017} referring to damages
 #'                      by storm (available for coniferous and deciduous
 #'                      species), \code{insects.moellmann.2017} refers to
-#'                      damages by insects; \code{"ips.fuchs.2022b"} refers to
+#'                      damages by insects; \code{"ips.fuchs.2022a"} refers to
 #'                      quality losses due to infestations by the European
-#'                      spruce bark beetle or \code{"ips.timely.fuchs.2022b"}
+#'                      spruce bark beetle or \code{"ips.timely.fuchs.2022a"}
 #'                      for timely salvage fellings in less advanced attack 
-#'                      stages (both according to Fuchs et al. 2022b); and
-#'                      \code{"stand.damage.fuchs.2022a"} to disturbances
+#'                      stages (both according to Fuchs et al. 2022a); and
+#'                      \code{"stand.damage.fuchs.2022b"} to disturbances
 #'                      affecting only one stand, 
-#'                      \code{"regional.disturbances.fuchs.2022a"} to 
+#'                      \code{"regional.disturbances.fuchs.2022b"} to 
 #'                      disturbances with effects on the regional wood market
-#'                      and \code{"transregional.calamity.fuchs.2022a"} to
+#'                      and \code{"transregional.calamity.fuchs.2022b"} to
 #'                      calamities affecting transregional wood markets (the
-#'                      last three referring to Fuchs et al. 2022a).
+#'                      last three referring to Fuchs et al. 2022b).
 #'                      User-defined types can be implemented via the
 #'                      \code{calamity.factors} argument.
 #' @param calamity.factors Summands \eqn{[EUR m^{-3}]}{[EUR m^(-3)]}
@@ -106,16 +107,16 @@
 #'             beech calculated with Monte Carlo modelling techniques. For.
 #'             Policy Econ. 2 (2), S. 157-166.
 #'             \doi{10.1016/S1389-9341(01)00045-4}.
-#' @references Fuchs, Jasper M.; v. Bodelschwingh, Hilmar; Lange, Alexander;
-#'             Paul, Carola; Husmann, Kai (2022a): Quantifying the
-#'             consequences of disturbances on wood revenues with Impulse
-#'             Response Functions. For. Policy Econ. 140, art. 102738.
-#'             \doi{10.1016/j.forpol.2022.102738}.
 #' @references Fuchs, Jasper M.; Hittenbeck, Anika; Brandl, Susanne; Schmidt,
-#'             Matthias; Paul, Carola (2022b): Adaptation Strategies for
+#'             Matthias; Paul, Carola (2022a): Adaptation Strategies for
 #'             Spruce Forests - Economic Potential of Bark Beetle Management and
 #'             Douglas Fir Cultivation in Future Tree Species Portfolios.
 #'             Forestry 95 (2) 229-246. \doi{10.1093/forestry/cpab040}
+#' @references Fuchs, Jasper M.; v. Bodelschwingh, Hilmar; Lange, Alexander;
+#'             Paul, Carola; Husmann, Kai (2022b): Quantifying the
+#'             consequences of disturbances on wood revenues with Impulse
+#'             Response Functions. For. Policy Econ. 140, art. 102738.
+#'             \doi{10.1016/j.forpol.2022.102738}.
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
 #'             Carola (in preparation): woodValuationDE: A consistent framework
@@ -160,11 +161,11 @@
 #'                40,
 #'                rep("spruce", 6),
 #'                calamity.type = c("none",
-#'                                  "ips.fuchs.2022b",
-#'                                  "ips.timely.fuchs.2022b",
-#'                                  "stand.damage.fuchs.2022a",
-#'                                  "regional.disturbance.fuchs.2022a",
-#'                                  "transregional.calamity.fuchs.2022a"))
+#'                                  "ips.fuchs.2022a",
+#'                                  "ips.timely.fuchs.2022a",
+#'                                  "stand.damage.fuchs.2022b",
+#'                                  "regional.disturbance.fuchs.2022b",
+#'                                  "transregional.calamity.fuchs.2022b"))
 #'
 #' # user-defined calamities with respective changes in harvest costs and wood revenues
 #' wood_valuation(10,
@@ -211,7 +212,7 @@ wood_valuation <- function(
   species,
   value.level = 2,
   cost.level = 1,
-  process.type = "combined",
+  logging.method = "combined",
   price.ref.assortment = "baseline",
   calamity.type = "none",
   calamity.factors = "baseline",
@@ -225,7 +226,7 @@ wood_valuation <- function(
     species = species,
     cost.level = cost.level,
     value.level = value.level,
-    process.type = process.type,
+    logging.method = logging.method,
     calamity.type = calamity.type
   ) %>%
 
@@ -233,17 +234,17 @@ wood_valuation <- function(
       vol.salable = vol_salable(diameter.q,
                                 species,
                                 value.level,
-                                process.type,
+                                logging.method,
                                 species.code.type),
       vol.skidded = vol_skidded(diameter.q,
                                 species,
                                 value.level,
-                                process.type,
+                                logging.method,
                                 species.code.type),
       wood.revenues = wood_revenues(diameter.q,
                                     species,
                                     value.level,
-                                    process.type,
+                                    logging.method,
                                     price.ref.assortment,
                                     calamity.type,
                                     calamity.factors,

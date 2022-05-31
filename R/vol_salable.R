@@ -28,11 +28,12 @@
 #'                    with many thick branches or stands). The
 #'                    \code{value.level}s refer to the applied assortment tables
 #'                    (Offer and Staupendahl, 2018).
-#' @param process.type Type of harvest process, with \code{"manually"} for
-#'                     motor-manual harvesting using a chain saw,
-#'                     \code{"harvester"} for highly mechanized forest harvest
-#'                     machines, or \code{"combined"} for a combination of the
-#'                     previous types dependent on the mean diameter.
+#' @param logging.method Logging method, with \code{"manually"} for
+#'                       motor-manual logging using a chain saw,
+#'                       \code{"harvester"} for logging with highly mechanized
+#'                       forest harvesters, or \code{"combined"} for a
+#'                       combination of the previous methods dependent on the
+#'                       mean diameter.
 #' @param species.code.type Type of code in which \code{species} is given.
 #'                          \code{"en"} for English species names or
 #'                          \code{"nds"} for numeric species codes used in Lower
@@ -72,8 +73,8 @@
 #'                 2),
 #'             rep(c("beech", "spruce"),
 #'                 each = 4),
-#'             process.type = rep(c("manually", "harvester"),
-#'                                each = 4))
+#'             logging.method = rep(c("manually", "harvester"),
+#'                                  each = 4))
 
 #' @import dplyr
 #'
@@ -82,7 +83,7 @@ vol_salable <- function(
   diameter.q,
   species,
   value.level = 2,
-  process.type = "combined",
+  logging.method = "combined",
   species.code.type = "en",
   method = "fuchs.orig"
 ) {
@@ -91,7 +92,7 @@ vol_salable <- function(
     tibble(diameter.q = diameter.q,
            species = species,
            value.level = value.level,
-           process.type = process.type) %>%
+           logging.method = logging.method) %>%
 
     # assign the appropriate parameterized species (group)
     mutate(species = recode_species(species,
@@ -101,7 +102,7 @@ vol_salable <- function(
     # add the specific parameters
     left_join(params.wood.value$vol.salable,
               by = c("species" = "species.code",
-                     "process.type" = "process.type",
+                     "logging.method" = "logging.method",
                      "value.level" = "value.level")) %>%
     mutate(vol.salable =
              .data$A *
