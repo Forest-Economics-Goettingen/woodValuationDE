@@ -4,7 +4,7 @@
 
 #' Available species in \pkg{woodValuationDE}, their codes, and parameter assignments
 #'
-#' The function shows the available species, species codes and species
+#' The function shows the available species, species codes, and species
 #' assignments to groups for the economic valuation. This information is
 #' provided to inform users for their own applications.
 #'

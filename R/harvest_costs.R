@@ -7,7 +7,7 @@
 #' The function estimates harvest costs per cubic meter skidded wood volume
 #' applying the harvest costs function of v. Bodelschwingh (2018). Consequences
 #' of disturbances and calamities are implemented based on Dieter (2001),
-#' Moellmann and Moehring (2017) and Fuchs et al. (2022a, 2022b). Apart from
+#' Moellmann and Moehring (2017), and Fuchs et al. (2022a, 2022b). Apart from
 #' Dieter (2001) and Moellmann and Moehring (2017), all functions and factors
 #' are based on data from HessenForst, the public forest service of the Federal
 #' State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
@@ -27,8 +27,8 @@
 #' @param calamity.type Defines the disturbance or calamity situation to allow
 #'                      for the consideration of lower net revenues in the case
 #'                      of salvage harvests. The calamity type determines the
-#'                      applied consequences of disturbances/calamities
-#'                      corrections resulting in reduced revenues and higher
+#'                      applied consequences of disturbances/calamities,
+#'                      implemented as factors for reduced revenues and higher
 #'                      harvest costs. By default no calamity is assumed
 #'                      \code{"none"}; \code{"calamity.dieter.2001"}
 #'                      refers to a general larger calamity applying the

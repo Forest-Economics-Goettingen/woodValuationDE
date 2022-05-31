@@ -27,10 +27,9 @@
 #'                    \code{1} for an extraordinarily high stand quality with 
 #'                    high shares of wood suitable for high-valued usages such
 #'                    as furniture, \code{2} for a moderate quality, and
-#'                    \code{3} for an extraordinarily low quality (e.g., trees
-#'                    with many thick branches or stands). The
-#'                    \code{value.level}s refer to the applied assortment tables
-#'                    (Offer and Staupendahl, 2018).
+#'                    \code{3} for a low quality (e.g., trees with thick
+#'                    branches). The \code{value.level}s refer to the applied
+#'                    assortment tables of Offer and Staupendah (2018).
 #' @param logging.method Logging method, with \code{"manually"} for
 #'                       motor-manual logging using a chain saw,
 #'                       \code{"harvester"} for logging with highly mechanized
