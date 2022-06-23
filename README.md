@@ -173,7 +173,7 @@ German: Durchmesser des Grundflächenmittelstamms.</i>
 
 <h2><em><a name="fct_vol_salable">vol_salable()</a></em></h2>
 
-The function estimates the salable share of the volume over bark of the
+The function estimates the salable share in the volume over bark of the
 standing trees that are to be harvested. This includes pulpwood,
 sawlogs, but also private fuel wood. It represents the entire share
 of wood which is taken out of the forest for usage. The share of salable
@@ -360,7 +360,7 @@ vol_salable(rep(seq(20, 50, 10),
 
 <h2><em><a name="fct_vol_skidded">vol_skidded()</a></em></h2>
 
-The function estimates the skidded share of the volume over bark of the
+The function estimates the skidded share in the volume over bark of the
 standing trees that are to be harvested. It is entire volume that is assumed to
 be commercially delivered to the forest road, the pulpwood and sawlog
 assortments. The share of skidded wood is required to derive the harvest costs
