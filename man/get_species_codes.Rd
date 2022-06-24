@@ -16,7 +16,7 @@ A list with the species, species codes, and assignments to economic
         species groups available in \pkg{woodValuationDE}.
 }
 \description{
-The function shows the available species, species codes and species
+The function shows the available species, species codes, and species
 assignments to groups for the economic valuation. This information is
 provided to inform users for their own applications.
 }

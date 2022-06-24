@@ -28,10 +28,9 @@ a list with the available species and codes call
 \code{1} for an extraordinarily high stand quality with 
 high shares of wood suitable for high-valued usages such
 as furniture, \code{2} for a moderate quality, and
-\code{3} for an extraordinarily low quality (e.g., trees
-with many thick branches or stands). The
-\code{value.level}s refer to the applied assortment tables
-(Offer and Staupendahl, 2018).}
+\code{3} for a low quality (e.g., trees with thick
+branches). The \code{value.level}s refer to the applied
+assortment tables of Offer and Staupendah (2018).}
 
 \item{logging.method}{Logging method, with \code{"manually"} for
 motor-manual logging using a chain saw,
@@ -53,8 +52,8 @@ same structure. The column species uses the specified
 \item{calamity.type}{Defines the disturbance or calamity situation to allow
 for the consideration of lower net revenues in the case
 of salvage harvests. The calamity type determines the
-applied consequences of disturbances/calamities
-corrections resulting in reduced revenues and higher
+applied consequences of disturbances/calamities,
+implemented as factors for reduced revenues and higher
 harvest costs. By default no calamity is assumed
 \code{"none"}; \code{"calamity.dieter.2001"}
 refers to a general larger calamity applying the
@@ -110,14 +109,14 @@ A vector with wood revenues per cubic meter
         wood volume, provided by \code{\link{vol_salable}}.
 }
 \description{
-The function estimates wood revenues per cubic meter salable volume based on
-the assortment tables from Offer and Staupendahl (2018) and the wood revenue
-function from v. Bodelschwingh (2018). Consequences of disturbances and
-calamities are implemented based on Dieter (2001), Moellmann and Moehring
-(2017) and Fuchs et al. (2022a, 2022b). Apart from Dieter (2001) and
-Moellmann and Moehring (2017), all functions and factors are based on data
-from HessenForst, the public forest service of the Federal State of Hesse in
-Germany. For further details see the \pkg{woodValuationDE}
+The function estimates wood revenues per cubic meter salable volume using the
+wood revenue model of v. Bodelschwingh (2018), which is based on the
+assortment tables from Offer and Staupendahl (2018). Consequences of
+disturbances and calamities are implemented based on Dieter (2001), Moellmann
+and Moehring (2017) and Fuchs et al. (2022a, 2022b). Apart from Dieter (2001)
+and Moellmann and Moehring (2017), all functions and factors are based on
+data from HessenForst, the public forest service of the Federal State of
+Hesse in Germany. For further details see the \pkg{woodValuationDE}
 \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 }
 \examples{
