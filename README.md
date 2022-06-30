@@ -5,10 +5,11 @@ A package for the monetary valuation of wood in German forests (stumpage
 values), including estimations of harvest quantities, wood revenues, and harvest
 costs. The functions are sensitive to tree species, mean diameter of the
 harvested trees, stand quality, and logging method. The functions include
-estimations for the consequences of disturbances on revenues and costs. The
-underlying assortment tables are taken from Offer and Staupendahl (2018) with
-corresponding functions for salable and skidded volume derived in Fuchs et al.
-(in preparation). Wood revenue and harvest cost functions were taken from v.
+estimations for the consequences of disturbances on revenues and costs.
+
+The underlying assortment tables are taken from Offer and Staupendahl (2018)
+with corresponding functions for salable and skidded volume derived in Fuchs et
+al. (in preparation). Wood revenue and harvest cost functions were taken from v.
 Bodelschwingh (2018). The consequences of disturbances refer to Dieter (2001),
 Moellmann and Moehring (2017), and Fuchs et al. (2022a, 2022b). For the full
 references see documentation of the functions, package readme, and Fuchs et al.
@@ -36,21 +37,22 @@ administration of the Federal State of Hesse in Germany.
 
 When assessing the multiple ecosystem services provided by German forests,
 economic indicators for productive ecosystem services are relevant but are not
-always easily estimable.Their calculation requires either quantitative
+always easily estimable. Their calculation requires either quantitative
 information or many assumptions on them and is time consuming. The net wood
 revenues, as a basis for several indicators related to income from wood
 production, depend, a.o., on tree species, diameter, and stand quality.
-Disturbance events also affect the net revenues, as wood quality is reduced due
-to mechanical damage, market prices are reduced due to increasing wood supply,
-and harvest costs might increase [Fuchs et al. (2022b)](#fuchs.2022b).
+Additionally, disturbance events may affect the net revenues, as wood quality
+is reduced due to mechanical damage, market prices are reduced due to increasing
+wood supply, and harvest costs might increase
+[(Fuchs et al. 2022b)](#fuchs.2022b).
 
 Here, <strong>woodValuationDE</strong> contributes with a comprehensive wood
-valuation model considering the various influences on 
-<em>assortment composition</em>, <em>harvest costs</em> and <em>wood
+valuation framework considering the various influences on 
+<em>harvest quantities</em>, <em>harvest costs</em>, and <em>wood
 revenues</em>. It simplifies the estimation of realistic monetary wood values
-for a broad field of bioeconomic modeling. A particular strength of
-<strong>woodValuationDE</strong> is the consistency of the data underlying the
-various models, including a set of disturbance scenarios.
+for a broad field of applications in bioeconomic modeling. A particular strength
+of <strong>woodValuationDE</strong> is the consistency of the data underlying
+the various models, including a set of disturbance scenarios.
 
 <strong>woodValuationDE</strong> comprises data and models obtained from several
 studies. It makes previously published models available for future studies by
@@ -59,11 +61,10 @@ all<sup>[1](#fndieter),[2](#fnmoellmann)</sup> submodels are based on
 operational harvest and sale data from HessenForst, the public forest service of
 the Federal State of Hesse in Germany. The underlying assortment tables are
 taken from [Offer and Staupendahl (2018)](
-#offer.2018) with corresponding functions for the harvest volume
-proportions derived in [Fuchs et al. (in preparation)](
-#fuchs.inpreparation). Wood revenue and harvest cost functions were
-taken from [v. Bodelschwingh (2018)](#vbodelschwingh.2018). The 
-consequences of disturbances refer to [Dieter (2001)](
+#offer.2018) with corresponding functions for the harvest quantities derived in
+[Fuchs et al. (in preparation)](#fuchs.inpreparation). Wood revenue and harvest
+cost functions were taken from [v. Bodelschwingh (2018)](#vbodelschwingh.2018).
+The consequences of disturbances refer to [Dieter (2001)](
 #dieter.2001)<sup>[1](#fndieter)</sup>, [Moellmann and Moehring (2017)](
 #moellmann.2017)<sup>[2](#fnmoellmann)</sup>, [Fuchs et al. (2022a)](
 #fuchs.2022a), and [Fuchs et al. (2022b)](#fuchs.2022b).
@@ -120,19 +121,19 @@ revenues and costs per volume unit, and (iii) the net revenues (see Fig. 1).
     function derived in Fuchs et al. (in preparation) based on Offer and
     Staupendahl (2018), green: functions taken from v. Bodelschwingh (2018),
     red: calamity factors derived in Dieter (2001), Moellmann and Moehring
-    (2017), and Fuchs et al. (2022a, 2022b). Box shape: rectangular: functions
+    (2017), and Fuchs et al. (2022a, 2022b). Box shape: rectangle: functions
     and factors, parallelogram: user input and output.
   </figcaption>
 </figure>
 
 <br><strong>woodValuationDE</strong> allows for the estimation of wood values
 referring to the volume over bark of the standing trees to be harvested (German
-unit: Vfm) as usually provided by yield tables and single-tree simulation
+unit: Vfm m.R.) as usually provided by yield tables and single-tree simulation
 models. Volume losses due to harvest cuts and residues (in German: X-Holz and
-NVD-Holz), e.g., due to fixed assortment length, are applied based on the 
+NVD-Holz), e.g., due to fixed assortment length, are considered via the 
 harvest quantity functions: <a href="#fct_vol_salable"><em>vol_salable()</em></a>
 provides the share of salable volume relative to the volume over bark. It
-represents the volume that is utilized and taken out of the forest stand and is
+represents the volume that is utilized and taken out of the forest stand. It is
 the relevant volume unit for the revenues. It includes all pulpwood, sawlogs, and
 private fuel wood.
 <a href="#fct_vol_skidded"><em>vol_skidded()</em></a> provides the share of
@@ -222,8 +223,8 @@ fitting, the modified formulation according to
 </p>
 
 with the volume share of salable wood <i>v<sub>salable</sub></i>, the
-quadratic mean diameter <i>d<sub>q</sub></i> and the parameters
-<i>A</i>, <i>z<sub>m</sub></i>, and <i>t<sub>w</sub></i>. The actual parameter
+quadratic mean diameter <i>d<sub>q</sub></i>, and the parameters
+<i>A</i>, <i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>. The actual parameter
 values depend on tree species, stand quality, and logging method.
 
 <h3>Input</h3>
@@ -281,8 +282,8 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
-  for furniture
+* <i>1</i>: extraordinarily high stand quality with high shares of wood
+  suitable, e.g., for furniture
 * <i>2</i>: moderate quality
 * <i>3</i>: low quality (e.g. trees with thick branches)
 
@@ -386,11 +387,11 @@ The assortment tables from
 from volume over bark to harvested volume under bark. In addition, they provide
 the share of non-utilized wood, e.g., due to fixed assortment lengths, and
 private fuelwood thereof. The assortment tables were derived for HessenForst
-with the calculation program Holzernte 7.1
-[(Schöpfer et al., 2003)](#schopfer.2003) using model stands, which were
-designed by a group of forestry experts, and harvest and sales data from
-HessenForst. More details on the assortment tables and their derivation are
-provided in [Offer and Staupendahl (2008)](#offer.2008) and
+with the calculation program HOLZERNTE 7.1
+[(Schöpfer et al., 2003)](#schopfer.2003). Additional parameters were defined by
+forest district officers and validated against harvest and sale statistics of
+HessenForst. More details on the assortment tables and their derivation
+are provided in [Offer and Staupendahl (2008)](#offer.2008) and
 [Offer and Staupendahl (2009)](#offer.2009).
 
 We derived the share of skidded volume <i>v<sub>skidded</sub></i> based on these
@@ -544,11 +545,11 @@ wood revenues of the model <i>s<sub>original</sub></i> will be updated
 | ash                  | B 4                  |                     112.88 |
 | poplar               | B 4                  |                      45.43 |
 
-A particular strength of <strong>woodValuationDE</strong> is the
-consideration of the consequences of disturbances and calamities. Users can
-choose a suitable parameterization from a broad set of previously published
+A particular strength of <strong>woodValuationDE</strong> is the possibility to
+consider consequences of disturbances and calamities. Users can choose a
+suitable parameterization from a broad set of previously published
 estimates for the consequences of disturbances that are pre-implemented.
-Additionally, users can implement their own assumptions. For wood revenues, a
+Alternatively, users can implement their own assumptions. For wood revenues, a
 factor is multiplied with the undisturbed revenues. The options that are
 implemented by default are listed in <a href="#tab3">Tab. 3</a>.
 
@@ -563,13 +564,13 @@ implemented by default are listed in <a href="#tab3">Tab. 3</a>.
 |:--------------|:---------------:|:----------------:|:-------------------|:----------------------------------------|
 | <i>"none"</i>                    | 1.00     | 1.00      | \-                 | default: no calamity            |
 | <i>"calamity.dieter.2001"</i>    | 0.50     | 0.50      | [Dieter (2001)](#dieter.2001)            | Assumption based on prices in southern Germany after a calamity event, often applied in bioeconomic simulations for Germany. Originally referring to net revenues, thus to be used in combination with <a href="#fct_harvest_costs"><em>harvest_costs()</em></a>. |
-| <i>"fire.small.moellmann.2017"</i>    | 0.56     | \-        | [Moellmann andMoehring (2017)](#moellmann.2017)     | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"fire.small.moellmann.2017"</i>    | 0.56     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017)     | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
 | <i>"fire.large.moellmann.2017"</i>    | 0.56     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. The survey only asked for effects of quality losses. |
 | <i>"storm.small.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
 | <i>"storm.large.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
 | <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
-| <i>"ips.fuchs.2022a"</i>          | 0.67     | \-        | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
-| <i>"ips.timely.fuchs.2022a"</i>   | 0.88     | \-        | [Fuchs et al. (2022a)]( #fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price index [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
+| <i>"ips.fuchs.2022a"</i>          | 0.67     | \-        | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price matrix [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
+| <i>"ips.timely.fuchs.2022a"</i>   | 0.88     | \-        | [Fuchs et al. (2022a)]( #fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price matrix [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
 | <i>"stand.damage.fuchs.2022b"</i>      | 0.90     | 0.85      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
 | <i>"regional.disturbance.fuchs.2022b"</i> | 0.74     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
 | <i>"transregional.calamity.fuchs.2022b"</i> | 0.54     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
@@ -601,8 +602,8 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
-  for furniture
+* <i>1</i>: extraordinarily high stand quality with high shares of wood
+  suitable, e.g., for furniture
 * <i>2</i>: moderate quality
 * <i>3</i>: low quality (e.g. trees with thick branches)
 
@@ -888,7 +889,7 @@ implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 <br>
 
 <p align="center" id="tab5">
-  <i>Tab. 5:</i> Factors and summands for consideration of higher
+  <i>Tab. 5:</i> Factors and summands for the consideration of higher
   harvest costs in case of salvage harvests after disturbances or
   large-scale calamities, implemented in
   <strong>woodValuationDE</strong>.
@@ -1096,8 +1097,8 @@ The function is a wrapper for the entire procedure of wood valuation
 implemented in <strong>woodValuationDE</strong>. It estimates the share
 of salable (for revenues) and skidded volume (for harvest costs) as well
 as the wood revenues and harvest costs per unit volume. Finally, it
-derives the net revenues for the user-provided volume referring to the
-volume over bark.
+derives the net revenues for the user-provided volume (referring to the
+volume over bark).
 
 <h3>Data and model</h3>
 
@@ -1135,8 +1136,8 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
-  for furniture
+* <i>1</i>: extraordinarily high stand quality with high shares of wood
+  suitable, e.g., for furniture
 * <i>2</i>: moderate quality
 * <i>3</i>: low quality (e.g. trees with thick branches)
 
@@ -1413,8 +1414,8 @@ get_species_codes()
 
 Stand quality, expressed as an integer value of 1:3:
 
-* <i>1</i>: extraordinarily high stand quality with high shares of wood suitable
-  for furniture
+* <i>1</i>: extraordinarily high stand quality with high shares of wood
+  suitable, e.g., for furniture
 * <i>2</i>: moderate quality
 * <i>3</i>: low quality (e.g. trees with thick branches)
 
@@ -1648,7 +1649,7 @@ wood_net_revenues(10,
 
 <h2><em><a name="fct_get_species_codes">get_species_codes()</a></em></h2>
 
-The function shows all available species, species codes, and species
+The function returns all available species, species codes, and species
 assignments to groups for the economic valuation.
 
 <h3>Output</h3>
@@ -1664,7 +1665,12 @@ get_species_codes()
 
 <h1><a name="citation">Recommended citation</a></h1>
 
-tbd.
+Until the publication of the technical note (Fuchs et al., in preparation),
+please cite the R package on CRAN.
+
+For details on the applied models and underlying assumptions, such as
+assumptions on the economic consequences of disturbances, please also cite the
+original publication(s).
 
 <h1><a name="references">References</a></h1>
 
