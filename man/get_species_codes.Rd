@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_species_codes.R
 \name{get_species_codes}
 \alias{get_species_codes}
-\title{Available species in \pkg{woodValuationDE}, their codes, and parameter assignments}
+\title{Available species in \pkg{woodValuationDE}, their codes, and parameter
+assignments}
 \usage{
 get_species_codes(method = "fuchs.orig")
 }
@@ -16,9 +17,8 @@ A list with the species, species codes, and assignments to economic
         species groups available in \pkg{woodValuationDE}.
 }
 \description{
-The function shows the available species, species codes, and species
-assignments to groups for the economic valuation. This information is
-provided to inform users for their own applications.
+The function returns the available species, species codes, and assignments of
+species to species groups for the economic valuation.
 }
 \examples{
 get_species_codes()

@@ -2,11 +2,11 @@
 #### Available Species Codes and Assignments ####
 ##--#########################################--##
 
-#' Available species in \pkg{woodValuationDE}, their codes, and parameter assignments
+#' Available species in \pkg{woodValuationDE}, their codes, and parameter
+#' assignments
 #'
-#' The function shows the available species, species codes, and species
-#' assignments to groups for the economic valuation. This information is
-#' provided to inform users for their own applications.
+#' The function returns the available species, species codes, and assignments of
+#' species to species groups for the economic valuation.
 #'
 #' @param method argument that is currently not used, but offers the possibility
 #'               to implement alternative parameters and functions in the

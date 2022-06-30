@@ -22,8 +22,9 @@
 #'                    expressed as an integer of \code{1:3}, with \code{1} for
 #'                    standard conditions without limitations, \code{2} for
 #'                    moist sites or sites with a slope between 36 \% and 58 \%,
-#'                    and \code{3} for slopes > 58 \%. The cost.levels refer to
-#'                    the harvest cost model of v. Bodelschwingh (2018).
+#'                    and \code{3} for slopes > 58 \%. The \code{cost.level}s
+#'                    refer to the harvest cost model of v. Bodelschwingh
+#'                    (2018).
 #' @param calamity.type Defines the disturbance or calamity situation to allow
 #'                      for the consideration of lower net revenues in the case
 #'                      of salvage harvests. The calamity type determines the
@@ -63,8 +64,8 @@
 #'                         based on the references listed in
 #'                         \code{calamity.type} (for details see
 #'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
-#'                         of \pkg{woodValuationDE}). Alternatively, it can be
-#'                         a user-provided tibble with the same structure.
+#'                         of \pkg{woodValuationDE}). Alternatively, users can
+#'                         provide a tibble with the same structure.
 #' @param species.code.type Type of code in which \code{species} is given.
 #'                          \code{"en"} for English species names or
 #'                          \code{"nds"} for numeric species codes used in Lower

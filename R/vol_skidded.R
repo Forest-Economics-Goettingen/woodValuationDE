@@ -2,20 +2,20 @@
 #### Share of Skidded Wood Volume ####
 ##--##############################--##
 
-#' Relative share of the volume over bark that is skidded
+#' Relative share in the volume over bark that is skidded
 #'
 #' The function estimates the skidded share of the wood volume. It is expressed
-#' in relation to the volume over bark (German unit: Vfm) as usually provided by
-#' yield tables and forest simulators. This includes all pulp wood and sawlog
-#' assortments. It is assumed that the fuel wood assortments are processed by
-#' private individuals and are thus not commercially delivered to the forest
-#' road. The share of salable wood is required to derive the costs for
-#' harvesting and skidding per cubic meter volume over bark. The function is
-#' based on the assortment tables from Offer and Staupendahl (2018) and its
-#' derivation is described in Fuchs et al. (in preparation). The underlying
-#' assortment tables are based on data from HessenForst, the public forest
-#' service of the Federal State of Hesse in Germany. For further details see the
-#' \pkg{woodValuationDE}
+#' in relation to the volume over bark (German unit: Vfm m.R.) as usually
+#' provided by yield tables and forest simulators. This includes all pulp wood
+#' and sawlog assortments. It is assumed that the fuel wood assortments are
+#' processed by buyers themselves and that they are thus not commercially
+#' delivered to the forest road. The share of salable wood is required to derive
+#' the costs for harvesting and skidding per cubic meter volume over bark. The
+#' function is based on the assortment tables from Offer and Staupendahl (2018)
+#' and its derivation is described in Fuchs et al. (in preparation). The
+#' underlying assortment tables are based on data from HessenForst, the public
+#' forest service of the Federal State of Hesse in Germany. For further details
+#' see the \pkg{woodValuationDE}
 #' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
@@ -29,7 +29,7 @@
 #'                    as furniture, \code{2} for a moderate quality, and
 #'                    \code{3} for a low quality (e.g., trees with thick
 #'                    branches). The \code{value.level}s refer to the applied
-#'                    assortment tables of Offer and Staupendah (2018).
+#'                    assortment tables of Offer and Staupendahl (2018).
 #' @param logging.method Logging method, with \code{"manually"} for
 #'                       motor-manual logging using a chain saw,
 #'                       \code{"harvester"} for logging with highly mechanized
@@ -49,7 +49,7 @@
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
 #'             Carola (in preparation): woodValuationDE: A consistent framework
-#'             for wood valuation in Germany (technical note)
+#'             for calculating stumpage values in Germany (technical note)
 #' @references Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).

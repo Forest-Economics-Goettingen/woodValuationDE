@@ -5,7 +5,16 @@ A package for the monetary valuation of wood in German forests (stumpage
 values), including estimations of harvest quantities, wood revenues, and harvest
 costs. The functions are sensitive to tree species, mean diameter of the
 harvested trees, stand quality, and logging method. The functions include
-estimations for the consequences of disturbances on revenues and costs.
+estimations for the consequences of disturbances on revenues and costs. The
+underlying assortment tables are taken from Offer and Staupendahl (2018) with
+corresponding functions for salable and skidded volume derived in Fuchs et al.
+(in preparation). Wood revenue and harvest cost functions were taken from v.
+Bodelschwingh (2018). The consequences of disturbances refer to Dieter (2001),
+Moellmann and Moehring (2017), and Fuchs et al. (2022a, 2022b). For the full
+references see documentation of the functions, package readme, and Fuchs et al.
+(in preparation). Apart from Dieter (2001) and Moellmann and Moehring (2017),
+all functions and factors are based on data from HessenForst, the forest
+administration of the Federal State of Hesse in Germany.
 
 <h1><a name="menu"></a></h1>
 
@@ -1701,7 +1710,7 @@ wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
 <a id="fuchs.inpreparation">Fuchs</a>, Jasper M.; Husmann, Kai;
 v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;
 Möhring, Bernhard; Paul, Carola (in preparation): woodValuationDE: A consistent
-framework for wood valuation in Germany
+framework for calculating stumpage values in Germany (technical note)
 
 <a id="kwf.2006">KWF</a> (ed.) (2006): Holzernteverfahren -
 Vergleichende Erhebung und Beurteilung, Daten CD mit Beschreibung der

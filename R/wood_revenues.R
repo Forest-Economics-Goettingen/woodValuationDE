@@ -8,9 +8,9 @@
 #' wood revenue model of v. Bodelschwingh (2018), which is based on the
 #' assortment tables from Offer and Staupendahl (2018). Consequences of
 #' disturbances and calamities are implemented based on Dieter (2001), Moellmann
-#' and Moehring (2017) and Fuchs et al. (2022a, 2022b). Apart from Dieter (2001)
-#' and Moellmann and Moehring (2017), all functions and factors are based on
-#' data from HessenForst, the public forest service of the Federal State of
+#' and Moehring (2017), and Fuchs et al. (2022a, 2022b). Apart from Dieter
+#' (2001) and Moellmann and Moehring (2017), all functions and factors are based
+#' on data from HessenForst, the public forest service of the Federal State of
 #' Hesse in Germany. For further details see the \pkg{woodValuationDE}
 #' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 #'
@@ -25,7 +25,7 @@
 #'                    as furniture, \code{2} for a moderate quality, and
 #'                    \code{3} for a low quality (e.g., trees with thick
 #'                    branches). The \code{value.level}s refer to the applied
-#'                    assortment tables of Offer and Staupendah (2018).
+#'                    assortment tables of Offer and Staupendahl (2018).
 #' @param logging.method Logging method, with \code{"manually"} for
 #'                       motor-manual logging using a chain saw,
 #'                       \code{"harvester"} for logging with highly mechanized
@@ -38,7 +38,7 @@
 #'                     2015 in Hesse, Germany (for details see
 #'                     \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
 #'                     of \pkg{woodValuationDE} or v. Bodelschwingh (2018)).
-#'                     Alternatively, it can be user-provided tibble with the
+#'                     Alternatively, users can provide a tibble with the
 #'                     same structure. The column species uses the specified
 #'                     \code{species.code.type}.
 #' @param calamity.type Defines the disturbance or calamity situation to allow
@@ -80,8 +80,8 @@
 #'                         based on the references listed in
 #'                         \code{calamity.type} (for details see
 #'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
-#'                         of \pkg{woodValuationDE}). Alternatively, it can be
-#'                         a user-provided tibble with the same structure.
+#'                         of \pkg{woodValuationDE}). Alternatively, users can
+#'                         provide a tibble with the same structure.
 #' @param species.code.type Type of code in which \code{species} is given.
 #'                          \code{"en"} for English species names or
 #'                          \code{"nds"} for numeric species codes used in Lower
@@ -111,7 +111,7 @@
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
 #'             Carola (in preparation): woodValuationDE: A consistent framework
-#'             for wood valuation in Germany (technical note)
+#'             for calculating stumpage values in Germany (technical note)
 #' @references Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
 #'             to integrate risk in forest management decisions. Ann. For. Sci.
 #'             74 (4), S.75. \doi{10.1007/s13595-017-0670-x}

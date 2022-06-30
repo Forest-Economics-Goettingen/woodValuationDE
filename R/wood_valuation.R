@@ -15,7 +15,7 @@
 #'
 #' @param volume Wood volume \eqn{[m^{3}]}{[m^3]}, referring to volume over bark
 #'               of the trees to be harvested, as usually provided by yield
-#'               tables and forest simulators (German unit: Vfm).
+#'               tables and forest simulators (German unit: Vfm m.R.).
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.
 #' @param species Tree species, using an available \code{species.code.type}. For
@@ -27,13 +27,14 @@
 #'                    as furniture, \code{2} for a moderate quality, and
 #'                    \code{3} for a low quality (e.g., trees with thick
 #'                    branches). The \code{value.level}s refer to the applied
-#'                    assortment tables of Offer and Staupendah (2018).
+#'                    assortment tables of Offer and Staupendahl (2018).
 #' @param cost.level  Accessibility of the stand for logging operations
 #'                    expressed as an integer of \code{1:3}, with \code{1} for
 #'                    standard conditions without limitations, \code{2} for
 #'                    moist sites or sites with a slope between 36 \% and 58 \%,
-#'                    and \code{3} for slopes > 58 \%. The cost.levels refer to
-#'                    the harvest cost model of v. Bodelschwingh (2018).
+#'                    and \code{3} for slopes > 58 \%. The \code{cost.level}s
+#'                    refer to the harvest cost model of v. Bodelschwingh
+#'                    (2018).
 #' @param logging.method Logging method, with \code{"manually"} for
 #'                       motor-manual logging using a chain saw,
 #'                       \code{"harvester"} for logging with highly mechanized
@@ -46,7 +47,7 @@
 #'                     2015 in Hesse, Germany (for details see
 #'                     \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
 #'                     of \pkg{woodValuationDE} or v. Bodelschwingh (2018)).
-#'                     Alternatively, it can be user-provided tibble with the
+#'                     Alternatively, users can provide a tibble with the
 #'                     same structure. The column species uses the specified
 #'                     \code{species.code.type}.
 #' @param calamity.type Defines the disturbance or calamity situation to allow
@@ -88,8 +89,8 @@
 #'                         based on the references listed in
 #'                         \code{calamity.type} (for details see
 #'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
-#'                         of \pkg{woodValuationDE}). Alternatively, it can be
-#'                         a user-provided tibble with the same structure.
+#'                         of \pkg{woodValuationDE}). Alternatively, users can
+#'                         provide a tibble with the same structure.
 #' @param species.code.type Type of code in which \code{species} is given.
 #'                          \code{"en"} for English species names or
 #'                          \code{"nds"} for numeric species codes used in Lower
@@ -100,8 +101,9 @@
 #'               to implement alternative parameters and functions in the
 #'               future.
 #' @return A tibble with all steps of the wood valuation (harvest quantities,
-#'         harvest costs, wood revenues \eqn{[EUR m^{-3}]}{[EUR m^(-3)]}, and
-#'         total net revenues \eqn{[EUR]}{[EUR]}).
+#'         harvest costs \eqn{[EUR m^{-3}]}{[EUR m^(-3)]}, wood revenues
+#'         \eqn{[EUR m^{-3}]}{[EUR m^(-3)]}, and total net revenues
+#'         \eqn{[EUR]}{[EUR]}).
 #' @references Dieter, Matthias (2001): Land expectation values for spruce and
 #'             beech calculated with Monte Carlo modelling techniques. For.
 #'             Policy Econ. 2 (2), S. 157-166.
@@ -119,7 +121,7 @@
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
 #'             Carola (in preparation): woodValuationDE: A consistent framework
-#'             for wood valuation in Germany (technical note)
+#'             for calculating stumpage values in Germany (technical note)
 #' @references Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
 #'             to integrate risk in forest management decisions. Ann. For. Sci.
 #'             74 (4), S.75. \doi{10.1007/s13595-017-0670-x}

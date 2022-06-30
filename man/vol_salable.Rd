@@ -2,7 +2,7 @@
 % Please edit documentation in R/vol_salable.R
 \name{vol_salable}
 \alias{vol_salable}
-\title{Relative share of the volume over bark that is salable}
+\title{Relative share in the volume over bark that is salable}
 \usage{
 vol_salable(
   diameter.q,
@@ -27,7 +27,7 @@ high shares of wood suitable for high-valued usages such
 as furniture, \code{2} for a moderate quality, and
 \code{3} for a low quality (e.g., trees with thick
 branches). The \code{value.level}s refer to the applied
-assortment tables of Offer and Staupendah (2018).}
+assortment tables of Offer and Staupendahl (2018).}
 
 \item{logging.method}{Logging method, with \code{"manually"} for
 motor-manual logging using a chain saw,
@@ -52,14 +52,15 @@ A vector with relative shares of salable wood volume.
 }
 \description{
 The function estimates the salable share of the wood volume. It is expressed
-in relation to the volume over bark (German unit: Vfm) as usually provided by
-yield tables and forest simulators. This includes all pulp wood, sawlog,
-and fuel wood assortments. The share of salable wood is required to derive
-the wood revenues per cubic meter volume over bark. The function is based on
-the assortment tables from Offer and Staupendahl (2018) and its derivation is
-described in Fuchs et al. (in preparation). The underlying assortment tables
-are based on data from HessenForst, the public forest service of the Federal
-State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
+in relation to the volume over bark (German unit: Vfm m.R.) as usually
+provided by yield tables and forest simulators. This includes all pulp wood,
+sawlog, and fuel wood assortments. The share of salable wood is required to
+derive the wood revenues per cubic meter volume over bark. The function is
+based on the assortment tables from Offer and Staupendahl (2018) and its
+derivation is described in Fuchs et al. (in preparation). The underlying
+assortment tables are based on data from HessenForst, the public forest
+service of the Federal State of Hesse in Germany. For further details see the
+\pkg{woodValuationDE}
 \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
 }
 \examples{
@@ -91,7 +92,7 @@ vol_salable(rep(seq(20, 50, 10),
 Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
             Carola (in preparation): woodValuationDE: A consistent framework
-            for wood valuation in Germany (technical note)
+            for calculating stumpage values in Germany (technical note)
 
 Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
             Bestandessortentafeln (Wood Harvest Cost and Assortment
