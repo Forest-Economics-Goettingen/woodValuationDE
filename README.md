@@ -258,25 +258,25 @@ get_species_codes()
   species codes.
 </p>
 
-| Species code Lower Saxony | English species Code | Scientific name              |
-|---------------------------|----------------------|------------------------------|
-| 110                       | oak                  | <i>Quercus</i> sp.           |
-| 211                       | beech                | <i>Fagus sylvatica</i>       |
-| 221                       | hornbeam             | <i>Carpinus betulus</i>      |
-| 311                       | ash                  | <i>Fraxinus exelsior</i>     |
-| 321                       | maple                | <i>Acer pseudoplatanus</i>   |
-| 331                       | elm                  | <i>Ulmus glabra</i>          |
-| 341                       | lime                 | <i>Tilia platyphyllos</i>    |
-| 354                       | cherry               | <i>Prunus avium</i>          |
-| 410                       | birch                | <i>Betula</i> sp.            |
-| 421                       | alder                | <i>Alnus glutinosa</i>       |
-| 430                       | poplar               | <i>Populus</i> sp.           |
-| 441                       | willow               | <i>Salix</i> sp.             |
-| 511                       | spruce               | <i>Picea abies</i>           |
-| 521                       | fir                  | <i>Abies alba</i>            |
-| 611                       | douglas.fir          | <i>Pseudotsuga menziesii</i> |
-| 711                       | pine                 | <i>Pinus sylvestris</i>      |
-| 811                       | larch                | <i>Larix decidua</i>         |
+| Species code Lower Saxony | English species Code | Scientific name               |
+|---------------------------|----------------------|-------------------------------|
+| 110                       | oak                  | <i>Quercus</i> sp.            |
+| 211                       | beech                | <i>Fagus sylvatica</i>        |
+| 221                       | hornbeam             | <i>Carpinus betulus</i>       |
+| 311                       | ash                  | <i>Fraxinus excelsior</i>     |
+| 321                       | maple                | <i>Acer pseudoplatanus</i>    |
+| 331                       | elm                  | <i>Ulmus glabra</i>           |
+| 341                       | lime                 | <i>Tilia platyphyllos</i>     |
+| 354                       | cherry               | <i>Prunus avium</i>           |
+| 410                       | birch                | <i>Betula</i> sp.             |
+| 421                       | alder                | <i>Alnus glutinosa</i>        |
+| 430                       | poplar               | <i>Populus</i> sp.            |
+| 441                       | willow               | <i>Salix</i> sp.              |
+| 511                       | spruce               | <i>Picea abies</i>            |
+| 521                       | fir                  | <i>Abies alba</i>             |
+| 611                       | douglas.fir          | <i>Pseudotsuga menziesii</i>  |
+| 711                       | pine                 | <i>Pinus sylvestris</i>       |
+| 811                       | larch                | <i>Larix decidua</i>          |
 
 <h4><i>value.level</i></h4>
 
