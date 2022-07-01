@@ -29,7 +29,7 @@ administration of the Federal State of Hesse in Germany.
    * <a href="#fct_wood_valuation">wood_valuation()</a>
    * <a href="#fct_wood_net_revenues">wood_net_revenues()</a>
    * <a href="#fct_get_species_codes">get_species_codes()</a>
-4. <a href="#examples">Examples</a>
+4. <a href="#example">Tutorial with yield tables</a>
 5. <a href="#citation">Recommended citation</a>
 6. <a href="#references">References</a>
 
@@ -1663,6 +1663,387 @@ to economic species groups.
 get_species_codes()
 ```
 
+<h1><a name="example">Tutorial with yield tables</a></h1>
+
+In the following, we will demonstrate the application of
+<strong>woodValuationDE</strong> using yield tables. We will show the
+calculations required to obtain the figures presented below. These are similar
+to those included in the technical note
+[(Fuchs et al. in preparation)](#fuchs.inpreparation). In contrast to the
+technical note, we use the new generation of yield tables
+[(Albert et al., 2021)](#albert.2021) as an example for a growth model.
+
+First, we install woodValuationDE and load the required R packages:
+``` r
+install.packages("woodValuationDE")
+
+library(woodValuationDE)
+library(tidyverse)
+library(readxl)
+```
+
+We download the yield tables [(Albert et al., 2021)](#albert.2021) from zenodo
+and unzip them:
+``` r
+# create folder for the yield tables in the current working directory
+if (!dir.exists("./yield_tables")) {
+  dir.create("./yield_tables")
+}
+
+# download and unzip yield table zip file
+download.file(
+  "https://zenodo.org/record/6343907/files/Neue%20Generation%20von%20Ertragstafeln.zip",
+  "./yield_tables/yield_tables.zip")
+unzip("./yield_tables/yield_tables.zip",
+      exdir = "./yield_tables")
+```
+
+We load the yield table data into R. Due to the format of the files, this may
+look a bit complex.
+``` r
+# specify which species should be loaded and provide translations
+yield.table <- tibble()
+species.list <- tibble(
+  en = c("beech",
+         "douglas.fir",
+         "oak",
+         "spruce",
+         "pine"),
+  de = c("Buche",
+         "Douglasie",
+         "Eiche",
+         "Fichte",
+         "Kiefer"),
+  h.100.m = c(40.5,
+              50,
+              33,
+              43,
+              37),
+  # required to read out only data of the highest site index
+  number.rows = c(21,
+                  19,
+                  35,
+                  14,
+                  17)
+)
+
+# for loop over the species
+for (i in 1:nrow(species.list)) {
+  
+  yield.table <- read_excel(
+    paste0("./yield_tables/",
+           species.list$de[i],
+           "ntafel.xlsx"),
+    skip = 4,
+    n_max = species.list$number.rows[i]
+  )[-1, ] %>% 
+    select(Alter,
+           `mittl. Durch- messer...6`,
+           Vorrat...8) %>% 
+    rename(age = Alter,
+           diameter.remaining.cm = `mittl. Durch- messer...6`,
+           volume.remaining.m3.ha = Vorrat...8) %>% 
+    add_column(h.100.m = species.list$h.100.m[i],
+               .before = 1) %>% 
+    add_column(species = species.list$en[i],
+               .before = 1) %>% 
+    bind_rows(yield.table)
+  
+}
+
+# correct data types
+yield.table <- yield.table %>% 
+  mutate(
+    age = as.numeric(age),
+    diameter.remaining.cm = as.numeric(diameter.remaining.cm),
+    volume.remaining.m3.ha = as.numeric(volume.remaining.m3.ha)
+  )
+  
+# colors tree species (Lower Saxony)
+colors <- c(
+  "oak"         = rgb(255, 255,   0, maxColorValue = 255),
+  "beech"       = rgb(189,  91,  57, maxColorValue = 255),
+  "spruce"      = rgb(  0, 200, 255, maxColorValue = 255),
+  "douglas.fir" = rgb(255,   0, 255, maxColorValue = 255),
+  "pine"        = rgb(191, 191, 191, maxColorValue = 255)
+)
+  
+# plotted mean diameters [cm]
+diameter.range <- c(10, 60)
+```
+
+<h2>Figure 1: Fundamental functions</h2>
+
+Calculate harvest quantities, revenues, and costs over the diameter range
+specified above. The functions are applied with default parameters for the five
+species available in the yield tables.
+``` r
+dat.1 <- tibble(
+  species = rep(
+    species.list$en,
+    each = length(seq(diameter.range[1],
+                      diameter.range[2],
+                      0.1))),
+  diameter = rep(
+    seq(diameter.range[1],
+        diameter.range[2],
+        0.1),
+    times = nrow(species.list))
+) %>% 
+  mutate(
+    skidded.volume = vol_skidded(
+      diameter,
+      species),
+    salable.volume = vol_salable(
+      diameter,
+      species),
+    harvest.costs = harvest_costs(
+      diameter,
+      species),
+    wood.revenues = wood_revenues(
+      diameter,
+      species),
+    wood.net.revenues = wood_net_revenues(
+      1, # 1 m^3
+      diameter,
+      species)
+    
+  )
+  
+# long format for plotting
+dat.1.gath <- dat.1 %>% 
+  gather("variable",
+         "value",
+         -species,
+         -diameter) %>% 
+  # reasonable order in the plot
+  mutate(variable = factor(variable,
+                           levels = c("salable.volume",
+                                      "skidded.volume",
+                                      "harvest.costs",
+                                      "wood.revenues",
+                                      "wood.net.revenues")))
+```
+
+Harvest quantities:
+``` r
+p1.1 <- 
+  ggplot() +
+  geom_hline(yintercept = 0,
+             col = "grey40",
+             linetype = "dashed") +
+  geom_line(
+    data = filter(dat.1.gath,
+                  variable %in% c("skidded.volume",
+                                  "salable.volume")),
+    aes(diameter,
+        value,
+        col = species),
+    size = 1) +
+  labs(x = "Quadratic mean diameter [cm]",
+       y = "Relative volume share") +
+  scale_x_continuous(breaks = seq(10, 60, 10)) +
+  scale_color_manual(values = colors) +
+  theme_bw() +
+  theme(legend.position = "none") +
+  facet_wrap(~variable)
+```
+
+Revenues and costs:
+``` r
+p1.2 <- 
+  ggplot() +
+  geom_hline(yintercept = 0,
+             col = "grey40",
+             linetype = "dashed") +
+  geom_line(
+    data = filter(dat.1.gath,
+                  variable %in% c("harvest.costs",
+                                  "wood.revenues",
+                                  "wood.net.revenues")),
+    aes(diameter,
+        value,
+        color = species),
+    size = 1) +
+  labs(x = "Quadratic mean diameter [cm]",
+       y = bquote("Costs or (net) revenues [\u20AC m"^-3~"]")) +
+  scale_x_continuous(breaks = seq(10, 60, 10)) +
+  scale_color_manual(values = colors) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  facet_wrap(~variable)
+```
+
+Combined plot:
+``` r
+p1.1 +
+  p1.2 +
+  plot_layout(nrow = 2) +
+  plot_annotation(tag_levels = "a")
+```
+<figure align="center">
+  <img src="./man/fig/example_fig1_functions.png" width="100%"/>
+</figure>
+
+<h2>Figure 2: Stumpage values</h2>
+
+For this figure, we calculate stumpage values over age based on the yield
+tables. The figure should illustrate the influence of the stand quality (value
+level) as well as the accessibility for harvest operations (cost level).
+``` r
+dat.2 <- yield.table %>% 
+  filter(diameter.remaining.cm <= 60 &
+           diameter.remaining.cm >= 10)
+
+dat.2a <- dat.2[rep(1:nrow(dat.2),
+                    times = 9), ] %>% 
+  add_column(value.level = rep(1:3,
+                               each = nrow(dat.2) * 3)) %>% 
+  add_column(cost.level = rep(rep(1:3,
+                                  each = nrow(dat.2)),
+                              times = 3)) %>% 
+  mutate(
+    net.revenue = wood_net_revenues(
+      volume = volume.remaining.m3.ha,
+      diameter.q = diameter.remaining.cm,
+      species = species,
+      value.level = value.level,
+      cost.level = cost.level))
+
+# fixed cost level for the influence of the stand quality
+dat.2.1 <- dat.2a %>% 
+  filter(cost.level == 1)
+
+# fixed value level for the influence of the accessibility
+dat.2.2 <- dat.2a %>% 
+  filter(value.level == 2)
+```
+
+Influence of the stand quality:
+``` r
+p2.1 <- ggplot() +
+  geom_hline(yintercept = 0,
+             col = "grey40",
+             linetype = "dashed") +
+  geom_line(data = dat.2.1,
+            aes(age,
+                net.revenue,
+                col = as.factor(value.level)),
+            size = 1) +
+  scale_x_continuous(breaks = c(seq(40, 160, 40))) +
+  scale_color_discrete(name = "value.level") +
+  labs(x = "Age [a]",
+       y = bquote("Net stumpage value [\u20AC ha"^-1~"]")) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  facet_wrap(~species)
+```
+
+Influence of the accessibility for harvest operations:
+``` r
+p2.2 <- ggplot() +
+  geom_hline(yintercept = 0,
+             col = "grey40",
+             linetype = "dashed") +
+  geom_line(data = dat.2.2,
+            aes(age,
+                net.revenue,
+                col = as.factor(cost.level)),
+            size = 1) +
+  scale_x_continuous(breaks = c(seq(40, 160, 40))) +
+  scale_color_discrete(name = "cost.level") +
+  labs(x = "Age [a]",
+       y = bquote("Net stumpage value [\u20AC ha"^-1~"]")) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  facet_wrap(~species)
+```
+
+Combined plot:
+``` r
+p2.1 + p2.2 +
+  plot_layout(nrow = 2) +
+  plot_annotation(tag_levels = "a")
+```
+
+<figure align="center">
+  <img src="./man/fig/example_fig2_stumpagevalues.png" width="100%"/>
+</figure>
+
+<h2>Figure 3: Consequences of disturbances</h2>
+
+This figure illustrates the different assumptions on the consequences of
+calamities that we implemented in our package. We compare stumpage values of
+spruce and beech stands (age 70) without disturbances ("none") and with the
+different assumptions on reductions in revenues and increases in costs in the
+case of a salvage harvest.
+
+``` r
+dat.3 <- yield.table %>%  
+  filter(species %in% c("beech",
+                        "spruce")) %>% 
+  filter(age == 70)
+
+dat.3a <- dat.3[rep(1:2,
+                    times = 11), ] %>% 
+  mutate(
+    calamity.reference = rep(
+      c("transregional.calamity.fuchs.2022b",
+        "regional.disturbance.fuchs.2022b",
+        "stand.damage.fuchs.2022b",
+        "ips.timely.fuchs.2022a",
+        "ips.fuchs.2022a",
+        "fire.large.moellmann.2017",
+        "fire.small.moellmann.2017",
+        "storm.large.moellmann.2017",
+        "storm.small.moellmann.2017",
+        "calamity.dieter.2001",
+        "none"),
+      each = 2),
+    net.stumpage.value =
+      wood_net_revenues(
+        volume = volume.remaining.m3.ha,
+        diameter.q = diameter.remaining.cm,
+        species = species,
+        calamity.type = calamity.reference
+      ),
+    calamity.reference = as_factor(calamity.reference)
+  )
+```
+You will receive three warnings. 1+3: Some assumptions on the consequences of
+calamities apply only to coniferous species. Thus, the function returns NA
+values for beech. 2: Please note that [Dieter (2001)](#dieter.2001) assumed
+a reduction in net revenues by a factor of 0.5. Thus, the revenues and costs are
+only meaningful if they are interpreted in their sum (as net revenues).
+
+Plot:
+``` r
+ggplot() +
+  geom_hline(yintercept = 0,
+             col = "gray60") +
+  geom_hline(data = filter(dat.3a,
+                           calamity.reference == "none"),
+             aes(yintercept = net.stumpage.value),
+             linetype = "dashed",
+             col = "gray40") +
+  geom_bar(data = dat.3a,
+           aes(calamity.reference,
+               net.stumpage.value,
+               fill = calamity.reference),
+           stat = "identity") +
+  labs(x = "Calamity type",
+       y = bquote("Net stumpage value [\u20AC ha"^-1~"]")) +
+  theme_bw() +
+  theme(legend.position = "none") +
+  coord_flip() +
+  facet_wrap(~species,
+             ncol = 1)
+```
+
+<figure align="center">
+  <img src="./man/fig/example_fig3_salvagerevenues.png" width="60%"/>
+</figure>
+
 <h1><a name="citation">Recommended citation</a></h1>
 
 Until the publication of the technical note (Fuchs et al., in preparation),
@@ -1678,6 +2059,12 @@ original publication(s).
 Tarife, Kalkulationen, Adressen. [Reference prices, tariffs,
 calculations, addresses]. AfL Niedersachsen e.V. <em>Hannover:
 Deutscher Landwirtschaftsverlag</em>.
+
+<a id="albert.2021">Albert</a>, Matthias; Nagel, Jürgen; Schmidt, Matthias;
+Nagel, Ralf-Volker; Spellmann, Hermann (2021): Eine neue Generation von
+Ertragstafeln für Eiche, Buche, Fichte, Douglasie und Kiefer (1.0).
+[A new generation of yield tables for oak, beech, spruce, Douglas fir, and pine
+(1.0). [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.6343907>
 
 <a id="curtis.2000">Curtis</a>, Robert O.; Marshall, David D. (2000):
 Technical Note: Why Quadratic Mean Diameter?
