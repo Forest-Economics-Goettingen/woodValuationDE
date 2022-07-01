@@ -36,7 +36,7 @@ Authors@R:
            role = "ctb",
            comment=c(ORCID="0000-0002-6257-2026"))
     )
-Description: A package for the monetary valuation of wood in German forests
+Description: Monetary valuation of wood in German forests
              (stumpage values), including estimations of harvest quantities, 
              wood revenues, and harvest costs. The functions are sensitive to
              tree species, mean diameter of the harvested trees, stand quality,

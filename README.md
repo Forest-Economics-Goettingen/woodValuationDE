@@ -153,14 +153,14 @@ accessibility of the stand for logging operations. In addition, current
 market situations can be considered via updated prices for the German reference
 assortments.
 
-The functions <a href="fct_wood_valuation"><em>wood_valuation()</em></a> and
-<a href="fct_wood_net_revenues"><em>wood_net_revenues()</em></a> provide
+The functions <a href="#fct_wood_valuation"><em>wood_valuation()</em></a> and
+<a href="#fct_wood_net_revenues"><em>wood_net_revenues()</em></a> provide
 wrappers for easy application of the wood valuation procedure implemented in
 <strong>woodValuationDE</strong>. Both functions call the previously described
 ones and combine them to derive the net wood revenues. While
-<a href="fct_wood_valuation"><em>wood_valuation()</em></a> returns a tibble with
-the entire calculations,
-<a href="fct_wood_net_revenues"><em>wood_net_revenues()</em></a> can be used to
+<a href="#fct_wood_valuation"><em>wood_valuation()</em></a> returns a tibble
+with the entire calculations,
+<a href="#fct_wood_net_revenues"><em>wood_net_revenues()</em></a> can be used to
 directly get the total net revenues [EUR].
 
 In the next section, we describe the functions' input arguments and output
@@ -2076,7 +2076,7 @@ Forstwirtschaftsrat</a> e.V.; Deutscher Holzwirtschaftsrat e.V. (2020):
 Rahmenvereinbarung für den Rohholzhandel in Deutschland (RVR). [Master
 Agreement for Raw Wood Trading in Germany]. 3rd ed. Fachagentur
 Nachwachsende Rohstoffe e.V. (FNR). Guelzow-Pruezen. Online available at
-<https://mediathek.fnr.de/rahmenvereinbarung-fuer-den-rohholzhandel-rvr.html>.
+<https://www.fnr.de/fileadmin/kiwuh/broschueren/Broschuere_RVR2020_Nachdruck_web.pdf>.
 
 <a id="dieter.2001">Dieter</a>, Matthias (2001): Land expectation values
 for spruce and beech calculated with Monte Carlo modelling techniques.
