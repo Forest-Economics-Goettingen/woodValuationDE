@@ -1,0 +1,1 @@
+2022/07/01 initial upload to cran, all checks successfull on windows 10 and ubuntu 20.04
