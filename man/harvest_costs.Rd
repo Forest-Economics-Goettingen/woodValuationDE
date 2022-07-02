@@ -69,7 +69,7 @@ disturbances and calamities on wood revenues and
 harvest costs. \code{"baseline"} provides a tibble
 based on the references listed in
 \code{calamity.type} (for details see
-\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
+\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}
 of \pkg{woodValuationDE}). Alternatively, users can
 provide a tibble with the same structure.}
 
@@ -97,7 +97,7 @@ Moellmann and Moehring (2017), and Fuchs et al. (2022a, 2022b). Apart from
 Dieter (2001) and Moellmann and Moehring (2017), all functions and factors
 are based on data from HessenForst, the public forest service of the Federal
 State of Hesse in Germany. For further details see the \pkg{woodValuationDE}
-\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
+\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}.
 }
 \examples{
 harvest_costs(40,
