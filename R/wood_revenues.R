@@ -12,7 +12,7 @@
 #' (2001) and Moellmann and Moehring (2017), all functions and factors are based
 #' on data from HessenForst, the public forest service of the Federal State of
 #' Hesse in Germany. For further details see the \pkg{woodValuationDE}
-#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}.
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.
@@ -36,7 +36,7 @@
 #'                     to consider market fluctuations. Default is
 #'                     \code{"baseline"} referring to the prices from 2010 to
 #'                     2015 in Hesse, Germany (for details see
-#'                     \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
+#'                     \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}
 #'                     of \pkg{woodValuationDE} or v. Bodelschwingh (2018)).
 #'                     Alternatively, users can provide a tibble with the
 #'                     same structure. The column species uses the specified
@@ -79,7 +79,7 @@
 #'                         harvest costs. \code{"baseline"} provides a tibble
 #'                         based on the references listed in
 #'                         \code{calamity.type} (for details see
-#'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{readme}
+#'                         \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}
 #'                         of \pkg{woodValuationDE}). Alternatively, users can
 #'                         provide a tibble with the same structure.
 #' @param species.code.type Type of code in which \code{species} is given.
@@ -204,7 +204,7 @@ wood_revenues <- function(
 
     if (calamity.factors != "baseline") {
 
-      stop("Provided value for calamity.factors unknown. See package readme for further details.")
+      stop("Provided value for calamity.factors unknown. See package README for further details.")
 
     }
 
@@ -218,7 +218,7 @@ wood_revenues <- function(
         !(all(is.numeric(calamity.factors$cost.factor))) &
         !(all(is.numeric(calamity.factors$cost.additional)))) {
 
-      stop("Structure of calamity.factors does not match the required structure. See package readme for further details.")
+      stop("Structure of calamity.factors does not match the required structure. See package README for further details.")
 
     }
 
@@ -280,7 +280,7 @@ wood_revenues <- function(
 
     if (price.ref.assortment != "baseline") {
 
-      stop("Provided value for price.ref.assortment unknown. See package readme for further details.")
+      stop("Provided value for price.ref.assortment unknown. See package README for further details.")
 
     }
 
@@ -291,7 +291,7 @@ wood_revenues <- function(
         !(all(is.numeric(price.ref.assortment$species))) &
         !(all(is.numeric(price.ref.assortment$price.ref.assortment)))) {
 
-      stop("Structure of price.ref.assortment does not match the required structure. See package readme for further details.")
+      stop("Structure of price.ref.assortment does not match the required structure. See package README for further details.")
 
     }
 

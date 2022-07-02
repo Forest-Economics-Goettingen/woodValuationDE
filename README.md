@@ -12,7 +12,7 @@ with corresponding functions for salable and skidded volume derived in Fuchs et
 al. (in preparation). Wood revenue and harvest cost functions were taken from v.
 Bodelschwingh (2018). The consequences of disturbances refer to Dieter (2001),
 Möllmann and Möhring (2017), and Fuchs et al. (2022a, 2022b). For the full
-references see documentation of the functions, package readme, and Fuchs et al.
+references see documentation of the functions, package README, and Fuchs et al.
 (in preparation). Apart from Dieter (2001) and Möllmann and Möhring (2017),
 all functions and factors are based on data from HessenForst, the forest
 administration of the Federal State of Hesse in Germany.
