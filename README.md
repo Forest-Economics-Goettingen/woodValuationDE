@@ -11,9 +11,9 @@ The underlying assortment tables are taken from Offer and Staupendahl (2018)
 with corresponding functions for salable and skidded volume derived in Fuchs et
 al. (in preparation). Wood revenue and harvest cost functions were taken from v.
 Bodelschwingh (2018). The consequences of disturbances refer to Dieter (2001),
-Moellmann and Moehring (2017), and Fuchs et al. (2022a, 2022b). For the full
+Möllmann and Möhring (2017), and Fuchs et al. (2022a, 2022b). For the full
 references see documentation of the functions, package readme, and Fuchs et al.
-(in preparation). Apart from Dieter (2001) and Moellmann and Moehring (2017),
+(in preparation). Apart from Dieter (2001) and Möllmann and Möhring (2017),
 all functions and factors are based on data from HessenForst, the forest
 administration of the Federal State of Hesse in Germany.
 
@@ -65,7 +65,7 @@ taken from [Offer and Staupendahl (2018)](
 [Fuchs et al. (in preparation)](#fuchs.inpreparation). Wood revenue and harvest
 cost functions were taken from [v. Bodelschwingh (2018)](#vbodelschwingh.2018).
 The consequences of disturbances refer to [Dieter (2001)](
-#dieter.2001)<sup>[1](#fndieter)</sup>, [Moellmann and Moehring (2017)](
+#dieter.2001)<sup>[1](#fndieter)</sup>, [Möllmann and Möhring (2017)](
 #moellmann.2017)<sup>[2](#fnmoellmann)</sup>, [Fuchs et al. (2022a)](
 #fuchs.2022a), and [Fuchs et al. (2022b)](#fuchs.2022b).
 
@@ -101,7 +101,7 @@ in southern Germany. However, we included it since it has often been applied in
 bioeconomic simulations for Germany.</i>
 
 <i><sup><a id="fndieter">2</a></sup>The assumed factors according to
-[Moellmann and Moehring (2017)](#moellmann.2017) are an exception since they are
+[Möllmann and Möhring (2017)](#moellmann.2017) are an exception since they are
 based on surveys of forest owners and managers in the entirety of Germany.
 However, we included them, since they provide estimates distinguishing
 between the disturbance agents.</i>
@@ -120,7 +120,7 @@ revenues and costs per volume unit, and (iii) the net revenues (see Fig. 1).
     main functions. Font: bold: main elements, italics: functions. Color: blue:
     function derived in Fuchs et al. (in preparation) based on Offer and
     Staupendahl (2018), green: functions taken from v. Bodelschwingh (2018),
-    red: calamity factors derived in Dieter (2001), Moellmann and Moehring
+    red: calamity factors derived in Dieter (2001), Möllmann and Möhring
     (2017), and Fuchs et al. (2022a, 2022b). Box shape: rectangle: functions
     and factors, parallelogram: user input and output.
   </figcaption>
@@ -214,7 +214,7 @@ diameter steps of 2 cm, a Gompertz function was fitted in order to have a
 continuous model (see
 [Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
 fitting, the modified formulation according to
-[Fischer and Schoenfelder (2017)](#fischer.2017) was used:
+[Fischer and Schönfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
   <i>v<sub>salable</sub></i> = <i>A</i> * exp( -exp(
@@ -399,7 +399,7 @@ assortment tables. Since the assortment tables only provide the values in
 diameter steps of 2 cm, a Gompertz function was fitted to have a continuous
 model (see [Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
 fitting, the modified formulation according to
-[Fischer and Schoenfelder (2017)](#fischer.2017) was used:
+[Fischer and Schönfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
   <i>v<sub>skidded</sub></i> = <i>A</i> * exp( -exp(
@@ -471,11 +471,11 @@ The function estimates average wood revenues per unit salable volume
 assortment tables from [Offer and Staupendahl (2018)](#offer.2018).
 Consequences of calamities are implemented based on
 [Dieter (2001)](#dieter.2001),
-[Moellmann and Moehring (2017)](#moellmann.2017),
+[Möllmann and Möhring (2017)](#moellmann.2017),
 [Fuchs et al. (2022a)](#fuchs.2022a), and
 [Fuchs et al. (2022b)](#fuchs.2022b). Apart from
 [Dieter (2001)](#dieter.2001) and
-[Moellmann and Moehring (2017)](#moellmann.2017), the function and all
+[Möllmann and Möhring (2017)](#moellmann.2017), the function and all
 factors are based on data from HessenForst, the public forest service of
 the Federal State of Hesse in Germany.
 
@@ -564,11 +564,11 @@ implemented by default are listed in <a href="#tab3">Tab. 3</a>.
 |:--------------|:---------------:|:----------------:|:-------------------|:----------------------------------------|
 | <i>"none"</i>                    | 1.00     | 1.00      | \-                 | default: no calamity            |
 | <i>"calamity.dieter.2001"</i>    | 0.50     | 0.50      | [Dieter (2001)](#dieter.2001)            | Assumption based on prices in southern Germany after a calamity event, often applied in bioeconomic simulations for Germany. Originally referring to net revenues, thus to be used in combination with <a href="#fct_harvest_costs"><em>harvest_costs()</em></a>. |
-| <i>"fire.small.moellmann.2017"</i>    | 0.56     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017)     | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
-| <i>"fire.large.moellmann.2017"</i>    | 0.56     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. The survey only asked for effects of quality losses. |
-| <i>"storm.small.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
-| <i>"storm.large.moellmann.2017"</i>   | 0.85     | 0.79      | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
-| <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
+| <i>"fire.small.moellmann.2017"</i>    | 0.56     | \-        | [Möllmann and Möhring (2017)](#moellmann.2017)     | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"fire.large.moellmann.2017"</i>    | 0.56     | \-        | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. The survey only asked for effects of quality losses. |
+| <i>"storm.small.moellmann.2017"</i>   | 0.85     | 0.79      | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. The survey only asked for effects of quality losses. |
+| <i>"storm.large.moellmann.2017"</i>   | 0.85     | 0.79      | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment. The survey only asked for effects of quality losses. |
+| <i>"insects.moellmann.2017"</i>       | 0.78     | \-        | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. The survey only asked for effects of quality losses. |
 | <i>"ips.fuchs.2022a"</i>          | 0.67     | \-        | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price matrix [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
 | <i>"ips.timely.fuchs.2022a"</i>   | 0.88     | \-        | [Fuchs et al. (2022a)]( #fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price matrix [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
 | <i>"stand.damage.fuchs.2022b"</i>      | 0.90     | 0.85      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
@@ -824,7 +824,7 @@ The function estimates harvest costs per unit skidded volume
 [EUR m<sup>-3</sup>] applying the harvest costs model of
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Consequences of
 calamities are implemented based on [Dieter (2001)](#dieter.2001),
-[Moellmann and Moehring (2017)](#moellmann.2017),
+[Möllmann and Möhring (2017)](#moellmann.2017),
 [Fuchs et al. (2022a)](#fuchs.2022a), and
 [Fuchs et al. (2022b)](#fuchs.2022b).
 
@@ -900,11 +900,11 @@ implemented by default are listed in <a href="#tab5">Tab. 5</a>.
 |:--------------|:----:|:----:|:----:|:----:|:-------------------|:----------------------------------------|
 | <i>"none"</i>                    | 1.00 | 0.00                 | 1.00      | 0.00                 | \-                 | default: no calamity            |
 | <i>"calamity.dieter.2001"</i>    | 0.50 | 0.00                 | 0.50      | 0.00                 | [Dieter (2001)](#dieter.2001) | [Dieter (2001)](#dieter.2001) assumed a reduction of the net revenues by 0.5 in case of calamities. In our model, this factor is therefore applied to reduce both wood revenues and harvest costs. Obviously this is counterintuitive for the harvest costs and thus to be used in combination with <a href="#fct_wood_revenues"><em>wood_revenues()</em></a>. |
-| <i>"fire.small.moellmann.2017"</i>    | 1.17 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. |
-| <i>"fire.large.moellmann.2017"</i>    | 1.09 | 0.00 | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. |
-| <i>"storm.small.moellmann.2017"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
-| <i>"storm.large.moellmann.2017"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment.
-| <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Moellmann and Moehring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
+| <i>"fire.small.moellmann.2017"</i>    | 1.17 | 0.00 | NA   | NA   | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting only a few trees. |
+| <i>"fire.large.moellmann.2017"</i>    | 1.09 | 0.00 | NA   | NA   | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by fire affecting at least one compartment. |
+| <i>"storm.small.moellmann.2017"</i>   | 1.21 | 0.00 | 1.24 | 0.00 | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting only a few trees. |
+| <i>"storm.large.moellmann.2017"</i>   | 1.10 | 0.00 | 1.12 | 0.00 | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by storm affecting at least one compartment.
+| <i>"insects.moellmann.2017"</i>       | NA   | NA   | NA   | NA   | [Möllmann and Möhring (2017)](#moellmann.2017) | Based on a survey of forest managers in Germany, referring to damages by insects. |
 | <i>"ips.fuchs.2022a"</i>          | 1.00 | 2.50 | NA   | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of higher harvest costs due to smaller, scattered logging operations. |
 | <i>"ips.timely.fuchs.2022a"</i>   | 1.00 | 7.50 | NA   | NA   | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of higher harvest costs due to smaller, scattered logging operations, but also including costs for debarking or chemically treating the logs afterwards. |
 | <i>"stand.damage.fuchs.2022b"</i>      | 1.15 | 0   | 1.15 | 0   | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption for damages in a single stand with smaller harvest volumes based on experience of HessenForst. |
@@ -2075,7 +2075,7 @@ Technical Note: Why Quadratic Mean Diameter?
 Forstwirtschaftsrat</a> e.V.; Deutscher Holzwirtschaftsrat e.V. (2020):
 Rahmenvereinbarung für den Rohholzhandel in Deutschland (RVR). [Master
 Agreement for Raw Wood Trading in Germany]. 3rd ed. Fachagentur
-Nachwachsende Rohstoffe e.V. (FNR). Guelzow-Pruezen. Online available at
+Nachwachsende Rohstoffe e.V. (FNR). Gülzow-Prüzen. Online available at
 <https://www.fnr.de/fileadmin/kiwuh/broschueren/Broschuere_RVR2020_Nachdruck_web.pdf>.
 
 <a id="dieter.2001">Dieter</a>, Matthias (2001): Land expectation values
@@ -2083,7 +2083,7 @@ for spruce and beech calculated with Monte Carlo modelling techniques.
 <em>For. Policy Econ.</em> **2 (2)**, S. 157-166.
 <https://doi.org/10.1016/S1389-9341(01)00045-4>.
 
-<a id="fischer.2017">Fischer</a>, Christoph; Schoenfelder, Egbert
+<a id="fischer.2017">Fischer</a>, Christoph; Schönfelder, Egbert
 (2017): A modified growth function with interpretable parameters applied
 to the age--height relationship of individual trees. <em>Can. J. For.
 Res.</em> **47**, S. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
@@ -2111,7 +2111,7 @@ Ernteverfahren und Kalkulationen. [Wood harvesting methods -
 Comparative survey and assessment, data CD with description of
 harvesting methods and calculations.]. <em>Groß-Umstadt: KWF.</em>
 
-<a id="moellmann.2017">Moellmann</a>, Torsten B.; Moehring, Bernhard
+<a id="moellmann.2017">Möllmann</a>, Torsten B.; Möhring, Bernhard
 (2017): A practical way to integrate risk in forest management
 decisions. <em>Ann. For. Sci.</em> **74 (4)**, S. 75.
 
@@ -2131,15 +2131,15 @@ their application in valuation practice.]. <em>Forst und Holz</em> **64
 Holzwerbungskosten- und Bestandessortentafeln (Wood Harvest Cost and
 Assortment Tables). <em>Kassel: HessenForst (publisher)</em>.
 
-<a id="schopfer.2003">Schoepfer</a>, W.; Kaendler, G.; Stoehr, D.
+<a id="schopfer.2003">Schöpfer</a>, W.; Kändler, G.; Stöhr, D.
 (2003): Entscheidungshilfen für die Forst- und Holzwirtschaft - Zur
 Abschlussversion von HOLZERNTE. [Decision Support for Forestry and Wood
 Industry - The Final Version of HOLZERNTE]. <em>Forst und Holz</em>
 **58 (18)**, S. 545--550.
 
 <a id="vbodelschwingh.2018">v. Bodelschwingh</a>, Hilmar (2018):
-Oekonomische Potentiale von Waldbestaenden. Konzeption und Abschaetzung
-im Rahmen einer Fallstudie in hessischen Staatswaldflaechen [Economic
+Oekonomische Potentiale von Waldbeständen. Konzeption und Abschätzung
+im Rahmen einer Fallstudie in hessischen Staatswaldflächen [Economic
 Potentials of Forest Stands and Their Consideration in Strategic
-Decisions]. <em>Bad Orb: J.D. Sauerlaender\`s Verlag (Schriften zur
-Forst- und Umweltoekonomie, 47)</em>.
+Decisions]. <em>Bad Orb: J.D. Sauerländer\`s Verlag (Schriften zur
+Forst- und Umweltökonomie, 47)</em>.

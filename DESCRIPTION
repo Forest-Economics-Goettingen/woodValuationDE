@@ -1,7 +1,7 @@
 Package: woodValuationDE
 Type: Package
 Title: Wood Valuation Germany
-Version: 1.0.0
+Version: 1.0.1
 Authors@R:
     c(
     person(given = "Jasper M.",
@@ -48,7 +48,7 @@ Description: Monetary valuation of wood in German forests
              functions were taken from v. Bodelschwingh (2018). The consequences
              of disturbances refer to Dieter (2001), Moellmann and Moehring
              (2017), and Fuchs et al. (2022a, 2022b). For the full references 
-             see documentation of the functions, package readme, and Fuchs et
+             see documentation of the functions, package README, and Fuchs et
              al. (in preparation). Apart from Dieter (2001) and Moellmann and
              Moehring (2017), all functions and factors are based on data from
              HessenForst, the forest administration of the Federal State of

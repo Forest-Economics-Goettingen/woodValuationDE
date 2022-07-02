@@ -1,1 +1,1 @@
-2022/07/01 initial upload to cran, all checks successfull on Windows 10 and Ubuntu 20.04. We thoroughly reviewed all words tagged as misspelled in the NOTE. All words are actually correct. Also the URL to the doi works correctly.
+2022/07/01 initial upload to cran, all checks successful on Windows 10 and Ubuntu 20.04. We thoroughly reviewed all words tagged as misspelled in the NOTE. All words are actually correct. Also the URL to the doi works correctly.
