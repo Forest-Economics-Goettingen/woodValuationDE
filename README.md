@@ -1,4 +1,4 @@
-woodValuationDE: Wood Valuation Germany
+woodValuationDE: Wood Valuation Germany <img src='man/fig/logo.png' align="right" height="139" />
 ===================================
 
 [![](https://www.r-pkg.org/badges/version/woodValuationDE)](https://cran.r-project.org/package=woodValuationDE)
