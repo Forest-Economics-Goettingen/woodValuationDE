@@ -4,7 +4,6 @@ woodValuationDE: Wood Valuation Germany
 [![](https://www.r-pkg.org/badges/version/woodValuationDE)](https://cran.r-project.org/package=woodValuationDE)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/woodValuationDE?color=green)](https://cran.r-project.org/package=woodValuationDE)
 [![](http://cranlogs.r-pkg.org/badges/last-month/woodValuationDE?color=green)](https://cran.r-project.org/package=woodValuationDE)
-<!--- [![CRAN checks](https://cranchecks.info/badges/summary/woodValuationDE)](https://cran.r-project.org/web/checks/check_results_woodValuationDE.html) --->
 [![](https://img.shields.io/github/last-commit/Forest-Economics-Goettingen/woodValuationDE.svg)](https://github.com/Forest-Economics-Goettingen/woodValuationDE/commits/master)
 [![](https://img.shields.io/github/languages/code-size/Forest-Economics-Goettingen/woodValuationDE.svg)](https://github.com/Forest-Economics-Goettingen/woodValuationDE)
 [![](https://img.shields.io/badge/other%20version-EXCEL-blue.svg)](https://doi.org/10.5281/zenodo.6796526)
