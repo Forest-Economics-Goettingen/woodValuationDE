@@ -88,7 +88,7 @@ for timely salvage fellings in less advanced attack
 stages (both according to Fuchs et al. 2022a); and
 \code{"stand.damage.fuchs.2022b"} to disturbances
 affecting only one stand, 
-\code{"regional.disturbances.fuchs.2022b"} to 
+\code{"regional.disturbance.fuchs.2022b"} to 
 disturbances with effects on the regional wood market
 and \code{"transregional.calamity.fuchs.2022b"} to
 calamities affecting transregional wood markets (the
