@@ -26,6 +26,11 @@ PrepareTimberContrMarginParameters <- function() {
                         delim = ";",
                         locale = readr::locale(decimal_mark = ","),
                         col_types = readr::cols()),
+    vol.assortment =
+      readr::read_delim("./data-raw/volAssortmentParametersOffer.csv",
+                        delim = ";",
+                        locale = readr::locale(decimal_mark = ","),
+                        col_types = readr::cols()),
     prices.ref.assortments = dplyr::tibble(
       species = c(110, 211, 511, 711, 611,
                   811, 410, 421, 311, 430),
