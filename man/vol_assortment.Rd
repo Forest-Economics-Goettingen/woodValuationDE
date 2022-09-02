@@ -2,7 +2,7 @@
 % Please edit documentation in R/vol_assortment.R
 \name{vol_assortment}
 \alias{vol_assortment}
-\title{tbd}
+\title{Relative volume share of different assortments}
 \usage{
 vol_assortment(
   diameter.q,
@@ -23,7 +23,7 @@ a list with the available species and codes call
 \code{\link{get_species_codes}}.}
 
 \item{assortment}{wood assortment whose share is sought, currently
-implemented \code("stem.wood")}
+implemented: \code{"sawn.wood"}}
 
 \item{value.level}{Stand quality expressed as an integer of \code{1:3}, with
 \code{1} for an extraordinarily high stand quality with 
@@ -52,13 +52,44 @@ to implement alternative parameters and functions in the
 future.}
 }
 \value{
-A vector with relative shares of salable wood volume.
+A vector with relative shares of the respective assortment's wood volume.
 }
 \description{
-tbd
+The function estimates the share of different assortments. It is expressed
+in relation to the salable volume, i.e. the sum of pulp wood, saw log, and 
+fuel wood assortments. The function is based on the assortment tables from 
+Offer and Staupendahl (2018) and its derivation is similar to the approach
+described in Fuchs et al. (in preparation) for the salable and skidded
+volume. The underlying assortment tables are based on data from HessenForst,
+the public forest service of the Federal State of Hesse in Germany. For
+further details see the \pkg{woodValuationDE}
+\href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}.
 }
 \examples{
-tbd
+# sawn wood / saw log volume per cubic meter salable volume
+share.saw.logs <- vol_assortment(40,
+                                 "beech",
+                                 "sawn.wood")
+share.saw.logs
+
+# fuel wood per cubic meter salable volume
+share.fuel.wood <- (vol_salable(40,
+                                "beech") -
+                      vol_skidded(40,
+                                  "beech")) /
+  vol_salable(40,
+              "beech")
+share.fuel.wood
+
+# pulp wood per cubic meter salable volume
+share.pulp.wood <- 1 - share.saw.logs - share.fuel.wood
+
+# sawn wood / saw log volume per cubic meter volume over bark
+vol_assortment(40,
+               "beech",
+               "stem.wood") *
+  vol_salable(40,
+              "beech")
 }
 \references{
 Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,

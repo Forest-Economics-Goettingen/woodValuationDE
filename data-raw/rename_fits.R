@@ -1,3 +1,5 @@
+library(tidyverse)
+
 dat <- read.csv2("./data-raw/volStemWoodParametersOffer.csv")
 dat.andere <- read.csv2("./data-raw/volSalableParametersOffer.csv") %>% 
   dplyr::select(tree.species,
@@ -16,7 +18,7 @@ dat1 <- dat %>%
                            "beech"),
          baumart = replace(baumart,
                            baumart == "Douglasie",
-                           "douglas.fir"),
+                           "Douglas fir"),
          baumart = replace(baumart,
                            baumart == "Eiche",
                            "oak"),
@@ -54,7 +56,7 @@ dat1 <- dat %>%
             by = c("tree.species",
                    "value.level",
                    "logging.method")) %>% 
-  add_column(assortment = "stem.wood")
+  add_column(assortment = "sawn.wood")
 
 
 write.csv2(dat1,

@@ -2,7 +2,17 @@
 #### Shares of Different Wood Assortments ####
 ##--######################################--##
 
-#' tbd
+#' Relative volume share of different assortments
+#'
+#' The function estimates the share of different assortments. It is expressed
+#' in relation to the salable volume, i.e. the sum of pulp wood, saw log, and 
+#' fuel wood assortments. The function is based on the assortment tables from 
+#' Offer and Staupendahl (2018) and its derivation is similar to the approach
+#' described in Fuchs et al. (in preparation) for the salable and skidded
+#' volume. The underlying assortment tables are based on data from HessenForst,
+#' the public forest service of the Federal State of Hesse in Germany. For
+#' further details see the \pkg{woodValuationDE}
+#' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
 #'                   the harvested trees \eqn{[cm]}{[cm]}.
@@ -10,7 +20,7 @@
 #'                a list with the available species and codes call
 #'                \code{\link{get_species_codes}}.
 #' @param assortment wood assortment whose share is sought, currently
-#'                   implemented \code("stem.wood")
+#'                   implemented: \code{"sawn.wood"}
 #' @param value.level Stand quality expressed as an integer of \code{1:3}, with
 #'                    \code{1} for an extraordinarily high stand quality with 
 #'                    high shares of wood suitable for high-valued usages such
@@ -33,7 +43,7 @@
 #' @param method argument that is currently not used, but offers the possibility
 #'               to implement alternative parameters and functions in the
 #'               future.
-#' @return A vector with relative shares of salable wood volume.
+#' @return A vector with relative shares of the respective assortment's wood volume.
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
 #'             Carola (in preparation): woodValuationDE: A consistent framework
@@ -42,7 +52,30 @@
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).
 #' @examples
-#' tbd
+#' # sawn wood / saw log volume per cubic meter salable volume
+#' share.saw.logs <- vol_assortment(40,
+#'                                  "beech",
+#'                                  "sawn.wood")
+#' share.saw.logs
+#' 
+#' # fuel wood per cubic meter salable volume
+#' share.fuel.wood <- (vol_salable(40,
+#'                                 "beech") -
+#'                       vol_skidded(40,
+#'                                   "beech")) /
+#'   vol_salable(40,
+#'               "beech")
+#' share.fuel.wood
+#' 
+#' # pulp wood per cubic meter salable volume
+#' share.pulp.wood <- 1 - share.saw.logs - share.fuel.wood
+#' 
+#' # sawn wood / saw log volume per cubic meter volume over bark
+#' vol_assortment(40,
+#'                "beech",
+#'                "stem.wood") *
+#'   vol_salable(40,
+#'               "beech")
 
 #' @import dplyr
 #'
