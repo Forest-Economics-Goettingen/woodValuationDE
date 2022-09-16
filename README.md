@@ -38,6 +38,7 @@ administration of the Federal State of Hesse in Germany.
    * <a href="#fct_get_species_codes">get_species_codes()</a>
 4. <a href="#example">Tutorial with yield tables</a>
 5. <a href="#citation">Recommended citation</a>
+5. <a href="#funding">Funding</a>
 6. <a href="#references">References</a>
 
 <h1><a name="introduction">Introduction</a></h1>
@@ -2059,6 +2060,17 @@ please cite the R package on CRAN.
 For details on the applied models and underlying assumptions, such as
 assumptions on the economic consequences of disturbances, please also cite the
 original publication(s).
+
+<h1><a name="funding">Funding</a></h1>
+
+This work is part of a PhD project by J.F., partly financed by the University of
+Göttingen and supported by the Graduate School Forest and Agricultural Sciences
+Göttingen. J.F. further acknowledges partial funding through the Federal
+Ministry of Education and Research Germany (BMBF) in the 2019-2020 BiodivERsA
+joint call for research proposals, under the BiodivClim ERA-Net COFUND
+programme, and with the funding organisations Academy of Finland (decision no.
+344722), ANR (France, project ANR-20-EBI5-0005-03), and Federal Ministry of
+Education and Research (Germany, grant no. 16LC2021A). 
 
 <h1><a name="references">References</a></h1>
 

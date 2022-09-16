@@ -34,7 +34,13 @@ Authors@R:
     person(given = "Carola",
            family = "Paul",
            role = "ctb",
-           comment=c(ORCID="0000-0002-6257-2026"))
+           comment=c(ORCID="0000-0002-6257-2026")),
+    person("University Goettingen - Department of Forest Economics and Sustainable Land-use Planning",
+           role = "fnd"),
+    person("Federal Ministry of Education and Research Germany (BMBF)",
+           role = "fnd"),
+    person("BiodivClim ERA-Net COFUND: BiodivERsA call",
+           role = "fnd")
     )
 Description: Monetary valuation of wood in German forests
              (stumpage values), including estimations of harvest quantities, 
