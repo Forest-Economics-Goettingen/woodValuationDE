@@ -24,6 +24,12 @@ references see documentation of the functions, package README, and Fuchs et al.
 all functions and factors are based on data from HessenForst, the forest
 administration of the Federal State of Hesse in Germany.
 
+The current stable release of the <em>R</em> package
+<strong>woodValuationDE</strong> is available at
+[CRAN](https://cran.r-project.org/package=woodValuationDE). We have also
+published a simplified version with the main functions as an <em>EXCEL</em>
+file at [Zenodo](https://doi.org/10.5281/zenodo.6796526).
+
 <h1><a name="menu"></a></h1>
 
 1. <a href="#introduction">Introduction</a>
