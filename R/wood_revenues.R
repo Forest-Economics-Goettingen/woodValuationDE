@@ -118,6 +118,9 @@
 #' @references Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
 #'             to integrate risk in forest management decisions. Ann. For. Sci.
 #'             74 (4), S.75. \doi{10.1007/s13595-017-0670-x}
+#' @references Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
+#'             Bestandessortentafeln (Wood Harvest Cost and Assortment
+#'             Tables). Kassel: HessenForst (publisher).
 #' @references v. Bodelschwingh, Hilmar (2018): Oekonomische Potentiale von
 #'             Waldbestaenden. Konzeption und Abschaetzung im Rahmen einer
 #'             Fallstudie in hessischen Staatswaldflaechen (Economic Potentials
