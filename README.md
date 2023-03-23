@@ -850,7 +850,7 @@ from [KWF (2006)](#kwf.2006) and [AFL (2014)](#afl.2014). The fitted
 model function for the harvest costs <i>h</i> is:
 
 <p align="center">
-  <i>h</i> = max(<i>a</i> *
+  <i>h</i> = min(<i>a</i> *
   <i>d<sub>q</sub></i><sup><i>b</i></sup> + <i>c</i>,
   <i>h<sub>max</sub></i>),
 </p>
