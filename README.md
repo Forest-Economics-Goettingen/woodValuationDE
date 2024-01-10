@@ -100,8 +100,6 @@ technical note:
 
 [Fuchs et al. (2023)](#fuchs.2023)
 
-<em>We will add the full reference once the manuscript is published.</em>
-
 <strong>
 We encourage users to conduct sensitivity analyses and to review the default
 parameters and modify them where necessary.
