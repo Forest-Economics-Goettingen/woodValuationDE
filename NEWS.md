@@ -1,5 +1,10 @@
 # woodValuationDE 1.0.1
-2022/07/01: initial upload
+
+* initial upload
 
 # woodValuationDE 1.0.1-999
-2022/08/17: typo in help files; formatting NEWS.md
+
+* typo in help files; formatting NEWS.md
+* minor corrections in README.md
+* updated citation information in README.md
+* new CITATION file

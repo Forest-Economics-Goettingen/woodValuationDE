@@ -16,11 +16,11 @@ estimations for the consequences of disturbances on revenues and costs.
 
 The underlying assortment tables are taken from Offer and Staupendahl (2018)
 with corresponding functions for salable and skidded volume derived in Fuchs et
-al. (in preparation). Wood revenue and harvest cost functions were taken from v.
+al. (2023). Wood revenue and harvest cost functions were taken from v.
 Bodelschwingh (2018). The consequences of disturbances refer to Dieter (2001),
 Möllmann and Möhring (2017), and Fuchs et al. (2022a, 2022b). For the full
 references see documentation of the functions, package README, and Fuchs et al.
-(in preparation). Apart from Dieter (2001) and Möllmann and Möhring (2017),
+(2023). Apart from Dieter (2001) and Möllmann and Möhring (2017),
 all functions and factors are based on data from HessenForst, the forest
 administration of the Federal State of Hesse in Germany.
 
@@ -76,7 +76,7 @@ operational harvest and sale data from HessenForst, the public forest service of
 the Federal State of Hesse in Germany. The underlying assortment tables are
 taken from [Offer and Staupendahl (2018)](
 #offer.2018) with corresponding functions for the harvest quantities derived in
-[Fuchs et al. (in preparation)](#fuchs.inpreparation). Wood revenue and harvest
+[Fuchs et al. (2023)](#fuchs.2023). Wood revenue and harvest
 cost functions were taken from [v. Bodelschwingh (2018)](#vbodelschwingh.2018).
 The consequences of disturbances refer to [Dieter (2001)](
 #dieter.2001)<sup>[1](#fndieter)</sup>, [Möllmann and Möhring (2017)](
@@ -98,7 +98,7 @@ limitations of <strong>woodValuationDE</strong>, we refer the readers to the
 technical note:
 </strong>
 
-[Fuchs et al. (in preparation)](#fuchs.inpreparation)
+[Fuchs et al. (2023)](#fuchs.2023)
 
 <em>We will add the full reference once the manuscript is published.</em>
 
@@ -132,7 +132,7 @@ revenues and costs per volume unit, and (iii) the net revenues (see Fig. 1).
     <i>Fig. 1:</i> Structural outline of
     <strong>woodValuationDE</strong> with user input and output as well as the
     main functions. Font: bold: main elements, italics: functions. Color: blue:
-    function derived in Fuchs et al. (in preparation) based on Offer and
+    function derived in Fuchs et al. (2023) based on Offer and
     Staupendahl (2018), green: functions taken from v. Bodelschwingh (2018),
     red: calamity factors derived in Dieter (2001), Möllmann and Möhring
     (2017), and Fuchs et al. (2022a, 2022b). Box shape: rectangle: functions
@@ -204,7 +204,7 @@ of wood which is taken out of the forest for usage. The share of salable
 wood is required to  derive the wood revenues per unit volume over bark.
 The function is based on the assortment tables from
 [Offer and Staupendahl (2018)](#offer.2018) and its derivation is
-described in [Fuchs et al. (inpreparation)](#fuchs.inpreparation). The
+described in [Fuchs et al. (2023)](#fuchs.2023). The
 underlying assortment tables are based on data from HessenForst, the
 public forest service of the Federal State of Hesse in Germany.
 
@@ -226,7 +226,7 @@ We derived the share of salable volume <i>v<sub>salable</sub></i> based on these
 assortment tables. Since the assortment tables only provide the values in
 diameter steps of 2 cm, a Gompertz function was fitted in order to have a
 continuous model (see
-[Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
+[Fuchs et al., 2023](#fuchs.2023)). For the model
 fitting, the modified formulation according to
 [Fischer and Schönfelder (2017)](#fischer.2017) was used:
 
@@ -318,7 +318,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -390,7 +390,7 @@ be commercially delivered to the forest road, the pulpwood and sawlog
 assortments. The share of skidded wood is required to derive the harvest costs
 per unit volume over bark. The function is based on the assortment tables from
 [Offer and Staupendahl (2018)](#offer.2018) and its derivation is described in
-[Fuchs et al. (in preparation)](#fuchs.inpreparation). The underlying assortment
+[Fuchs et al. (2023)](#fuchs.2023). The underlying assortment
 tables are based on data from HessenForst, the public forest service of the
 Federal State of Hesse in Germany.
 
@@ -411,7 +411,7 @@ are provided in [Offer and Staupendahl (2008)](#offer.2008) and
 We derived the share of skidded volume <i>v<sub>skidded</sub></i> based on these
 assortment tables. Since the assortment tables only provide the values in
 diameter steps of 2 cm, a Gompertz function was fitted to have a continuous
-model (see [Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
+model (see [Fuchs et al., 2023](#fuchs.2023)). For the model
 fitting, the modified formulation according to
 [Fischer and Schönfelder (2017)](#fischer.2017) was used:
 
@@ -638,7 +638,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -1182,7 +1182,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -1460,7 +1460,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -1683,7 +1683,7 @@ In the following, we will demonstrate the application of
 <strong>woodValuationDE</strong> using yield tables. We will show the
 calculations required to obtain the figures presented below. These are similar
 to those included in the technical note
-[(Fuchs et al. in preparation)](#fuchs.inpreparation). In contrast to the
+[(Fuchs et al., 2023)](#fuchs.2023). In contrast to the
 technical note, we use the new generation of yield tables
 [(Albert et al., 2021)](#albert.2021) as an example for a growth model.
 
@@ -2060,8 +2060,26 @@ ggplot() +
 
 <h1><a name="citation">Recommended citation</a></h1>
 
-Until the publication of the technical note (Fuchs et al., in preparation),
-please cite the R package on CRAN.
+Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster, Roman;
+Staupendahl, Kai; Offer, Armin; Möhring, Bernhard; Paul, Carola (2023):
+woodValuationDE: A consistent framework for calculating stumpage values in
+Germany (technical note). <em>Allg. Forst- u. J.-Ztg.</em>
+**193 (1/2)**, p. 16-29. <https://doi.org/10.23765/afjz0002090>.
+
+Bibtex:
+
+```
+@article{
+  title = {{{woodValuationDE}}: {{A}} Consistent Framework for Calculating Stumpage Values in {{Germany}} (Technical Note)},
+  author = {Fuchs, Jasper M. and Husmann, Kai and {von Bodelschwingh}, Hilmar and Koster, Roman and Staupendahl, Kai and Offer, Armin and M{\"o}hring, Bernhard and Paul, Carola},
+  year = {2023},
+  journal = {Allg. Forst- Jagdztg.},
+  volume = {193},
+  number = {1/2},
+  pages = {16--29},
+  doi = {10.23765/afjz0002090}
+}
+```
 
 For details on the applied models and underlying assumptions, such as
 assumptions on the economic consequences of disturbances, please also cite the
@@ -2093,7 +2111,7 @@ Ertragstafeln für Eiche, Buche, Fichte, Douglasie und Kiefer (1.0).
 
 <a id="curtis.2000">Curtis</a>, Robert O.; Marshall, David D. (2000):
 Technical Note: Why Quadratic Mean Diameter?
-<em>West. J. Appl. For.</em> **15 (3)**, S. 137-139.
+<em>West. J. Appl. For.</em> **15 (3)**, p. 137-139.
 <https://doi.org/10.1093/wjaf/15.3.137>.
 
 <a id="deutscherforstwirtschaftsrat.2020">Deutscher
@@ -2105,19 +2123,19 @@ Nachwachsende Rohstoffe e.V. (FNR). Gülzow-Prüzen. Online available at
 
 <a id="dieter.2001">Dieter</a>, Matthias (2001): Land expectation values
 for spruce and beech calculated with Monte Carlo modelling techniques.
-<em>For. Policy Econ.</em> **2 (2)**, S. 157-166.
+<em>For. Policy Econ.</em> **2 (2)**, p. 157-166.
 <https://doi.org/10.1016/S1389-9341(01)00045-4>.
 
 <a id="fischer.2017">Fischer</a>, Christoph; Schönfelder, Egbert
 (2017): A modified growth function with interpretable parameters applied
 to the age--height relationship of individual trees. <em>Can. J. For.
-Res.</em> **47**, S. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
+Res.</em> **47**, p. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
 
 <a id="fuchs.2022a">Fuchs</a>, Jasper M.; Hittenbeck, Anika;
 Brandl, Susanne; Schmidt, Matthias; Paul, Carola (2022b):
 Adaptation Strategies for Spruce Forests - Economic Potential of Bark
 Beetle Management and Douglas Fir Cultivation in Future Tree Species
-Portfolios. <em>Forestry</em> **95 (2)**, S. 229-246.
+Portfolios. <em>Forestry</em> **95 (2)**, p. 229-246.
 <https://doi.org/10.1093/forestry/cpab040>
 
 <a id="fuchs.2022b">Fuchs</a>, Jasper M.; v. Bodelschwingh, Hilmar; Paul,
@@ -2125,10 +2143,11 @@ Carola; Husmann, Kai (2022a): Quantifying the consequences of disturbances on
 wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
 **140**, art. 102738. <https://doi.org/10.1016/j.forpol.2022.102738>.
 
-<a id="fuchs.inpreparation">Fuchs</a>, Jasper M.; Husmann, Kai;
+<a id="fuchs.2023">Fuchs</a>, Jasper M.; Husmann, Kai;
 v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;
-Möhring, Bernhard; Paul, Carola (in preparation): woodValuationDE: A consistent
-framework for calculating stumpage values in Germany (technical note)
+Möhring, Bernhard; Paul, Carola (2023): woodValuationDE: A consistent
+framework for calculating stumpage values in Germany (technical note). <em>Allg. Forst- u. J.-Ztg.</em>
+**193 (1/2)**, p. 16-29. <https://doi.org/10.23765/afjz0002090>.
 
 <a id="kwf.2006">KWF</a> (ed.) (2006): Holzernteverfahren -
 Vergleichende Erhebung und Beurteilung, Daten CD mit Beschreibung der
@@ -2138,19 +2157,20 @@ harvesting methods and calculations.]. <em>Groß-Umstadt: KWF.</em>
 
 <a id="moellmann.2017">Möllmann</a>, Torsten B.; Möhring, Bernhard
 (2017): A practical way to integrate risk in forest management
-decisions. <em>Ann. For. Sci.</em> **74 (4)**, S. 75.
+decisions. <em>Ann. For. Sci.</em> **74 (4)**, p. 75-87.
+<https://doi.org/10.1007/s13595-017-0670-x>.
 
 <a id="offer.2008">Offer</a>, Armin; Staupendahl, Kai (2008): Neue
 Bestandessortentafeln für die Waldbewertung und ihr Einsatz in der
 Bewertungspraxis. [New stand assortment tables for forest valuation and
 their application in valuation practice.].
-<em>Wertermittlungsforum</em> **26 (4)**, S. 146-154.
+<em>Wertermittlungsforum</em> **26 (4)**, p. 146-154.
 
 <a id="offer.2009">Offer</a>, Armin; Staupendahl, Kai (2009): Neue
 Bestandessortentafeln für die Waldbewertung und ihr Einsatz in der
 Bewertungspraxis. [New stand assortment tables for forest valuation and
 their application in valuation practice.]. <em>Forst und Holz</em> **64
-(5)**, S. 16--25.
+(5)**, p. 16--25.
 
 <a id="offer.2018">Offer</a>, Armin; Staupendahl, Kai (2018):
 Holzwerbungskosten- und Bestandessortentafeln (Wood Harvest Cost and
@@ -2160,7 +2180,7 @@ Assortment Tables). <em>Kassel: HessenForst (publisher)</em>.
 (2003): Entscheidungshilfen für die Forst- und Holzwirtschaft - Zur
 Abschlussversion von HOLZERNTE. [Decision Support for Forestry and Wood
 Industry - The Final Version of HOLZERNTE]. <em>Forst und Holz</em>
-**58 (18)**, S. 545--550.
+**58 (18)**, p. 545--550.
 
 <a id="vbodelschwingh.2018">v. Bodelschwingh</a>, Hilmar (2018):
 Oekonomische Potentiale von Waldbeständen. Konzeption und Abschätzung
