@@ -1683,38 +1683,61 @@ calculations required to obtain the figures presented below. These are similar
 to those included in the technical note
 [(Fuchs et al., 2023)](#fuchs.2023). In contrast to the
 technical note, we use the new generation of yield tables
-[(Albert et al., 2021)](#albert.2021) as an example for a growth model.
+[(Nuske et al., 2022)](#nuske.2022) as an example for a growth model.
 
-First, we install woodValuationDE and load the required R packages:
+First, we install <strong>woodValuationDE</strong>. We load the required R
+packages, including the <strong>et.nwfva</strong> package
+[(Nuske et al., 2022)](#nuske.2022) that provides yield table data for our
+example:
+
 ``` r
 install.packages("woodValuationDE")
 
 library(woodValuationDE)
 library(tidyverse)
 library(readxl)
+library(ggplot2)
+library(patchwork)
+library(et.nwfva)
 ```
 
-We download the yield tables [(Albert et al., 2021)](#albert.2021) from zenodo
-and unzip them:
-``` r
-# create folder for the yield tables in the current working directory
-if (!dir.exists("./yield_tables")) {
-  dir.create("./yield_tables")
-}
+We then import the yield tables:
 
-# download and unzip yield table zip file
-download.file(
-  "https://zenodo.org/record/6343907/files/Neue%20Generation%20von%20Ertragstafeln.zip",
-  "./yield_tables/yield_tables.zip")
-unzip("./yield_tables/yield_tables.zip",
-      exdir = "./yield_tables")
+``` r
+yield.table <-  bind_rows(
+  tibble(species = "oak", 
+         et_tafel(art = c("Eiche"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "beech", 
+         et_tafel(art = c("Buche"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "spruce", 
+         et_tafel(art = c("Fichte"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "douglas.fir", 
+         et_tafel(art = c("Douglasie"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "pine", 
+         et_tafel(art = c("Kiefer"),
+                  bon = -1,
+                  bon_typ = "relativ"))
+)
+
+yield.table <- yield.table %>%
+  select(species,
+         h.100.m = H100,
+         age = Alter,
+         diameter.remaining.cm = Dg,
+         volume.remaining.m3.ha = V)
 ```
 
-We load the yield table data into R. Due to the format of the files, this may
-look a bit complex.
+We add some information and translations for the visualization.
+
 ``` r
-# specify which species should be loaded and provide translations
-yield.table <- tibble()
 species.list <- tibble(
   en = c("beech",
          "douglas.fir",
@@ -1725,52 +1748,11 @@ species.list <- tibble(
          "Douglasie",
          "Eiche",
          "Fichte",
-         "Kiefer"),
-  h.100.m = c(40.5,
-              50,
-              33,
-              43,
-              37),
-  # required to read out only data of the highest site index
-  number.rows = c(21,
-                  19,
-                  35,
-                  14,
-                  17)
-)
+         "Kiefer"))
+         
+# plotted mean diameters [cm]
+diameter.range <- c(10, 60)
 
-# for loop over the species
-for (i in 1:nrow(species.list)) {
-  
-  yield.table <- read_excel(
-    paste0("./yield_tables/",
-           species.list$de[i],
-           "ntafel.xlsx"),
-    skip = 4,
-    n_max = species.list$number.rows[i]
-  )[-1, ] %>% 
-    select(Alter,
-           `mittl. Durch- messer...6`,
-           Vorrat...8) %>% 
-    rename(age = Alter,
-           diameter.remaining.cm = `mittl. Durch- messer...6`,
-           volume.remaining.m3.ha = Vorrat...8) %>% 
-    add_column(h.100.m = species.list$h.100.m[i],
-               .before = 1) %>% 
-    add_column(species = species.list$en[i],
-               .before = 1) %>% 
-    bind_rows(yield.table)
-  
-}
-
-# correct data types
-yield.table <- yield.table %>% 
-  mutate(
-    age = as.numeric(age),
-    diameter.remaining.cm = as.numeric(diameter.remaining.cm),
-    volume.remaining.m3.ha = as.numeric(volume.remaining.m3.ha)
-  )
-  
 # colors tree species (Lower Saxony)
 colors <- c(
   "oak"         = rgb(255, 255,   0, maxColorValue = 255),
@@ -1779,9 +1761,7 @@ colors <- c(
   "douglas.fir" = rgb(255,   0, 255, maxColorValue = 255),
   "pine"        = rgb(191, 191, 191, maxColorValue = 255)
 )
-  
-# plotted mean diameters [cm]
-diameter.range <- c(10, 60)
+         
 ```
 
 <h2>Figure 1: Fundamental functions</h2>
@@ -1789,6 +1769,7 @@ diameter.range <- c(10, 60)
 Calculate harvest quantities, revenues, and costs over the diameter range
 specified above. The functions are applied with default parameters for the five
 species available in the yield tables.
+
 ``` r
 dat.1 <- tibble(
   species = rep(
@@ -1821,7 +1802,7 @@ dat.1 <- tibble(
       species)
     
   )
-  
+
 # long format for plotting
 dat.1.gath <- dat.1 %>% 
   gather("variable",
@@ -1838,6 +1819,7 @@ dat.1.gath <- dat.1 %>%
 ```
 
 Harvest quantities:
+
 ``` r
 p1.1 <- 
   ggplot() +
@@ -1851,7 +1833,7 @@ p1.1 <-
     aes(diameter,
         value,
         col = species),
-    size = 1) +
+    linewidth = 1) +
   labs(x = "Quadratic mean diameter [cm]",
        y = "Relative volume share") +
   scale_x_continuous(breaks = seq(10, 60, 10)) +
@@ -1862,6 +1844,7 @@ p1.1 <-
 ```
 
 Revenues and costs:
+
 ``` r
 p1.2 <- 
   ggplot() +
@@ -1876,7 +1859,7 @@ p1.2 <-
     aes(diameter,
         value,
         color = species),
-    size = 1) +
+    linewidth = 1) +
   labs(x = "Quadratic mean diameter [cm]",
        y = bquote("Costs or (net) revenues [\u20AC m"^-3~"]")) +
   scale_x_continuous(breaks = seq(10, 60, 10)) +
@@ -1887,11 +1870,9 @@ p1.2 <-
 ```
 
 Combined plot:
+
 ``` r
-p1.1 +
-  p1.2 +
-  plot_layout(nrow = 2) +
-  plot_annotation(tag_levels = "a")
+p1.1 / p1.2 + plot_annotation(tag_levels = "a")
 ```
 <figure align="center">
   <img src="./man/fig/example_fig1_functions.png" width="100%"/>
@@ -1902,6 +1883,7 @@ p1.1 +
 For this figure, we calculate stumpage values over age based on the yield
 tables. The figure should illustrate the influence of the stand quality (value
 level) as well as the accessibility for harvest operations (cost level).
+
 ``` r
 dat.2 <- yield.table %>% 
   filter(diameter.remaining.cm <= 60 &
@@ -1932,6 +1914,7 @@ dat.2.2 <- dat.2a %>%
 ```
 
 Influence of the stand quality:
+
 ``` r
 p2.1 <- ggplot() +
   geom_hline(yintercept = 0,
@@ -1941,7 +1924,7 @@ p2.1 <- ggplot() +
             aes(age,
                 net.revenue,
                 col = as.factor(value.level)),
-            size = 1) +
+            linewidth = 1) +
   scale_x_continuous(breaks = c(seq(40, 160, 40))) +
   scale_color_discrete(name = "value.level") +
   labs(x = "Age [a]",
@@ -1952,6 +1935,7 @@ p2.1 <- ggplot() +
 ```
 
 Influence of the accessibility for harvest operations:
+
 ``` r
 p2.2 <- ggplot() +
   geom_hline(yintercept = 0,
@@ -1961,7 +1945,7 @@ p2.2 <- ggplot() +
             aes(age,
                 net.revenue,
                 col = as.factor(cost.level)),
-            size = 1) +
+            linewidth = 1) +
   scale_x_continuous(breaks = c(seq(40, 160, 40))) +
   scale_color_discrete(name = "cost.level") +
   labs(x = "Age [a]",
@@ -2029,6 +2013,7 @@ a reduction in net revenues by a factor of 0.5. Thus, the revenues and costs are
 only meaningful if they are interpreted in their sum (as net revenues).
 
 Plot:
+
 ``` r
 ggplot() +
   geom_hline(yintercept = 0,
@@ -2101,12 +2086,6 @@ Tarife, Kalkulationen, Adressen. [Reference prices, tariffs,
 calculations, addresses]. AfL Niedersachsen e.V. <em>Hannover:
 Deutscher Landwirtschaftsverlag</em>.
 
-<a id="albert.2021">Albert</a>, Matthias; Nagel, Jürgen; Schmidt, Matthias;
-Nagel, Ralf-Volker; Spellmann, Hermann (2021): Eine neue Generation von
-Ertragstafeln für Eiche, Buche, Fichte, Douglasie und Kiefer (1.0).
-[A new generation of yield tables for oak, beech, spruce, Douglas fir, and pine
-(1.0). [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.6343907>
-
 <a id="curtis.2000">Curtis</a>, Robert O.; Marshall, David D. (2000):
 Technical Note: Why Quadratic Mean Diameter?
 <em>West. J. Appl. For.</em> **15 (3)**, p. 137-139.
@@ -2144,8 +2123,9 @@ wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
 <a id="fuchs.2023">Fuchs</a>, Jasper M.; Husmann, Kai;
 v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;
 Möhring, Bernhard; Paul, Carola (2023): woodValuationDE: A consistent
-framework for calculating stumpage values in Germany (technical note). <em>Allg. Forst- u. J.-Ztg.</em>
-**193 (1/2)**, p. 16-29. <https://doi.org/10.23765/afjz0002090>.
+framework for calculating stumpage values in Germany (technical note).
+<em>Allg. Forst- u. J.-Ztg.</em> **193 (1/2)**, p. 16-29.
+<https://doi.org/10.23765/afjz0002090>.
 
 <a id="kwf.2006">KWF</a> (ed.) (2006): Holzernteverfahren -
 Vergleichende Erhebung und Beurteilung, Daten CD mit Beschreibung der
@@ -2157,6 +2137,11 @@ harvesting methods and calculations.]. <em>Groß-Umstadt: KWF.</em>
 (2017): A practical way to integrate risk in forest management
 decisions. <em>Ann. For. Sci.</em> **74 (4)**, p. 75-87.
 <https://doi.org/10.1007/s13595-017-0670-x>.
+
+<a id="nuske.2022">Nuske</a>, Robert; Staupendahl, Kai; Albert, Matthias (2022).
+et.nwfva: Forest Yield Tables for Northwest Germany and their Application
+(Version 0.1.1) [Computer software]. https://github.com/rnuske/et.nwfva and
+https://CRAN.R-project.org/package=et.nwfva
 
 <a id="offer.2008">Offer</a>, Armin; Staupendahl, Kai (2008): Neue
 Bestandessortentafeln für die Waldbewertung und ihr Einsatz in der
