@@ -96,13 +96,13 @@
 #'         wood volume, provided by \code{\link{vol_salable}}.
 #' @references Dieter, Matthias (2001): Land expectation values for spruce and
 #'             beech calculated with Monte Carlo modelling techniques. For.
-#'             Policy Econ. 2 (2), S. 157-166.
+#'             Policy Econ. 2 (2), p. 157-166.
 #'             \doi{10.1016/S1389-9341(01)00045-4}.
 #' @references Fuchs, Jasper M.; Hittenbeck, Anika; Brandl, Susanne; Schmidt,
 #'             Matthias; Paul, Carola (2022a): Adaptation Strategies for
 #'             Spruce Forests - Economic Potential of Bark Beetle Management and
 #'             Douglas Fir Cultivation in Future Tree Species Portfolios.
-#'             Forestry 95 (2) 229-246. \doi{10.1093/forestry/cpab040}
+#'             Forestry 95 (2) p. 229-246. \doi{10.1093/forestry/cpab040}
 #' @references Fuchs, Jasper M.; v. Bodelschwingh, Hilmar; Lange, Alexander;
 #'             Paul, Carola; Husmann, Kai (2022b): Quantifying the
 #'             consequences of disturbances on wood revenues with Impulse
@@ -110,14 +110,14 @@
 #'             \doi{10.1016/j.forpol.2022.102738}.
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
-#'             Carola (in preparation): woodValuationDE: A consistent framework
+#'             Carola (2023): woodValuationDE: A consistent framework
+#'             for calculating stumpage values in Germany (technical note).
+#'             Allgemeine Forst- und Jagdzeitung 193 (1/2), p. 16-29.
+#'             \doi{10.23765/afjz0002090}
 #'             for calculating stumpage values in Germany (technical note)
 #' @references Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
 #'             to integrate risk in forest management decisions. Ann. For. Sci.
-#'             74 (4), S.75. \doi{10.1007/s13595-017-0670-x}
-#' @references Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
-#'             to integrate risk in forest management decisions. Ann. For. Sci.
-#'             74 (4), S.75. \doi{10.1007/s13595-017-0670-x}
+#'             74 (4), p. 75. \doi{10.1007/s13595-017-0670-x}
 #' @references v. Bodelschwingh, Hilmar (2018): Oekonomische Potentiale von
 #'             Waldbestaenden. Konzeption und Abschaetzung im Rahmen einer
 #'             Fallstudie in hessischen Staatswaldflaechen (Economic Potentials

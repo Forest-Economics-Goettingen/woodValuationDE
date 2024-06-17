@@ -12,7 +12,7 @@
 #' delivered to the forest road. The share of salable wood is required to derive
 #' the costs for harvesting and skidding per cubic meter volume over bark. The
 #' function is based on the assortment tables from Offer and Staupendahl (2018)
-#' and its derivation is described in Fuchs et al. (in preparation). The
+#' and its derivation is described in Fuchs et al. (2023). The
 #' underlying assortment tables are based on data from HessenForst, the public
 #' forest service of the Federal State of Hesse in Germany. For further details
 #' see the \pkg{woodValuationDE}
@@ -48,8 +48,10 @@
 #' @return A vector with relative shares of skidded wood volume.
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
-#'             Carola (in preparation): woodValuationDE: A consistent framework
-#'             for calculating stumpage values in Germany (technical note)
+#'             Carola (2023): woodValuationDE: A consistent framework
+#'             for calculating stumpage values in Germany (technical note).
+#'             Allgemeine Forst- und Jagdzeitung 193 (1/2), p. 16-29.
+#'             \doi{10.23765/afjz0002090}
 #' @references Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).

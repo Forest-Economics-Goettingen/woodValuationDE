@@ -5,13 +5,13 @@
 #' Relative volume share of different assortments
 #'
 #' The function estimates the share of different assortments. It is expressed
-#' in relation to the salable volume, i.e. the sum of pulp wood, saw log, and 
+#' in relation to the salable volume, i.e., the sum of pulp wood, saw log, and 
 #' fuel wood assortments. The function is based on the assortment tables from 
 #' Offer and Staupendahl (2018) and its derivation is similar to the approach
-#' described in Fuchs et al. (in preparation) for the salable and skidded
-#' volume. The underlying assortment tables are based on data from HessenForst,
-#' the public forest service of the Federal State of Hesse in Germany. For
-#' further details see the \pkg{woodValuationDE}
+#' described in Fuchs et al. (2023) for the salable and skidded volume. The
+#' underlying assortment tables are based on data from HessenForst, the public
+#' forest service of the Federal State of Hesse in Germany. For further details
+#' see the \pkg{woodValuationDE}
 #' \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}.
 #'
 #' @param diameter.q Quadratic mean of the diameter at breast height (dbh) of
@@ -43,11 +43,14 @@
 #' @param method argument that is currently not used, but offers the possibility
 #'               to implement alternative parameters and functions in the
 #'               future.
-#' @return A vector with relative shares of the respective assortment's wood volume.
+#' @return A vector with relative shares of the respective assortment's wood
+#'         volume.
 #' @references Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
 #'             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
-#'             Carola (in preparation): woodValuationDE: A consistent framework
-#'             for calculating stumpage values in Germany (technical note)
+#'             Carola (2023): woodValuationDE: A consistent framework
+#'             for calculating stumpage values in Germany (technical note).
+#'             Allgemeine Forst- und Jagdzeitung 193 (1/2), p. 16-29.
+#'             \doi{10.23765/afjz0002090}
 #' @references Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).
