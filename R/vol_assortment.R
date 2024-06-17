@@ -76,7 +76,7 @@
 #' # sawn wood / saw log volume per cubic meter volume over bark
 #' vol_assortment(40,
 #'                "beech",
-#'                "stem.wood") *
+#'                "sawn.wood") *
 #'   vol_salable(40,
 #'               "beech")
 

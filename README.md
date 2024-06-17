@@ -37,6 +37,7 @@ file at [Zenodo](https://doi.org/10.5281/zenodo.6796526).
 3. <a href="#functions">Functions</a>
    * <a href="#fct_vol_salable">vol_salable()</a>
    * <a href="#fct_vol_skidded">vol_skidded()</a>
+   * <a href="#fct_vol_assortment">vol_assortment()</a>
    * <a href="#fct_wood_revenues">wood_revenues()</a>
    * <a href="#fct_harvest_costs">harvest_costs()</a>
    * <a href="#fct_wood_valuation">wood_valuation()</a>
@@ -473,6 +474,105 @@ vol_skidded(rep(seq(20, 50, 10),
                 each = 4),
             logging.method = rep(c("manually", "harvester"),
                                each = 4))
+```
+
+<h2><em><a name="fct_vol_assortment">vol_assortment()</a></em></h2>
+
+The function estimates volume shares of specific assortment (groups). These are
+expressed in relation to the salable volume. At the moment, we implemented the
+share of sawn wood / saw logs. This also allows for calculating the share of
+pulp wood. The function is based on the assortment tables from
+[Offer and Staupendahl (2018)](#offer.2018). Its derivation is similar to the
+approach described in [Fuchs et al. (2023)](#fuchs.2023) for the salable and
+skidded volume. The underlying assortment tables are based on data from 
+HessenForst, the public forest service of the Federal State of Hesse in Germany.
+
+<h3>Data and model</h3>
+
+The assortment tables from [Offer and Staupendahl (2018)](#offer.2018) provide
+conversion factors from volume over bark to harvested volume under bark. In
+addition, they provide the share of non-utilized wood, e.g., due to fixed
+assortment lengths, and private fuelwood thereof. The assortment tables were 
+derived for HessenForst with the calculation program HOLZERNTE 7.1
+[(Schöpfer et al., 2003)](#schopfer.2003). Additional parameters were defined by
+forest district officers and validated against harvest and sale statistics of
+HessenForst. More details on the assortment tables and their derivation
+are provided in [Offer and Staupendahl (2008)](#offer.2008) and
+[Offer and Staupendahl (2009)](#offer.2009).
+
+We derived the share of sawn wood <i>v<sub>sawn.wood</sub></i> based on these
+assortment tables. Since the assortment tables only provide the values in
+diameter steps of 2 cm, a Gompertz function was fitted to have a continuous
+model (cf. [Fuchs et al., 2023](#fuchs.2023)). For the model fitting, the
+modified formulation according to
+[Fischer and Schönfelder (2017)](#fischer.2017) was used:
+
+<p align="center">
+  <i>v<sub>sawn.wood</sub></i> = <i>A</i> * exp( -exp(
+  <i>z<sub>m</sub></i> / <i>A</i> * exp(1) * (<i>t<sub>w</sub></i> -
+  <i>d<sub>q</sub></i>))),
+</p>
+
+with the volume share of sawn wood <i>v<sub>sawn.wood</sub></i>, the
+quadratic mean diameter <i>d<sub>q</sub></i>, and the parameters
+<i>A</i>, <i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>. The actual parameter
+values depend on species, stand quality, and logging method.
+
+<h3>Input</h3>
+
+Apart from <i>species.code.type</i> and <i>assortment</i>, all user inputs can 
+be provided as single values or as a vector. If mixed, the single values will be
+recycled.
+
+<h4><i>assortment</i></h4>
+
+Wood assortment whose share is sought, currently implemented:
+<i>"sawn.wood"</i>.
+
+<h4><i>diameter.q</i></h4>
+
+<h4><i>species</i></h4>
+
+<h4><i>value.level</i></h4>
+
+<h4><i>logging.method</i></h4>
+
+<h4><i>species.code.type</i></h4>
+
+For details see <a href="#fct_vol_salable">vol_salable()</a>.
+
+<h3>Output</h3>
+
+A vector with relative shares of respective assortment.
+
+<h3>Application</h3>
+
+``` r
+# sawn wood / saw log volume per cubic meter salable volume
+share.saw.logs <- vol_assortment(40,
+                                 "beech",
+                                 "sawn.wood")
+share.saw.logs
+ 
+# fuel wood per cubic meter salable volume
+share.fuel.wood <- (vol_salable(40,
+                                "beech") -
+                      vol_skidded(40,
+                                  "beech")) /
+   vol_salable(40,
+               "beech")
+share.fuel.wood
+
+# pulp wood per cubic meter salable volume
+share.pulp.wood <- 1 - share.saw.logs - share.fuel.wood
+ 
+# sawn wood / saw log volume per cubic meter volume over bark
+vol_assortment(40,
+               "beech",
+               "sawn.wood") *
+   vol_salable(40,
+               "beech")
+
 ```
 
 <h2><em><a name="fct_wood_revenues">wood_revenues()</a></em></h2>
