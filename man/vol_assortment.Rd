@@ -23,7 +23,7 @@ a list with the available species and codes call
 \code{\link{get_species_codes}}.}
 
 \item{assortment}{wood assortment whose share is sought, currently
-implemented: \code{"sawn.wood"}}
+implemented: \code{"saw.logs"}}
 
 \item{value.level}{Stand quality expressed as an integer of \code{1:3}, with
 \code{1} for an extraordinarily high stand quality with 
@@ -52,24 +52,25 @@ to implement alternative parameters and functions in the
 future.}
 }
 \value{
-A vector with relative shares of the respective assortment's wood volume.
+A vector with relative shares of the respective assortment's wood
+        volume.
 }
 \description{
 The function estimates the share of different assortments. It is expressed
-in relation to the salable volume, i.e. the sum of pulp wood, saw log, and 
+in relation to the salable volume, i.e., the sum of pulp wood, saw log, and 
 fuel wood assortments. The function is based on the assortment tables from 
 Offer and Staupendahl (2018) and its derivation is similar to the approach
-described in Fuchs et al. (in preparation) for the salable and skidded
-volume. The underlying assortment tables are based on data from HessenForst,
-the public forest service of the Federal State of Hesse in Germany. For
-further details see the \pkg{woodValuationDE}
+described in Fuchs et al. (2023) for the salable and skidded volume. The
+underlying assortment tables are based on data from HessenForst, the public
+forest service of the Federal State of Hesse in Germany. For further details
+see the \pkg{woodValuationDE}
 \href{https://github.com/Forest-Economics-Goettingen/woodValuationDE}{README}.
 }
 \examples{
-# sawn wood / saw log volume per cubic meter salable volume
+# saw log volume per cubic meter salable volume
 share.saw.logs <- vol_assortment(40,
                                  "beech",
-                                 "sawn.wood")
+                                 "saw.logs")
 share.saw.logs
 
 # fuel wood per cubic meter salable volume
@@ -84,18 +85,20 @@ share.fuel.wood
 # pulp wood per cubic meter salable volume
 share.pulp.wood <- 1 - share.saw.logs - share.fuel.wood
 
-# sawn wood / saw log volume per cubic meter volume over bark
+# saw log volume per cubic meter volume over bark
 vol_assortment(40,
                "beech",
-               "stem.wood") *
+               "saw.logs") *
   vol_salable(40,
               "beech")
 }
 \references{
 Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
-            Carola (in preparation): woodValuationDE: A consistent framework
-            for calculating stumpage values in Germany (technical note)
+            Carola (2023): woodValuationDE: A consistent framework
+            for calculating stumpage values in Germany (technical note).
+            Allgemeine Forst- und Jagdzeitung 193 (1/2), p. 16-29.
+            \doi{10.23765/afjz0002090}
 
 Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
             Bestandessortentafeln (Wood Harvest Cost and Assortment

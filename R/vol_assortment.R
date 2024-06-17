@@ -20,7 +20,7 @@
 #'                a list with the available species and codes call
 #'                \code{\link{get_species_codes}}.
 #' @param assortment wood assortment whose share is sought, currently
-#'                   implemented: \code{"sawn.wood"}
+#'                   implemented: \code{"saw.logs"}
 #' @param value.level Stand quality expressed as an integer of \code{1:3}, with
 #'                    \code{1} for an extraordinarily high stand quality with 
 #'                    high shares of wood suitable for high-valued usages such
@@ -55,10 +55,10 @@
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).
 #' @examples
-#' # sawn wood / saw log volume per cubic meter salable volume
+#' # saw log volume per cubic meter salable volume
 #' share.saw.logs <- vol_assortment(40,
 #'                                  "beech",
-#'                                  "sawn.wood")
+#'                                  "saw.logs")
 #' share.saw.logs
 #' 
 #' # fuel wood per cubic meter salable volume
@@ -73,10 +73,10 @@
 #' # pulp wood per cubic meter salable volume
 #' share.pulp.wood <- 1 - share.saw.logs - share.fuel.wood
 #' 
-#' # sawn wood / saw log volume per cubic meter volume over bark
+#' # saw log volume per cubic meter volume over bark
 #' vol_assortment(40,
 #'                "beech",
-#'                "sawn.wood") *
+#'                "saw.logs") *
 #'   vol_salable(40,
 #'               "beech")
 

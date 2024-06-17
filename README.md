@@ -480,7 +480,7 @@ vol_skidded(rep(seq(20, 50, 10),
 
 The function estimates volume shares of specific assortment (groups). These are
 expressed in relation to the salable volume. At the moment, we implemented the
-share of sawn wood / saw logs. This also allows for calculating the share of
+share of saw logs. This also allows for calculating the share of
 pulp wood. The function is based on the assortment tables from
 [Offer and Staupendahl (2018)](#offer.2018). Its derivation is similar to the
 approach described in [Fuchs et al. (2023)](#fuchs.2023) for the salable and
@@ -500,7 +500,7 @@ HessenForst. More details on the assortment tables and their derivation
 are provided in [Offer and Staupendahl (2008)](#offer.2008) and
 [Offer and Staupendahl (2009)](#offer.2009).
 
-We derived the share of sawn wood <i>v<sub>sawn.wood</sub></i> based on these
+We derived the share of saw logs <i>v<sub>saw.logs</sub></i> based on these
 assortment tables. Since the assortment tables only provide the values in
 diameter steps of 2 cm, a Gompertz function was fitted to have a continuous
 model (cf. [Fuchs et al., 2023](#fuchs.2023)). For the model fitting, the
@@ -508,12 +508,12 @@ modified formulation according to
 [Fischer and Schönfelder (2017)](#fischer.2017) was used:
 
 <p align="center">
-  <i>v<sub>sawn.wood</sub></i> = <i>A</i> * exp( -exp(
+  <i>v<sub>saw.logs</sub></i> = <i>A</i> * exp( -exp(
   <i>z<sub>m</sub></i> / <i>A</i> * exp(1) * (<i>t<sub>w</sub></i> -
   <i>d<sub>q</sub></i>))),
 </p>
 
-with the volume share of sawn wood <i>v<sub>sawn.wood</sub></i>, the
+with the volume share of saw logs <i>v<sub>saw.logs</sub></i>, the
 quadratic mean diameter <i>d<sub>q</sub></i>, and the parameters
 <i>A</i>, <i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>. The actual parameter
 values depend on species, stand quality, and logging method.
@@ -527,7 +527,7 @@ recycled.
 <h4><i>assortment</i></h4>
 
 Wood assortment whose share is sought, currently implemented:
-<i>"sawn.wood"</i>.
+<i>"saw.logs"</i>.
 
 <h4><i>diameter.q</i></h4>
 
@@ -548,10 +548,10 @@ A vector with relative shares of respective assortment.
 <h3>Application</h3>
 
 ``` r
-# sawn wood / saw log volume per cubic meter salable volume
+# saw log volume per cubic meter salable volume
 share.saw.logs <- vol_assortment(40,
                                  "beech",
-                                 "sawn.wood")
+                                 "saw.logs")
 share.saw.logs
  
 # fuel wood per cubic meter salable volume
@@ -566,10 +566,10 @@ share.fuel.wood
 # pulp wood per cubic meter salable volume
 share.pulp.wood <- 1 - share.saw.logs - share.fuel.wood
  
-# sawn wood / saw log volume per cubic meter volume over bark
+# saw log volume per cubic meter volume over bark
 vol_assortment(40,
                "beech",
-               "sawn.wood") *
+               "saw.logs") *
    vol_salable(40,
                "beech")
 
