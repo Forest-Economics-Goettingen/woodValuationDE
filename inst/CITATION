@@ -20,8 +20,7 @@ bibentry(bibtype = "Article",
   title = "woodValuationDE: A Consistent Framework for Calculating Stumpage Values in Germany (Technical Note)",
   journal = "Allgemeine Forst- und Jagdzeitung",
   year = "2023",
-  doi = "10.23765/afjz0002090",
   volume = 193,
   number = 1/2,
-  pages = "16 - 29"
+  pages = "16 - 29, doi: 10.23765/afjz0002090"
 )
