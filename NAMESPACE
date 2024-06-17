@@ -2,6 +2,7 @@
 
 export(get_species_codes)
 export(harvest_costs)
+export(vol_assortment)
 export(vol_salable)
 export(vol_skidded)
 export(wood_net_revenues)

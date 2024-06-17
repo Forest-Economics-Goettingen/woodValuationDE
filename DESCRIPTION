@@ -41,7 +41,7 @@ Authors@R:
            role = "fnd"),
     person("BiodivClim ERA-Net COFUND BiodivERsA call",
            role = "fnd"),
-    person("ETH Zurich",
+    person("ETH Zurich - Institute of Terrestrial Ecosystems - Forest Resources Management",
            role = "fnd")
     )
 Description: Monetary valuation of wood in German forests
