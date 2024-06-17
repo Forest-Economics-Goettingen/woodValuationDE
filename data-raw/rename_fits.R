@@ -56,7 +56,7 @@ dat1 <- dat %>%
             by = c("tree.species",
                    "value.level",
                    "logging.method")) %>% 
-  add_column(assortment = "sawn.wood")
+  add_column(assortment = "saw.logs")
 
 
 write.csv2(dat1,
