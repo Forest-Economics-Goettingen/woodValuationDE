@@ -1685,7 +1685,11 @@ to those included in the technical note
 technical note, we use the new generation of yield tables
 [(Nuske et al., 2022)](#nuske.2022) as an example for a growth model.
 
-Firstly, we install woodValuationDE and load the required R packages:
+First, we install <strong>woodValuationDE</strong>. We load the required R
+packages, including the <strong>et.nwfva</strong> package
+[(Nuske et al., 2022)](#nuske.2022) that provides yield table data for our
+example:
+
 ``` r
 install.packages("woodValuationDE")
 
@@ -1697,28 +1701,42 @@ library(patchwork)
 library(et.nwfva)
 ```
 
-We then import the yield tables [(Nuske et al., 2022)](#nuske.2022):
+We then import the yield tables:
 
 ``` r
 yield.table <-  bind_rows(
   tibble(species = "oak", 
-         et_tafel(art = c("Eiche"), bon = -1, bon_typ = "relativ")),
+         et_tafel(art = c("Eiche"),
+                  bon = -1,
+                  bon_typ = "relativ")),
   tibble(species = "beech", 
-         et_tafel(art = c("Buche"), bon = -1, bon_typ = "relativ")),
+         et_tafel(art = c("Buche"),
+                  bon = -1,
+                  bon_typ = "relativ")),
   tibble(species = "spruce", 
-         et_tafel(art = c("Fichte"), bon = -1, bon_typ = "relativ")),
+         et_tafel(art = c("Fichte"),
+                  bon = -1,
+                  bon_typ = "relativ")),
   tibble(species = "douglas.fir", 
-         et_tafel(art = c("Douglasie"), bon = -1, bon_typ = "relativ")),
+         et_tafel(art = c("Douglasie"),
+                  bon = -1,
+                  bon_typ = "relativ")),
   tibble(species = "pine", 
-         et_tafel(art = c("Kiefer"), bon = -1, bon_typ = "relativ"))
+         et_tafel(art = c("Kiefer"),
+                  bon = -1,
+                  bon_typ = "relativ"))
 )
 
-yield.table <- yield.table |> select(species, h.100.m = H100, age = Alter, 
-                                     diameter.remaining.cm = Dg, 
-                                     volume.remaining.m3.ha = V)
+yield.table <- yield.table %>%
+  select(species,
+         h.100.m = H100,
+         age = Alter,
+         diameter.remaining.cm = Dg,
+         volume.remaining.m3.ha = V)
 ```
 
-We add some information and translations for the nice plots.
+We add some information and translations for the visualization.
+
 ``` r
 species.list <- tibble(
   en = c("beech",
@@ -1751,6 +1769,7 @@ colors <- c(
 Calculate harvest quantities, revenues, and costs over the diameter range
 specified above. The functions are applied with default parameters for the five
 species available in the yield tables.
+
 ``` r
 dat.1 <- tibble(
   species = rep(
@@ -1800,6 +1819,7 @@ dat.1.gath <- dat.1 %>%
 ```
 
 Harvest quantities:
+
 ``` r
 p1.1 <- 
   ggplot() +
@@ -1824,6 +1844,7 @@ p1.1 <-
 ```
 
 Revenues and costs:
+
 ``` r
 p1.2 <- 
   ggplot() +
@@ -1838,7 +1859,7 @@ p1.2 <-
     aes(diameter,
         value,
         color = species),
-    size = 1) +
+    linewidth = 1) +
   labs(x = "Quadratic mean diameter [cm]",
        y = bquote("Costs or (net) revenues [\u20AC m"^-3~"]")) +
   scale_x_continuous(breaks = seq(10, 60, 10)) +
@@ -1849,6 +1870,7 @@ p1.2 <-
 ```
 
 Combined plot:
+
 ``` r
 p1.1 / p1.2 + plot_annotation(tag_levels = "a")
 ```
@@ -1861,6 +1883,7 @@ p1.1 / p1.2 + plot_annotation(tag_levels = "a")
 For this figure, we calculate stumpage values over age based on the yield
 tables. The figure should illustrate the influence of the stand quality (value
 level) as well as the accessibility for harvest operations (cost level).
+
 ``` r
 dat.2 <- yield.table %>% 
   filter(diameter.remaining.cm <= 60 &
@@ -1891,6 +1914,7 @@ dat.2.2 <- dat.2a %>%
 ```
 
 Influence of the stand quality:
+
 ``` r
 p2.1 <- ggplot() +
   geom_hline(yintercept = 0,
@@ -1900,7 +1924,7 @@ p2.1 <- ggplot() +
             aes(age,
                 net.revenue,
                 col = as.factor(value.level)),
-            size = 1) +
+            linewidth = 1) +
   scale_x_continuous(breaks = c(seq(40, 160, 40))) +
   scale_color_discrete(name = "value.level") +
   labs(x = "Age [a]",
@@ -1911,6 +1935,7 @@ p2.1 <- ggplot() +
 ```
 
 Influence of the accessibility for harvest operations:
+
 ``` r
 p2.2 <- ggplot() +
   geom_hline(yintercept = 0,
@@ -1920,7 +1945,7 @@ p2.2 <- ggplot() +
             aes(age,
                 net.revenue,
                 col = as.factor(cost.level)),
-            size = 1) +
+            linewidth = 1) +
   scale_x_continuous(breaks = c(seq(40, 160, 40))) +
   scale_color_discrete(name = "cost.level") +
   labs(x = "Age [a]",
@@ -1988,6 +2013,7 @@ a reduction in net revenues by a factor of 0.5. Thus, the revenues and costs are
 only meaningful if they are interpreted in their sum (as net revenues).
 
 Plot:
+
 ``` r
 ggplot() +
   geom_hline(yintercept = 0,
@@ -2097,8 +2123,9 @@ wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
 <a id="fuchs.2023">Fuchs</a>, Jasper M.; Husmann, Kai;
 v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;
 Möhring, Bernhard; Paul, Carola (2023): woodValuationDE: A consistent
-framework for calculating stumpage values in Germany (technical note). <em>Allg. Forst- u. J.-Ztg.</em>
-**193 (1/2)**, p. 16-29. <https://doi.org/10.23765/afjz0002090>.
+framework for calculating stumpage values in Germany (technical note).
+<em>Allg. Forst- u. J.-Ztg.</em> **193 (1/2)**, p. 16-29.
+<https://doi.org/10.23765/afjz0002090>.
 
 <a id="kwf.2006">KWF</a> (ed.) (2006): Holzernteverfahren -
 Vergleichende Erhebung und Beurteilung, Daten CD mit Beschreibung der
@@ -2111,7 +2138,10 @@ harvesting methods and calculations.]. <em>Groß-Umstadt: KWF.</em>
 decisions. <em>Ann. For. Sci.</em> **74 (4)**, p. 75-87.
 <https://doi.org/10.1007/s13595-017-0670-x>.
 
-<a id="nuske.2022">Nuske</a>, Robert; Staupendahl, Kai; Albert, Matthias (2022). et.nwfva: Forest Yield Tables for Northwest Germany and their Application (Version 0.1.1) [Computer software]. https://github.com/rnuske/et.nwfva and https://CRAN.R-project.org/package=et.nwfva
+<a id="nuske.2022">Nuske</a>, Robert; Staupendahl, Kai; Albert, Matthias (2022).
+et.nwfva: Forest Yield Tables for Northwest Germany and their Application
+(Version 0.1.1) [Computer software]. https://github.com/rnuske/et.nwfva and
+https://CRAN.R-project.org/package=et.nwfva
 
 <a id="offer.2008">Offer</a>, Armin; Staupendahl, Kai (2008): Neue
 Bestandessortentafeln für die Waldbewertung und ihr Einsatz in der
