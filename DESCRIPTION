@@ -7,7 +7,7 @@ Authors@R:
     person(given = "Jasper M.",
            family = "Fuchs",
            role = c("aut", "cre"),
-           email = "jasper.fuchs@uni-goettingen.de",
+           email = "jasper.fuchs@usys.ethz.ch",
            comment=c(ORCID="0000-0001-5951-7897")),
     person(given = "Kai",
            family = "Husmann",
@@ -39,7 +39,9 @@ Authors@R:
            role = "fnd"),
     person("Federal Ministry of Education and Research Germany (BMBF)",
            role = "fnd"),
-    person("BiodivClim ERA-Net COFUND: BiodivERsA call",
+    person("BiodivClim ERA-Net COFUND BiodivERsA call",
+           role = "fnd"),
+    person("ETH Zurich",
            role = "fnd")
     )
 Description: Monetary valuation of wood in German forests
