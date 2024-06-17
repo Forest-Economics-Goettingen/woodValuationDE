@@ -1,0 +1,27 @@
+citHeader("To cite woodValuationDE, please use:")
+
+bibentry(bibtype = "Article",
+  author = person(given = "Jasper M.",
+           family = "Fuchs"),
+    person(given = "Kai",
+           family = "Husmann"),
+    person(given = "Hilmar",
+           family = "v. Bodelschwingh"),
+    person(given = "Roman",
+           family = "Koster"),
+    person(given = "Kai",
+           family = "Staupendahl"),
+    person(given = "Armin",
+           family = "Offer"),
+    person(given = "Bernhard",
+           family = "Möhring"),
+    person(given = "Carola",
+           family = "Paul"),
+  title = "woodValuationDE: A Consistent Framework for Calculating Stumpage Values in Germany (Technical Note)",
+  journal = "Allgemeine Forst- und Jagdzeitung",
+  year = "2023",
+  doi = "10.23765/afjz0002090",
+  volume = 193,
+  number = 1/2,
+  pages = "16 - 29"
+)
