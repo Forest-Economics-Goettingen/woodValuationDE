@@ -2147,7 +2147,7 @@ Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster, Roman;
 Staupendahl, Kai; Offer, Armin; Möhring, Bernhard; Paul, Carola (2023):
 woodValuationDE: A consistent framework for calculating stumpage values in
 Germany (technical note). <em>Allg. Forst- u. J.-Ztg.</em>
-**193 (1/2)**, p. 16-29. <https://doi.org/10.23765/afjz0002090>.
+**193 (1/2)**, p. 16-29. doi: 10.23765/afjz0002090.
 
 Bibtex:
 
@@ -2225,7 +2225,7 @@ v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;
 Möhring, Bernhard; Paul, Carola (2023): woodValuationDE: A consistent
 framework for calculating stumpage values in Germany (technical note).
 <em>Allg. Forst- u. J.-Ztg.</em> **193 (1/2)**, p. 16-29.
-<https://doi.org/10.23765/afjz0002090>.
+doi: 10.23765/afjz0002090.
 
 <a id="kwf.2006">KWF</a> (ed.) (2006): Holzernteverfahren -
 Vergleichende Erhebung und Beurteilung, Daten CD mit Beschreibung der

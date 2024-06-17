@@ -51,7 +51,7 @@
 #'             Carola (2023): woodValuationDE: A consistent framework
 #'             for calculating stumpage values in Germany (technical note).
 #'             Allgemeine Forst- und Jagdzeitung 193 (1/2), p. 16-29.
-#'             \doi{10.23765/afjz0002090}
+#'             doi: 10.23765/afjz0002090
 #' @references Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
 #'             Bestandessortentafeln (Wood Harvest Cost and Assortment
 #'             Tables). Kassel: HessenForst (publisher).

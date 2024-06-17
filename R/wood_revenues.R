@@ -113,7 +113,7 @@
 #'             Carola (2023): woodValuationDE: A consistent framework
 #'             for calculating stumpage values in Germany (technical note).
 #'             Allgemeine Forst- und Jagdzeitung 193 (1/2), p. 16-29.
-#'             \doi{10.23765/afjz0002090}
+#'             doi: 10.23765/afjz0002090
 #'             for calculating stumpage values in Germany (technical note)
 #' @references Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
 #'             to integrate risk in forest management decisions. Ann. For. Sci.
