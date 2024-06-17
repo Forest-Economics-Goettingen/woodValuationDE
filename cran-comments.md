@@ -1,2 +1,2 @@
 2022/07/01 initial upload to cran, all checks successful on Windows 10 and Ubuntu 20.04. We thoroughly reviewed all words tagged as misspelled in the NOTE. All words are actually correct. Also the URL to the doi works correctly.
-2024/06/17 updated citation, updated README, minor edits to the help texts, new function for quantities of specific wood assortments
+2024/06/17 updated citation, updated README, minor edits to the help texts, new function for quantities of specific wood assortments, first author (JF) has changed the affiliation and e-mail address
