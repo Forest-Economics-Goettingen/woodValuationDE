@@ -1,7 +1,7 @@
 Package: woodValuationDE
 Type: Package
 Title: Wood Valuation Germany
-Version: 1.0.1-999
+Version: 1.0.2
 Authors@R:
     c(
     person(given = "Jasper M.",
