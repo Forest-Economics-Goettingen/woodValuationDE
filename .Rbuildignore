@@ -4,3 +4,4 @@ data-raw
 cran-comments.md
 ^\.Rproj\.user$
 .github
+^CRAN-SUBMISSION$

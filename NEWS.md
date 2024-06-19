@@ -12,3 +12,5 @@
 * README.md: example with the R package et.nwfva
 * LICENSE: updated year
 * new function: vol_assortment
+
+# woodValuationDE 1.0.2-999
