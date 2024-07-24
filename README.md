@@ -684,8 +684,8 @@ implemented by default are listed in <a href="#tab3">Tab. 3</a>.
 | <i>"ips.fuchs.2022a"</i>          | 0.67     | \-        | [Fuchs et al. (2022a)](#fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price matrix [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
 | <i>"ips.timely.fuchs.2022a"</i>   | 0.88     | \-        | [Fuchs et al. (2022a)]( #fuchs.2022a) | Assumption of quality losses after spruce bark beetle infestations with timely salvage harvests leading to lower value losses, based on the assortment tables [(Offer and Staupendahl, 2018)](#offer.2018) and price matrix [(v. Bodelschwingh, 2018)](#vbodelschwingh.2018). |
 | <i>"stand.damage.fuchs.2022b"</i>      | 0.90     | 0.85      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of damages in a single stand influencing only the wood quality not the wood market, derived based on time series analyses of sales of HessenForst. |
-| <i>"regional.disturbance.fuchs.2022b"</i> | 0.74     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
-| <i>"transregional.calamity.fuchs.2022b"</i> | 0.54     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"regional.disturbance.fuchs.2022b"</i> | 0.66     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of regional damages influencing wood quality and regional wood market (oversupply), derived based on time series analyses of sales of HessenForst. |
+| <i>"transregional.calamity.fuchs.2022b"</i> | 0.46     | 0.70      | [Fuchs et al. (2022b)](#fuchs.2022b) | Assumption of (inter-)national damages influencing wood quality and wood national market (oversupply), derived based on time series analyses of sales of HessenForst. |
 
 <h3>Input</h3>
 
